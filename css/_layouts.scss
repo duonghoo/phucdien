@@ -11,6 +11,12 @@
 {
     background-color: forestgreen;
 }
+
+.bg-orange
+{
+    background-color: $primary_color;
+}
+
 .logo{
     color: forestgreen;
     img{
@@ -28,6 +34,9 @@
     a:hover{
         color:$hover_color;
     }
+    .active{
+        color: $primary_color;
+    } 
 }
 .title{
     h1{
@@ -72,11 +81,11 @@
 }
 
 .second-content{
-    margin-top: 20px;
+    margin-top: 1rem;
 }
 
 .third-content{
-    margin-top:20px;
+    margin-top:1rem;
 }
 
 footer{
@@ -101,6 +110,27 @@ footer{
     }
     // margin-left: 2rem;
     // transform: translateX(-2rem);
-  
+}
 
+.preview-main{
+    background-color: #fff;
+}
+
+.border-bottom-orange{
+    border-bottom:3px solid $primary_color;
+}
+.max-100{
+    max-width: 100%;
+    img{
+        max-width:100%;
+    }
+    p{
+        max-width: 100%;
+    }
+}
+
+.block-title{
+    border-bottom: 1px solid $primary_color;
+    padding-bottom: 1rem;
+    color: $primary_color;
 }
