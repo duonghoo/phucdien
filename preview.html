@@ -9,7 +9,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     </head>
     <body>
-        <div class="container-lg">
+        <div class="container-lg px-0">
         <header class="border-bottom-orange">
             <nav class="navbar navbar-expand-lg navbar-light bg-green d-flex justify-content-center">CÔNG TY TNHH PHÚC DIỄN - 09213124124 - 0918231274- 0211247812</nav>
             
@@ -45,27 +45,56 @@
         </header>
         <main class="preview-main">
             <div class="first-content w-100 d-flex flex-column justify-content-center p-lg-5">
-                <h1 class="font-50 fw-bold">Bao giá trị, vững niềm tin </h1>
-                  <span class="col-lg-6 col-12 pl-5">
-                    <p class="font-26 ms-2">Sản phẩm của Phúc Diễn là sự “bao bọc” các
-                      giá trị, mang đến thành công cho khách hàng,
-                      từ đó niềm tin được vun đắp, nhân lên đến tận
-                      cùng giới hạn một cách “trọn vẹn”</p>
-                  </span>
-                  <div>
-                    <button class="btn-more btn_primary ms-2">Xem thêm</button>
-                    <button class="btn-more btn_primary ms-5">Xem thêm</button>
-                  </div>
+                
               </div>
-
-            <div class="second-content m-0 p-5 d-flex">
-                <img src="img/section-2.jpg " alt="" width="30%">
+              
+            <div class="mx-5 mt-2 d-none d-lg-block">
+              <ul class="nav nav-pills mb-3 " id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
+                </li>
+              </ul>
+              <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                  <div class="second-content m-0 pb-5 pt-2 d-flex">
+                    <img src="img/section-2.jpg " alt="" width="50%">
+                    <p class="ms-3 font-20">Tọa lạc trên diện tích 10.000 mét vuông, diện tích nhà xưởng xây dựng đạt 6.000 mét vuông với hai dây chuyền sản xuất hiện đại. Nằm trong khu công nghiệp Cát Lái, gần cảng Cát Lái. Công ty cổ phần hóa chất Thành Phố Hồ Chí Minh tự hào là một trong hai nhà máy nghiền bột đá CaCO3 lớn nhất tại miền Nam Việt Nam. <a href="#">Xem thêm...</a></p> 
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                  <div class="second-content m-0 pb-5 pt-2 d-flex">
+                    <div class="col-md-6 col-12 bg-orange p-5 rounded"><p>Chúng tôi đang đồng hành cùng các doanh nghiệp</p></div>
+                    <div class="ms-3 font-20">
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                    </div> 
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                  <div class="second-content m-0 pb-5 pt-2 d-flex">
+                    <img src="img/section-2.jpg " alt="" width="30%">
+                    <div class="ms-3 font-20 d-flex">
+                        <p>Giám đốc: Nguyễn Thành Đạt</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-block d-lg-none px-2">
+              <div class="second-content m-0 pb-5 pt-2 d-flex flex-wrap">
+                <img src="img/section-2.jpg " alt="" width="100%">
                 <div class="ms-3 font-20 d-flex">
                     <p>Giám đốc: Nguyễn Thành Đạt</p>
                 </div>
               </div>
 
-              <div class="second-content m-0 p-5 d-flex">
+              <div class="second-content m-0 pb-5 pt-2 d-flex">
                 <div class="col-md-6 col-12 bg-orange p-5 rounded"><p>Chúng tôi đang đồng hành cùng các doanh nghiệp</p></div>
                 <div class="ms-3 font-20">
                     <li>Lorem ipsum dolor sit amet.</li>
@@ -73,17 +102,13 @@
                 </div> 
               </div>
 
-            <div class="second-content m-0 p-5 d-flex">
-              <img src="img/section-2.jpg " alt="" width="50%">
-              <p class="ms-3 font-20">Tọa lạc trên diện tích 10.000 mét vuông, diện tích nhà xưởng xây dựng đạt 6.000 mét vuông với hai dây chuyền sản xuất hiện đại. Nằm trong khu công nghiệp Cát Lái, gần cảng Cát Lái. Công ty cổ phần hóa chất Thành Phố Hồ Chí Minh tự hào là một trong hai nhà máy nghiền bột đá CaCO3 lớn nhất tại miền Nam Việt Nam. <a href="#">Xem thêm...</a></p> 
-            </div>
-
-        
-
-              <div class="second-content m-0 p-5 d-flex">
+              <div class="second-content m-0 pb-5 pt-2 d-flex">
                 <img src="img/section-2.jpg " alt="" width="50%">
                 <p class="ms-3 font-20">Tọa lạc trên diện tích 10.000 mét vuông, diện tích nhà xưởng xây dựng đạt 6.000 mét vuông với hai dây chuyền sản xuất hiện đại. Nằm trong khu công nghiệp Cát Lái, gần cảng Cát Lái. Công ty cổ phần hóa chất Thành Phố Hồ Chí Minh tự hào là một trong hai nhà máy nghiền bột đá CaCO3 lớn nhất tại miền Nam Việt Nam. <a href="#">Xem thêm...</a></p> 
               </div>
+
+            </div>
+
         </main>
         <footer class="footer d-flex">
           <div class="ms-5 mt-3 w-100 row me-5 mb-5">

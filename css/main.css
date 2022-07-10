@@ -128,6 +128,9 @@ footer {
   padding-bottom: 1rem;
   color: #ff8126; }
 
+.bg-grey {
+  background-color: F7F5F0; }
+
 .list-category {
   margin-left: 1rem; }
   .list-category li {
