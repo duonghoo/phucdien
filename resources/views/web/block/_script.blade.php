@@ -1,0 +1,1 @@
+<script src="{{asset('js/page_compile/main.min.js?v=6')}}"></script>

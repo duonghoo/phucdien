@@ -1,0 +1,6 @@
+@each $font in $fonts{
+    .fs-#{$font}{
+      font-size: $font * 1px;
+    }
+  }
+  

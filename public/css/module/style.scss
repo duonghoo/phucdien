@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap');
+@font-face {
+	font-family: 'simple-line-icons';
+    
+	src: url('../../fonts/Simple-Line-Icons.eot?v=2.4.0');
+	src: url('../../fonts/Simple-Line-Icons.eot?v=2.4.0#iefix') format('embedded-opentype'), url('../../../fonts/Simple-Line-Icons.woff2?v=2.4.0') format('woff2'), url('../../../fonts/Simple-Line-Icons.ttf?v=2.4.0') format('truetype'), url('../../../fonts/Simple-Line-Icons.woff?v=2.4.0') format('woff'), url('../../../fonts/Simple-Line-Icons.svg?v=2.4.0#simple-line-icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@import "sass/mixins";
+@import "sass/base";
+@import "sass/header";
+@import "sass/main";
+@import "sass/helper";
+@import "sass/buttons";
+@import "sass/elements";
+@import "sass/slick";
+@import "sass/slick2";
+@import "sass/responsive";
+@import "sass/line-icons";
+@import "sass/layout";
