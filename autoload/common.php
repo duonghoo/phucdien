@@ -147,6 +147,7 @@ function getListPermission() {
         'categoryauthor' => 'Tác giả chuyên mục',
         // 'video' => 'Video',
         'shortcode' => 'short code',
+        'product' => 'Sản phầm',
     ];
 }
 

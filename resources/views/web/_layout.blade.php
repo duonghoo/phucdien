@@ -44,6 +44,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v14.0&appId=432416328750166&autoLogAppEvents=1" nonce="730jaS1D"></script>
     {!! getSiteSetting('meta_head') ?? '' !!}
@@ -66,15 +67,11 @@
 	@endif
 </head>
 
-<body>
-@include('web.block._preload')
-<div class="site-wrapper">
-	<div class="main-overlay"></div>
-		@include('web.block._header')
-		@yield('main')
-		@include('web.block._canvas_menu')
-		@include('web.block._footer')
-</div>
+<body data-spy="scroll" data-target=".navbar-fixed-top">
+@include('web.block._header')
+@yield('main')
+<div class="clear"></div>
+@include('web.block._footer')
 @include('web.block._script')
 </body>
 </html>

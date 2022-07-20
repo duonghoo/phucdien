@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/admin/css/coreui/coreui.min.css">
     <link rel="stylesheet" href="/admin/css/custom.css?2">
     <link rel="stylesheet" href="/admin/css/toastr.min.css">
+    <link rel="stylesheet" href="/admin/css/spectrum.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <link rel="shortcut icon" href="{{url('images/favicon.png')}}" />
     <link rel="apple-touch-icon" href="{{url('images/favicon.png')}}" />
@@ -28,6 +29,7 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <script src="/admin/js/upload.js"></script>
+<script src="/admin/js/spectrum.js"></script>
 <script src="/admin/js/custom.js?v=12312"></script>
 <script src="/admin/js/tinymce.min.js"></script>
 <script src="/admin/js/tiny_full_featured.js?9"></script>

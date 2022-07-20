@@ -96,6 +96,12 @@ Route::group(['middleware' => ['auth', 'checkPermission']], function () {
     Route::any('/shortcode/update/{id}','ShortCodeController@update')->where(['id' => '[0-9]+']);
     Route::any('/shortcode/delete/{id}','ShortCodeController@delete')->where(['id' => '[0-9]+']);
 
+    /* product */
+    Route::get('/product','ProductController@index');
+    Route::any('/product/update','ProductController@update');
+    Route::any('/product/update/{id}','ProductController@update')->where(['id' => '[0-9]+']);
+    Route::any('/product/delete/{id}','ProductController@delete')->where(['id' => '[0-9]+']);
+
     //upload image
     Route::post('/upload_image','AdminImagesController@upload');
 

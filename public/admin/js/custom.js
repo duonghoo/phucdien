@@ -532,4 +532,17 @@ $(function() {
         $(v).trigger('chosen:updated');
     });
     console.log(form);
- })
+ });
+
+ $("#custom").spectrum({
+    color: "#f00",
+    change: (color) => {
+        color = color.toHexString();
+        $('.input_color').append(`
+            <div class="mx-2" style="width:30px; height:30px;background-color:${color}"></div>
+        `);
+        let variable = $('#color_var').val();
+        variable = variable+ '|' + color;
+        $('#color_var').val(variable);
+    }
+});

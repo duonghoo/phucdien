@@ -2,15 +2,74 @@ import $ from 'jquery';
 import 'slick-carousel';
 
 window.$ = window.jQuery = $;
-import StickySidebar from 'sticky-sidebar';
 import './rateit';
+import './easyResponsiveTabs';
+import './jquery.flexslider';
+import './owl.carousel';
 
 $(window).on('load', function(){
     "use strict";
     /*=========================================================================
             Preloader
     =========================================================================*/
-    $("#preloader").delay(750).fadeOut('slow');
+    // $("#preloader").delay(750).fadeOut('slow');
+});
+
+function collapseNavbar() {
+  if ($(window).scrollTop() > 50) {
+      $(".navbar-fixed-top").addClass("top-nav-collapse");
+  } else {
+      $(".navbar-fixed-top").removeClass("top-nav-collapse");
+  }
+}
+
+$(window).scroll(collapseNavbar);
+$(document).ready(collapseNavbar);
+
+
+// Closes the Responsive Menu on Menu Item Click
+$('.navbar-collapse ul li a').click(function() {
+if ($(this).attr('class') != 'dropdown-toggle active' && $(this).attr('class') != 'dropdown-toggle') {
+  $('.navbar-toggle:visible').click();
+}
+});
+
+
+
+$(window).on('load', function(){
+  
+// defalt show testimonial tab
+$('.testimonial-tab .testimonial-con').fadeOut();
+$('.testimonial-tab #testimonial-tab3').fadeIn();
+  $('.testimonials-tab-content #testimonial-tab3').addClass('active');
+
+  
+// Flex Slider
+$('.flexslider').flexslider({
+  animation: "fade",
+  start: function(slider){
+    $('body').removeClass('loading');
+  }
+});
+  
+  
+  // Owl Slider
+  var owl = $(".partner-slider");
+owl.owlCarousel({
+  items : 3, //10 items above 1000px browser width
+  itemsDesktop : [1190,3], //5 items between 1900px and 591px
+      itemsDesktopSmall : [1024,3], // 3 items betweem 1020px and 861px
+  itemsTablet: [980,2], //2 items between 860 and 0;
+      itemsTabletSmall:[767,1], //2 items between 860 and 0;
+  itemsMobile : [428,1], // itemsMobile disabled - inherit from itemsTablet option
+  paginationNumbers : false,
+  navigation  : true,
+  navigationText : false,
+  rewindNav:false,
+  scrollPerPage : true
+});
+  
+  
 });
 
 /*=========================================================================
@@ -19,251 +78,56 @@ $(window).on('load', function(){
 $(document).ready(function() {
     "use strict";
 
-    /*=========================================================================
-            Slick sliders
-    =========================================================================*/
-    $('.post-carousel-lg').slick({
-      dots: true,
-      arrows: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      fade: true,
-      cssEase: 'linear',
-      responsive: [
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            dots: true,
-            arrows: false,
+    function close_accordion_section() {
+      $('.accordion .accordion-section-title').removeClass('active');
+      $('.accordion .accordion-section-content').slideUp(300).removeClass('open');
+    };
+  
+    $('.accordion-section-title').click(function(e) {
+      // Grab current anchor value
+      var currentAttrValue = $(this).attr('href');
+  
+      if($(e.target).is('.active')) {
+        close_accordion_section();
+      }else {
+        close_accordion_section();
+  
+        // Add active class to section title
+        $(this).addClass('active');
+        // Open up the hidden content panel
+        $('.accordion ' + currentAttrValue).slideDown(300).addClass('open'); 
+      }
+  
+      e.preventDefault();
+    });
+      
+      $('#parentVerticalTab').easyResponsiveTabs({
+          type: 'vertical', //Types: default, vertical, accordion
+          width: 'auto', //auto or any width like 600px
+          fit: true, // 100% fit in a container
+          closed: 'accordion', // Start closed if in accordion view
+          tabidentify: 'hor_1', // The tab groups identifier
+          activate: function(event) { // Callback function if tab is switched
+              var $tab = $(this);
+              var $info = $('#nested-tabInfo2');
+              var $name = $('span', $info);
+              $name.text($tab.text());
+              $info.show();
           }
-        }
-      ]
-    });
-
-    $('.post-carousel-featured').slick({
-      dots: true,
-      arrows: false,
-      slidesToShow: 5,
-      slidesToScroll: 2,
-      responsive: [
-        {
-          breakpoint: 1440,
-          settings: {
-            slidesToShow: 4,
-            slidesToScroll: 4,
-            dots: true,
-            arrows: false,
-          }
-        },
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            dots: true,
-            arrows: false,
-          }
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            dots: true,
-            arrows: false,
-          }
-        }
-        ,
-        {
-          breakpoint: 576,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            dots: true,
-            arrows: false,
-          }
-        }
-      ]
-    });
-
-    $('.post-carousel-twoCol').slick({
-      dots: false,
-      arrows: false,
-      slidesToShow: 2,
-      slidesToScroll: 1,
-      responsive: [
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            dots: false,
-            arrows: false,
-          }
-        },
-        {
-          breakpoint: 576,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            dots: false,
-            arrows: false,
-          }
-        }
-      ]
-    });
-    // Custom carousel nav
-    $('.carousel-topNav-prev').click(function(){ 
-      $('.post-carousel-twoCol').slick('slickPrev');
-    } );
-    $('.carousel-topNav-next').click(function(){ 
-      $('.post-carousel-twoCol').slick('slickNext');
-    } );
-
-
-    $('.post-carousel-widget').slick({
-      dots: false,
-      arrows: false,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      responsive: [
-        {
-          breakpoint: 991,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-          }
-        },
-        {
-          breakpoint: 576,
-          settings: {
-            slidesToShow: 1,
-            centerMode: true,
-            slidesToScroll: 1,
-          }
-        }
-      ]
-    });
-    // Custom carousel nav
-    $('.carousel-botNav-prev').click(function(){ 
-      $('.post-carousel-widget').slick('slickPrev');
-    } );
-    $('.carousel-botNav-next').click(function(){ 
-      $('.post-carousel-widget').slick('slickNext');
-    } );
-
-    /*=========================================================================
-            Sticky header
-    =========================================================================*/
-    var $header = $(".header-default, .header-personal nav, .header-classic .header-bottom"),
-      $clone = $header.before($header.clone().addClass("clone"));
-
-    $(window).on("scroll", function() {
-      var fromTop = $(window).scrollTop();
-      $('body').toggleClass("down", (fromTop > 300));
-    });
-
-});
-
-$(function(){
-    "use strict";
-
-    /*=========================================================================
-            Sticky Sidebar
-    =========================================================================*/
-
-    var sidebar = new StickySidebar('.sidebar', {
-        containerSelector: '.main-content',
-        topSpacing: 60,
-        bottomSpacing: 30,
-    });
-
-    /*=========================================================================
-            Vertical Menu
-    =========================================================================*/
-    $( ".submenu" ).before( '<i class="icon-arrow-down switch"></i>' );
-
-    $(".vertical-menu li i.switch").on( 'click', function() {
-        var $submenu = $(this).next(".submenu");
-        $submenu.slideToggle(300);
-        $submenu.parent().toggleClass("openmenu");
-    });
-
-    /*=========================================================================
-            Canvas Menu
-    =========================================================================*/
-    $("button.burger-menu").on( 'click', function() {
-      $(".canvas-menu").toggleClass("open");
-      $(".main-overlay").toggleClass("active");
-    });
-
-    $(".canvas-menu .btn-close, .main-overlay").on( 'click', function() {
-      $(".canvas-menu").removeClass("open");
-      $(".main-overlay").removeClass("active");
-    });
-
-    /*=========================================================================
-            Popups
-    =========================================================================*/
-    $("button.search").on( 'click', function() {
-      $(".search-popup").addClass("visible");
-    });
-
-    $(".search-popup .btn-close").on( 'click', function() {
-      $(".search-popup").removeClass("visible");
-    });
-
-    $(document).keyup(function(e) {
-          if (e.key === "Escape") { // escape key maps to keycode `27`
-            $(".search-popup").removeClass("visible");
-        }
-    });
-
-    /*=========================================================================
-            Tabs loader
-    =========================================================================*/
-    $('button[data-bs-toggle="tab"]').on( 'click', function() {
-      $(".tab-pane").addClass("loading");
-      $('.lds-dual-ring').addClass("loading");
-      setTimeout(function () {
-          $(".tab-pane").removeClass("loading");
-          $('.lds-dual-ring').removeClass("loading");
-      }, 500);
-    });
-    
-    /*=========================================================================
-            Social share toggle
-    =========================================================================*/
-    $('.post button.toggle-button').each( function() {
-      $(this).on( 'click', function(e) {
-        $(this).next('.social-share .icons').toggleClass("visible");
-        $(this).toggleClass('icon-close').toggleClass('icon-share');
       });
+    
+    // show testimonial tab
+    $('.testimonials-tab-list ul li a').click(function() {
+      $('.testimonials-tab-list ul li').removeClass('active');
+          $('.testimonials-tab-content .testimonial-con').removeClass('active');
+      $('.testimonials-tab-content .testimonial-con').fadeOut('fast');
+      $(this).parent().addClass('active');
+      $('.testimonial-tab #testimonial-'+$(this).attr('data-tab')).fadeIn(1000).addClass('active');
     });
-
-    /*=========================================================================
-    Spacer with Data Attribute
-    =========================================================================*/
-    var list = document.getElementsByClassName('spacer');
-
-    for (var i = 0; i < list.length; i++) {
-      var size = list[i].getAttribute('data-height');
-      list[i].style.height = "" + size + "px";
-    }
-
-    /*=========================================================================
-    Background Image with Data Attribute
-    =========================================================================*/
-    var list = document.getElementsByClassName('data-bg-image');
-
-    for (var i = 0; i < list.length; i++) {
-      var bgimage = list[i].getAttribute('data-bg-image');
-      list[i].style.backgroundImage  = "url('" + bgimage + "')";
-    }
+      
 
 });
+
 
 const FUNC = {
   ajax_load_more: function() {
@@ -371,38 +235,38 @@ let voteStar = () => {
   }
 };
 
-$(document).ready(function () {
-  FUNC.init();
-  FUNC.post_table();
-  setTimeout(()=>{
-      $('.rate-fake').addClass('d-none');
-      $('.rateit').removeClass('opa-0');
-  },1);
-  voteStar();
-});
+// $(document).ready(function () {
+//   FUNC.init();
+//   FUNC.post_table();
+//   setTimeout(()=>{
+//       $('.rate-fake').addClass('d-none');
+//       $('.rateit').removeClass('opa-0');
+//   },1);
+//   voteStar();
+// });
 
-function lazyReplaceLoad(selected, image_replace = null){
-  if(image_replace == null) image_replace = 'https://forextradingvn.top/images/posts/inspiration-2.jpg';
-  $(selected).each(function(){
-    var src = $(this).attr('src');
-    var that = this;
-    if(src == '' || src == null){
-      $(this).attr('src', image_replace);
-    }
-    if($(this).attr('width') != null &&  $(this).attr('height') != null){
-      let width = parseInt($(this).attr('width'));
-      let height = parseInt($(this).attr('height'));
-      var img = new Image(width, height);
-    }else{
-      var img = new Image();
-    }
-    img.src = $(this).attr('src');
-    $(this).attr('src', image_replace);
-    $(img).on('load', function(){
-        $(that).attr('src',img.src);
-    })
+// function lazyReplaceLoad(selected, image_replace = null){
+//   if(image_replace == null) image_replace = 'https://forextradingvn.top/images/posts/inspiration-2.jpg';
+//   $(selected).each(function(){
+//     var src = $(this).attr('src');
+//     var that = this;
+//     if(src == '' || src == null){
+//       $(this).attr('src', image_replace);
+//     }
+//     if($(this).attr('width') != null &&  $(this).attr('height') != null){
+//       let width = parseInt($(this).attr('width'));
+//       let height = parseInt($(this).attr('height'));
+//       var img = new Image(width, height);
+//     }else{
+//       var img = new Image();
+//     }
+//     img.src = $(this).attr('src');
+//     $(this).attr('src', image_replace);
+//     $(img).on('load', function(){
+//         $(that).attr('src',img.src);
+//     })
   
-  });  
-}
+//   });  
+// }
 
-lazyReplaceLoad('.img-fluid');
+// lazyReplaceLoad('.img-fluid');
