@@ -46,7 +46,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v14.0&appId=432416328750166&autoLogAppEvents=1" nonce="730jaS1D"></script>
+    <script defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v14.0&appId=432416328750166&autoLogAppEvents=1" nonce="730jaS1D"></script>
     {!! getSiteSetting('meta_head') ?? '' !!}
 
 	
