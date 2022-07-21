@@ -119,6 +119,23 @@
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-sm-12">
+
+                                                    <div class="form-group">
+                                                        <label>Sản phẩm</label>
+                                                        @if(!$product->isEmpty())
+                                                        <select name="product_id" class="form-control">
+                                                            <option value="0">Chọn sản phầm</option>
+                                                            @foreach($product as $pd)
+                                                            @if(!empty($oneItem) && $oneItem->product_id == $pd->id)
+                                                            <option value="{{$pd->id}}" selected>{{$pd->title}}</option>
+                                                            @else
+                                                            <option value="{{$pd->id}}">{{$pd->title}}</option>
+                                                            @endif
+                                                            @endforeach
+                                                        </select>
+                                                        @endif
+                                                    </div>
+
                                                     <div class="form-group">
                                                         <label>Chuyên mục</label>
                                                         <div id="select-multi-category" data-post-id="{{!empty($oneItem->id) ? $oneItem->id : 0}}"></div>

@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Post_Category;
 use App\Models\Video_Category;
 use App\Models\Tag;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\User;
