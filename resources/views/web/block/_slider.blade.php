@@ -1,37 +1,19 @@
+@if(!empty($post_feature))
 <section class="flexslider">
     <ul class="slides">
+        @foreach($post_feature as $pf)
         <li>
-            <img src="images/example/slider-img.jpg" />
+            {!! genImage($pf->thumbnail, 1400, 600) !!}
             <div class="slide-info">
                 <div class="slide-con">
-                    <b>Healthcare</b>
-                    <h3>Health Insurance</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit fringilla ligula, nec congue leo pharetra in.</p>
-                    <a href="#" class="ti-arrow-right"></a>
+                    <b>{{$pf->category->title}}</b>
+                    <h3>{{$pf->title}}</h3>
+                    <p>{!! get_limit_content($pf->desc, 120) !!}</p>
+                    <a href="{{getUrlPost($pf)}}" class="ti-arrow-right"></a>
                 </div>
             </div>
         </li>
-        <li>
-            <img src="images/example/slider-img1.jpg" />
-            <div class="slide-info">
-                <div class="slide-con">
-                    <b>Lifecare</b>
-                    <h3>Life Insurance</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit fringilla ligula, nec congue leo pharetra in.</p>
-                    <a href="#" class="ti-arrow-right"></a>
-                </div>
-            </div>
-        </li>
-        <li>
-            <img src="images/example/slider-img2.jpg" />
-            <div class="slide-info">
-                <div class="slide-con">
-                    <b>Healthcare</b>
-                    <h3>Travel Insurance</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit fringilla ligula, nec congue leo pharetra in.</p>
-                    <a href="#" class="ti-arrow-right"></a>
-                </div>
-            </div>
-        </li>
+        @endforeach
     </ul>
 </section>
+@endif

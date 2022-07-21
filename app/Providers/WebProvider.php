@@ -35,6 +35,10 @@ class WebProvider extends ServiceProvider
             ['web.block._header', 'web.block._footer', 'web.block._menu', 'web.block._canvas_menu', 'web.block.amp-header'],
             'App\Http\ViewComposers\Web\MenuComposer'
         );
+        view()->composer(
+            ['web.block._slider'],
+            'App\Http\ViewComposers\Web\sliderComposer'
+        );
       
     }
 }

@@ -17,15 +17,9 @@ class HomeController extends Controller
 
         $data['loadmore'] = true;
 
-        // // one post new 
-        // $cache_post_feature = md5('post_feature-with-category-user-displayed_time-desc');
-        // if(Cache::has($cache_post_feature)){
-        //     $data['post_feature'] = Cache::get($cache_post_feature);
-        // }else{
-        //     $data['post_feature'] = Post::with(['category', 'user'])->orderBy('displayed_time', 'DESC')->first();
-        //     Cache::set($cache_post_feature, $data['post_feature'], now()->addHours(12));
-        // }
-        // // exclude cho one post new 
+        // three post new 
+        
+        // exclude cho one post new 
         // $this->arr_exclude[] = $data['post_feature']->id;
 
         // // bài viết phổ biến (xu hướng) id=10
