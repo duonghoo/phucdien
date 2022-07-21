@@ -62,8 +62,8 @@
     <div class="copyright">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6 col-md-6 col-lg-6">
-                    Copyright &copy; 2018 distributed by <a href="https://themewagon.com/">ThemeWagon</a>
+                <div class="col-sm-6 col-md-6 col-lg-6 text-start">
+                    <p>Copyright &copy; 2022 distributed by <a href="https://themewagon.com/">MD</a></p>
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-6 text-right">
                     <a href="#">Terms & Conditions</a>

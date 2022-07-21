@@ -14,3 +14,20 @@
       }
     }
   }
+  .bg_primary{
+    background-color: #F27127 !important;
+  }
+  .bg_secondary{
+    background-color: #F2F2F2 !important;
+  }
+  .text_primary{
+    color: #F27127 !important;
+  }
+  .text_secondary{
+    color: #F2F2F2 !important;
+  }
+
+  $secondary_color:#F2F2F2;
+  $primary_color:#F27127;
+  $tertiary:#f59a65;
+  $hover_color:#f36412

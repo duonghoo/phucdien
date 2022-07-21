@@ -1,5 +1,7 @@
+
+@import "../common/color";
 .top-bar {
-	background-color: #304254;
+	background-color: #F27127;
 	line-height: 50px;
 	left: 0;
 	top: 0;
@@ -7,7 +9,7 @@
 	position: fixed;
 }
 .address {
-	color: #6f8aa6;
+	color: white;
 	font-size: 13px;
 	i {
 		font-size: 18px;
@@ -23,17 +25,23 @@
 		margin-right: 10px;
 		vertical-align: middle;
 		a {
-			displat: inline-block;
+			display: inline-block;
 			font-size: 16px;
-			color: #4e6073;
+			color: white;
 			&:hover {
-				color: #00b2ce;
+				color: #F27127;
+			}
+			i{
+				color: white;
+				&:hover {
+					color: #eefd64;
+				}
 			}
 		}
 	}
 }
 .navbar-custom {
-	background: #344659;
+	background: white;
 	top: 50px;
 	padding: 15px 0;
 	.navbar-brand {
@@ -45,9 +53,9 @@
 		}
 		span {
 			font-weight: 300;
-			color: #00b2ce;
+			color: #F27127;
 			&:hover {
-				color: #00b2ce;
+				color: #F27127;
 			}
 		}
 		&:focus {
@@ -56,7 +64,7 @@
 	}
 	.navbar-toggle {
 		font-size: 28px;
-		color: #00b2ce;
+		color: #F27127;
 		margin: 0;
 		padding: 5px 10px 0;
 		&:active {
@@ -67,10 +75,10 @@
 		}
 	}
 	a {
-		color: #98acc0;
+		color: $tertiary;
 		background-color: transparent;
 		&:hover {
-			color: #00b2ce;
+			color: $hover_color;
 		}
 	}
 	.nav {
@@ -81,7 +89,7 @@
 				-o-transition: all 0.3s ease-in-out;
 				transition: all 0.3s ease-in-out;
 				font-size: 14px;
-				border: 1px solid #344659;
+				border: 1px solid $tertiary;
 				line-height: 28px;
 				border-radius: 24px;
 				-webkit-border-radius: 24px;
@@ -89,19 +97,19 @@
 				padding: 10px 25px;
 				&:focus {
 					outline: 0;
-					color: #00b2ce;
-					border-color: #00b2ce;
+					color: $hover_color;
+					border-color: $hover_color;
 					background-color: transparent;
 				}
 				&:hover {
 					outline: 0;
-					color: #00b2ce;
-					border-color: #00b2ce;
+					color: $hover_color;
+					border-color: $hover_color;
 					background-color: transparent;
 				}
 			}
 			a.btn-default {
-				background-color: #00b2ce;
+				background-color: $tertiary;
 				line-height: 50px;
 				color: #fff;
 				text-transform: uppercase;
@@ -192,7 +200,7 @@
 		border-left: 1px solid #465a6f;
 		padding-left: 15px;
 		float: left;
-		color: #cddae7;
+		color: $tertiary;
 		font-size: 12px;
 		line-height: 20px;
 		b {
@@ -203,10 +211,10 @@
 	}
 }
 .breadcrumb {
-	background-color: #f3f6f8;
+	background-color: $secondary_color;
 	padding: 40px 0;
 	h2 {
-		color: #304254;
+		color: $tertiary;
 		font-weight: 300;
 		font-size: 30px;
 		margin: 0;
@@ -214,27 +222,27 @@
 	ul {
 		margin-top: 15px;
 		li {
-			color: #00b2ce;
+			color: $tertiary;
 			font-size: 14px;
 			display: inline-block;
 			a {
-				color: #00b2ce;
+				color: $tertiary;
 				display: inline-block;
 				padding: 0 5px;
 			}
 			&:last-child {
 				a {
-					color: #989898;
+					color: $tertiary;
 				}
 			}
 		}
 	}
 }
 footer {
-	background-color: #344659;
+	background-color: $secondary_color;
 	padding-top: 40px;
 	margin-top: 60px;
-	color: #768ba2;
+	color: $tertiary;
 	h2 {
 		color: #fff;
 		font-weight: 800;
@@ -242,13 +250,13 @@ footer {
 		margin: 25px 0;
 		span {
 			font-weight: 300;
-			color: #00b2ce;
+			color: $tertiary;
 		}
 	}
 	a {
-		color: #768ba2;
+		color: $tertiary;
 		&:hover {
-			color: #00b2ce;
+			color: $hover_color;
 		}
 	}
 }
@@ -259,7 +267,7 @@ footer {
 	p {
 		font-size: 14px;
 		font-weight: 300;
-		color: #768ba2;
+		color: #f59a65;
 		line-height: 24px;
 	}
 	li {
@@ -292,10 +300,19 @@ footer {
 .copyright {
 	margin-top: 40px;
 	padding: 20px 0;
-	background-color: #304254;
+	background-color:#F27127 ;
 	.text-right {
 		a {
+			color: #fff;
 			margin-left: 40px;
+		}
+	}
+	.text-start{
+		a {
+			color: #fff;
+		}
+		p{
+			color:#fff
 		}
 	}
 }
@@ -468,7 +485,7 @@ ul {
 	vertical-align: middle;
 }
 .btn-default {
-	background-color: #00b2ce;
+	background-color: $tertiary;
 	line-height: 50px;
 	height: 50px;
 	color: #fff;
@@ -489,21 +506,21 @@ ul {
 	display: inline-block;
 	&:active {
 		color: #fff;
-		background-color: #00b2ce;
+		background-color: $tertiary;
 		-webkit-box-shadow: none;
 		box-shadow: none;
 		outline: 0;
 	}
 	&:focus {
 		color: #fff;
-		background-color: #00b2ce;
+		background-color: $tertiary;
 		-webkit-box-shadow: none;
 		box-shadow: none;
 		outline: 0;
 	}
 	&:hover {
 		color: #fff;
-		background-color: #00b2ce;
+		background-color: $tertiary;
 		-webkit-box-shadow: none;
 		box-shadow: none;
 		outline: 0;
@@ -531,21 +548,21 @@ ul {
 	display: inline-block;
 	&:active {
 		color: #fff;
-		background-color: #00b2ce;
+		background-color: $tertiary;
 		-webkit-box-shadow: none;
 		box-shadow: none;
 		outline: 0;
 	}
 	&:focus {
 		color: #fff;
-		background-color: #00b2ce;
+		background-color: $tertiary;
 		-webkit-box-shadow: none;
 		box-shadow: none;
 		outline: 0;
 	}
 	&:hover {
 		color: #fff;
-		background-color: #00b2ce;
+		background-color: $tertiary;
 		-webkit-box-shadow: none;
 		box-shadow: none;
 		outline: 0;
@@ -566,7 +583,7 @@ ul {
 		position: absolute;
 		left: 15%;
 		top: 18%;
-		background-color: #00b2ce;
+		background-color: $tertiary;
 		border-radius: 50%;
 		-webkit-border-radius: 50%;
 		-moz-border-radius: 50%;
@@ -643,7 +660,7 @@ ul {
 	}
 	i {
 		display: inline-block;
-		background-color: #00b2ce;
+		background-color: $tertiary;
 		color: #fff;
 		font-size: 20px;
 		padding: 15px 10px;
@@ -667,7 +684,7 @@ ul {
 	h2 {
 		color: #fff !important;
 		line-height: 65px;
-		background-color: #00b2ce;
+		background-color: $tertiary;
 		padding: 0 25px;
 		margin: 0;
 		font-size: 24px !important;
@@ -758,7 +775,7 @@ ul {
 		font-weight: 300;
 		margin: 0;
 		span {
-			background-color: #00b2ce;
+			background-color: $tertiary;
 			margin-right: 15px;
 			margin-top: -25px;
 			text-align: center;
@@ -796,11 +813,11 @@ ul {
 	}
 }
 .resp-arrow {
-	border-top-color: #00b2ce;
+	border-top-color: $tertiary;
 }
 h3.resp-tab-active {
 	span.resp-arrow {
-		border-bottom-color: #00b2ce;
+		border-bottom-color: $tertiary;
 	}
 }
 .services {
@@ -809,7 +826,7 @@ h3.resp-tab-active {
 		margin-top: 60px;
 		min-height: 155px;
 		span {
-			color: #00b2ce;
+			color: $tertiary;
 			font-size: 30px;
 			line-height: normal;
 		}
@@ -893,7 +910,7 @@ h3.resp-tab-active {
 				bottom: 0;
 			}
 			h3 {
-				color: #00b2ce;
+				color: $tertiary;
 				font-size: 18px;
 				font-weight: 400;
 				line-height: 26px;
@@ -929,7 +946,7 @@ h3.resp-tab-active {
 		span {
 			line-height: normal;
 			font-size: 30px;
-			color: #00b2ce;
+			color: $tertiary;
 		}
 		p {
 			font-weight: 300;
@@ -950,7 +967,7 @@ h3.resp-tab-active {
 				vertical-align: middle;
 			}
 			a {
-				color: #00b2ce;
+				color: $tertiary;
 			}
 		}
 		&:hover {
@@ -1008,7 +1025,7 @@ h3.resp-tab-active {
 		border-radius: 50%;
 		-webkit-border-radius: 50%;
 		-moz-border-radius: 50%;
-		background-color: #00b2ce;
+		background-color: $tertiary;
 		width: 100%;
 		margin: 0 auto;
 		max-width: 397px;
@@ -1038,7 +1055,7 @@ h3.resp-tab-active {
 		margin-top: 60px;
 		p {
 			font-size: 18px;
-			color: #00b2ce;
+			color: $tertiary;
 			margin: 0;
 		}
 		h2 {
@@ -1062,7 +1079,7 @@ h3.resp-tab-active {
 		padding-top: 60px;
 		padding-bottom: 20px;
 		span {
-			border-bottom: 2px solid #00b2ce;
+			border-bottom: 2px solid $tertiary;
 			padding-bottom: 20px;
 			display: inline-block;
 		}
@@ -1078,13 +1095,13 @@ h3.resp-tab-active {
 			-moz-border-radius: 21px;
 			color: #344659;
 			&:hover {
-				border-color: #00b2ce;
-				color: #00b2ce;
+				border-color: $tertiary;
+				color: $tertiary;
 			}
 		}
 		&:hover {
 			h3 {
-				color: #00b2ce;
+				color: $tertiary;
 				font-weight: 700;
 			}
 			a {
@@ -1122,7 +1139,7 @@ h3.resp-tab-active {
 			display: inline-block;
 			text-align: center;
 			vertical-align: middle;
-			color: #00b2ce;
+			color: $tertiary;
 			font-size: 18px;
 			margin: 0;
 			line-height: 26px;
@@ -1152,7 +1169,7 @@ h3.resp-tab-active {
 		a {
 			color: #304254;
 			&:hover {
-				color: #00b2ce;
+				color: $tertiary;
 			}
 		}
 	}
@@ -1185,7 +1202,7 @@ h3.resp-tab-active {
 		border-radius: 50%;
 		-webkit-border-radius: 50%;
 		-moz-border-radius: 50%;
-		background-color: #00b2ce;
+		background-color: $tertiary;
 		width: 42px;
 		height: 42px;
 		line-height: 40px;
@@ -1203,7 +1220,7 @@ h3.resp-tab-active {
 		}
 		span {
 			font-size: 12px;
-			color: #00b2ce;
+			color: $tertiary;
 		}
 	}
 	p {
@@ -1219,7 +1236,7 @@ h3.resp-tab-active {
 		color: #304254;
 		margin: 0;
 		span {
-			color: #00b2ce;
+			color: $tertiary;
 		}
 	}
 	p {
@@ -1275,14 +1292,14 @@ h3.resp-tab-active {
 			text-decoration: none;
 			outline: none;
 			i {
-				color: #00b2ce;
+				color: $tertiary;
 			}
 		}
 		&:hover {
 			text-decoration: none;
 			outline: none;
 			i {
-				color: #00b2ce;
+				color: $tertiary;
 			}
 		}
 	}
@@ -1290,7 +1307,7 @@ h3.resp-tab-active {
 		text-decoration: none;
 		outline: none;
 		i {
-			color: #00b2ce;
+			color: $tertiary;
 			-ms-transform: rotate(0deg);
 			transform: rotate(0deg);
 			-webkit-transform: rotate(0deg);
@@ -1321,7 +1338,7 @@ h3.resp-tab-active {
 	.ques {
 		width: 40px;
 		display: inline-block;
-		background-color: #00b2ce;
+		background-color: $tertiary;
 		line-height: 40px;
 		padding-top: 30px;
 		text-align: center;
@@ -1390,7 +1407,7 @@ h3.resp-tab-active {
 					top: 10px;
 					font-size: 16px;
 					content: "";
-					color: #00b2ce;
+					color: $tertiary;
 					font-family: FontAwesome;
 				}
 			}
@@ -1414,7 +1431,7 @@ h3.resp-tab-active {
 	h2 {
 		margin: 0;
 		color: #fff !important;
-		background-color: #00b2ce;
+		background-color: $tertiary;
 		line-height: 65px;
 		padding: 0 25px;
 	}
@@ -1440,7 +1457,7 @@ h3.resp-tab-active {
 	}
 	i.icon {
 		color: #fff;
-		background-color: #00b2ce;
+		background-color: $tertiary;
 		text-align: center;
 		line-height: 37px;
 		width: 37px;
@@ -1463,7 +1480,7 @@ h3.resp-tab-active {
 		a {
 			color: #768ba2;
 			&:hover {
-				color: #00b2ce;
+				color: $tertiary;
 			}
 		}
 	}
@@ -1476,7 +1493,7 @@ h3.resp-tab-active {
 			font-size: 16px;
 			vertical-align: middle;
 			&:hover {
-				color: #00b2ce;
+				color: $tertiary;
 			}
 		}
 	}
@@ -1515,7 +1532,7 @@ h3.resp-tab-active {
 			font-weight: 300;
 			margin: 0;
 			span {
-				color: #00b2ce;
+				color: $tertiary;
 				font-size: 12px;
 				font-weight: 300;
 			}
@@ -1569,7 +1586,7 @@ h3.resp-tab-active {
 		font-weight: 300;
 		margin: 0;
 		span {
-			background-color: #00b2ce;
+			background-color: $tertiary;
 			margin-right: 15px;
 			margin-top: -25px;
 			text-align: center;
@@ -1624,7 +1641,7 @@ h3.resp-tab-active {
 			font-size: 16px;
 			line-height: 35px;
 			span {
-				color: #00b2ce;
+				color: $tertiary;
 				margin-right: 10px;
 			}
 		}
@@ -1658,7 +1675,7 @@ h3.resp-tab-active {
 			height: 53px;
 			width: 53px;
 			border-radius: 100%;
-			background: #00b2ce;
+			background: $tertiary;
 			line-height: 53px;
 			text-align: center;
 			color: #fff;
@@ -1684,7 +1701,7 @@ h3.resp-tab-active {
 				margin-left: 30px;
 				color: #a6a6a6;
 				&:hover {
-					color: #00b2ce;
+					color: $tertiary;
 				}
 				i {
 					margin-right: 10px;
@@ -1712,7 +1729,7 @@ h3.resp-tab-active {
 					margin-right: 20px;
 				}
 				a {
-					color: #00b2ce;
+					color: $tertiary;
 					margin-top: 10px;
 				}
 			}
@@ -1739,7 +1756,7 @@ h3.resp-tab-active {
 			font-size: 16px;
 		}
 		h6 {
-			color: #00b2ce;
+			color: $tertiary;
 			font-family: Georgia;
 			font-style: italic;
 			font-size: 16px;
@@ -1752,15 +1769,15 @@ h3.resp-tab-active {
 		text-transform: uppercase;
 		&:first-child {
 			span {
-				background: #00b2ce;
+				background: $tertiary;
 				color: #fff;
-				border-color: #00b2ce;
+				border-color: $tertiary;
 				border-radius: 20px;
 				margin-right: 10px;
 				&:hover {
 					background: #fff;
-					color: #00b2ce;
-					border-color: #00b2ce;
+					color: $tertiary;
+					border-color: $tertiary;
 				}
 			}
 		}
@@ -1814,7 +1831,7 @@ h3.resp-tab-active {
 			font-size: 15px;
 			color: #304254;
 			&:hover {
-				color: #00b2ce;
+				color: $tertiary;
 			}
 		}
 		.margin-left-auto {
@@ -1823,7 +1840,7 @@ h3.resp-tab-active {
 	}
 }
 .blue-text {
-	color: #00b2ce;
+	color: $tertiary;
 }
 .border-bottom {
 	border-bottom: 1px solid #efefef;
@@ -1834,7 +1851,7 @@ h3.resp-tab-active {
 			font-size: 14px;
 			color: #304254;
 			&:hover {
-				color: #00b2ce;
+				color: $tertiary;
 			}
 		}
 		h6 {
@@ -1856,11 +1873,11 @@ h3.resp-tab-active {
 		margin-bottom: 10px;
 		font-size: 11px;
 		&:first-child {
-			background: #00b2ce;
+			background: $tertiary;
 			color: #fff;
 		}
 		&:hover {
-			background: #00b2ce;
+			background: $tertiary;
 			color: #fff;
 		}
 	}
@@ -1868,7 +1885,7 @@ h3.resp-tab-active {
 .blog-author {
 	margin-top: 35px;
 	.author-text {
-		background-color: #00b2ce;
+		background-color: $tertiary;
 		color: #fff;
 		padding: 15px;
 		text-align: center;
@@ -1890,7 +1907,7 @@ h3.resp-tab-active {
 			margin-left: 10px;
 			color: #a6a6a6;
 			&:hover {
-				color: #00b2ce;
+				color: $tertiary;
 			}
 		}
 	}
@@ -1899,7 +1916,7 @@ h3.resp-tab-active {
 	margin: 35px 0;
 	padding: 40px;
 	background-color: #efefef;
-	border-left: 3px solid #00b2ce;
+	border-left: 3px solid $tertiary;
 	.quote-text {
 		h5 {
 			margin: 0;
@@ -1930,7 +1947,7 @@ h3.resp-tab-active {
 	a {
 		font-size: 15px;
 		&:hover {
-			color: #00b2ce;
+			color: $tertiary;
 		}
 	}
 }
@@ -1955,7 +1972,7 @@ h3.resp-tab-active {
 			font-size: 16px;
 		}
 		h6 {
-			color: #00b2ce;
+			color: $tertiary;
 			font-family: Georgia;
 			font-style: italic;
 			font-size: 16px;
@@ -2000,7 +2017,7 @@ h3.resp-tab-active {
 			font-size: 16px;
 		}
 		h6 {
-			color: #00b2ce;
+			color: $tertiary;
 			font-size: 16px;
 		}
 	}
@@ -2027,7 +2044,7 @@ h3.resp-tab-active {
 			font-size: 16px;
 		}
 		h6 {
-			color: #00b2ce;
+			color: $tertiary;
 			font-size: 16px;
 		}
 	}
@@ -2318,7 +2335,7 @@ h3.resp-tab-active {
 		}
 	}
 	.navbar-custom {
-		top: 72px;
+		top: auto;
 		.nav {
 			float: none;
 			text-align: left;
