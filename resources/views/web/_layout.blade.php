@@ -69,6 +69,7 @@
 
 <body data-spy="scroll" data-target=".navbar-fixed-top">
 @include('web.block._header')
+<div class="clear"></div>
 @yield('main')
 <div class="clear"></div>
 @include('web.block._footer')

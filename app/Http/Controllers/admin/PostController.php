@@ -9,6 +9,7 @@ use Request;
 use Redirect;
 use App\Models\Post;
 use App\Models\Category;
+use App\Models\Product;
 use App\Models\Post_tag;
 use App\Models\Post_Category;
 use Illuminate\Support\Facades\Auth;
@@ -78,6 +79,7 @@ class PostController extends Controller
         $data['categoryTree'] = Category::getTree();
         $data['user_id'] = Auth::id();
         $data['group_id'] = Auth::user()->group_id;
+        $data['product'] = Product::all();
 
         if ($id > 0) {
             $data['oneItem'] = $oneItem = Post::findOrFail($id);
@@ -86,6 +88,7 @@ class PostController extends Controller
         if (!empty(Request::post())) {
             $post_data = Request::post();
             $url_referer = $post_data['url_referer'];
+            if($post_data['product_id'] == 0) unset($post_data['product_id']);
             unset($post_data['url_referer']);
             if (empty($post_data['slug'])) $post_data['slug'] = toSlug($post_data['title']);
             /*$post_data['count_link_out'] = getNumberLinkOut($post_data['content']);*/
