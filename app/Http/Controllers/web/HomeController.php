@@ -17,7 +17,16 @@ class HomeController extends Controller
 
         $data['loadmore'] = true;
 
-        // three post new 
+        // bài viết sản phầm
+        $post_product_home = md5('post_product_home');
+        if(Cache::has($post_product_home)){
+            $data['product'] = Cache::get($post_product_home, now()->addHours(12));
+        }else{
+            $data['product'] = Post::with('product')->whereNotNull('product_id')->orderBy('displayed_time', 'DESC')->offset(0)->limit(8)->get();
+            Cache::set($post_product_home, $data['product']);
+        }
+
+        // dd($data['product']);
         
         // exclude cho one post new 
         // $this->arr_exclude[] = $data['post_feature']->id;

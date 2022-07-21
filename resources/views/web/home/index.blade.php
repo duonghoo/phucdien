@@ -61,6 +61,27 @@
 	</div>
 
 	{{-- product tab  --}}
+
+	<div class="container">
+		<div class="row">
+
+			<h2 class="title">Danh sách các sản phẩm</h2>
+			@if(!empty($product))
+			@foreach ($product as $item)
+			<div class="col-sm-12 col-md-3 py-0 px-2 rounded">
+				<div class="p-1">
+					{!! genImage($item->product->thumbnail, 400 , 400, 'img-responsive') !!}
+				</div>
+				<div class="p-1 border">
+					<h3 class="post_title font-14">{{$item->product->title}}</h3>
+					<p class="desc">{!! get_limit_content($item->desc, 130) !!}</p>
+					<button class="btn btn-primary"><a href="{{getUrlPost($item)}}">Xem sản phẩn</a></button>
+				</div>
+			</div>
+			@endforeach
+			@endif
+		</div>
+	</div>
 	
 
 </div>
