@@ -1,7 +1,7 @@
 <section class="flexslider">
     <ul class="slides">
         <li>
-            <img src="images/example/slider-img.jpg" />
+            <img src="images/example/slider-img.jpg" width="1920" height="800"/>
             <div class="slide-info">
                 <div class="slide-con">
                     <b>Healthcare</b>
@@ -12,7 +12,7 @@
             </div>
         </li>
         <li>
-            <img src="images/example/slider-img1.jpg" />
+            <img src="images/example/slider-img1.jpg" width="1920" height="800" />
             <div class="slide-info">
                 <div class="slide-con">
                     <b>Lifecare</b>
@@ -23,7 +23,7 @@
             </div>
         </li>
         <li>
-            <img src="images/example/slider-img2.jpg" />
+            <img src="images/example/slider-img2.jpg" width="1920" height="800"/>
             <div class="slide-info">
                 <div class="slide-con">
                     <b>Healthcare</b>
