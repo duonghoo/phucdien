@@ -3,36 +3,38 @@
     <div class="container">
         <div class="row contact-sec">
             <div class="col-md-5 col-lg-5">
-                <h2>Insurance<span>Press</span></h2>
+                <h2><span>Hotline 1</span></h2>
                 <div class="row">
                     <div class="col-sm-6">
-                        <p>E104 Dharti -2 , Nr Silverstar Mall Chandlodia - Ahmedabad
-                            <br/>Zip - 382481</p>
+                        <p>{!! getSiteSetting('address') !!}
+                            {{-- <br/>Zip - 382481 --}}
+                        </p>
                     </div>
                     <div class="col-sm-6">
                         <ul>
-                            <li><a href="#"><i class="fa fa-phone"></i> +91 123 456 7890</a></li>
-                            <li><a href="#"><i class="ti-email"></i> info@bootstrapmart.com</a></li>
+                            <li><a href="#"><i class="fa fa-phone"></i> {!! getSiteSetting('site_hotline') !!}</a></li>
+                            <li><a href="#"><i class="ti-email"></i> {!! getSiteSetting('site_email') !!}</a></li>
                         </ul>
                     </div>
                 </div>
                 <a href="#" class="btn-default">Contact Us</a>
             </div>
             <div class="col-md-5 col-lg-5 col-md-offset-2 col-lg-offset-2">
-                <h2>Agent<span>Detail</span></h2>
+                <h2><span>Hotline 2</span></h2>
                 <div class="row">
                     <div class="col-sm-6">
-                        <p>E104 Dharti -2 , Nr Silverstar Mall Chandlodia - Ahmedabad
-                            <br/>Zip - 382481</p>
+                        <p>{!! getSiteSetting('address') !!}
+                            {{-- <br/>Zip - 382481 --}}
+                        </p>
                     </div>
                     <div class="col-sm-6">
                         <ul>
-                            <li><a href="#"><i class="fa fa-phone"></i> +91 123 456 7890</a></li>
-                            <li><a href="#"><i class="ti-email"></i> info@bootstrapmart.com</a></li>
+                            <li><a href="#"><i class="fa fa-phone"></i> {!! getSiteSetting('site_hotline') !!}</a></li>
+                            <li><a href="#"><i class="ti-email"></i> {!! getSiteSetting('site_email') !!}</a></li>
                         </ul>
                     </div>
                 </div>
-                <a href="#" class="btn-default">Contact Agent</a>
+                <a href="#" class="btn-default">Contact Us</a>
             </div>
         </div>
         <div class="row">
