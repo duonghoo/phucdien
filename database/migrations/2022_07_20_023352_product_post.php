@@ -14,8 +14,8 @@ class ProductPost extends Migration
     public function up()
     {
         Schema::table('post', function (Blueprint $table) {
-            $table->bigInteger('product_id')->unsigned()->index()->nullable();
-            $table->foreign('product_id')->references('id')->on('post')->nullOnDelete();
+            // $table->bigInteger('product_id')->unsigned()->index()->nullable();
+            $table->foreign('product_id')->references('id')->on('product')->nullOnDelete();
         });
     }
 

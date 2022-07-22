@@ -38,11 +38,9 @@ class CategoryController extends Controller
             'limit' => $limit,
             'offset' => ($page-1) * $limit,
         ];
-        $post = Post::whereHas('categories', function($q) use($id){
-            return $q->where('category_id', $id);
-        })->get();
 
-        if(count($post) <= $limit) $data['loadmore'] = false;
+        $count = Post::getCount($params);
+        if($count <= $limit) $data['loadmore'] = false;
         $count = Post::getCount($params);
         $pagination = (int) ceil($count/$limit);
         $data['pagination'] = $pagination;

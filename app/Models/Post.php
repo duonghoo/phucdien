@@ -84,7 +84,13 @@ class Post extends Model
                 $id[] = $T->id;
             }
             $data = $data->select('post.*', 'category_post.post_id', 'category_post.category_id','category_post.is_primary')->Join('category_post', 'category_post.post_id', '=', 'post.id');
-            $data = $data->whereIn('category_post.category_id', $id);
+
+            if(!empty($id)){
+                $data = $data->whereIn('category_post.category_id', $id);
+            }else{
+                $data = $data->whereIn('category_post.category_id', [$category_id]);
+            }
+            
             if (!empty($only_primary_category)) {
                 $data = $data->where('category_post.is_primary', 1);
             }
@@ -132,7 +138,11 @@ class Post extends Model
                 $id[] = $T->id;
             }
             $data = $data->join('category_post', 'category_post.post_id', '=', 'post.id');
-            $data = $data->whereIn('category_post.category_id', $id);
+            if(!empty($id)){
+                $data = $data->whereIn('category_post.category_id', $id);
+            }else{
+                $data = $data->whereIn('category_post.category_id', [$category_id]);
+            }
             if (!empty($only_primary_category)) {
                 $data = $data->where('category_post.is_primary', 1);
             }

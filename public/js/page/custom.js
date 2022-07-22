@@ -245,28 +245,28 @@ let voteStar = () => {
 //   voteStar();
 // });
 
-// function lazyReplaceLoad(selected, image_replace = null){
-//   if(image_replace == null) image_replace = 'https://forextradingvn.top/images/posts/inspiration-2.jpg';
-//   $(selected).each(function(){
-//     var src = $(this).attr('src');
-//     var that = this;
-//     if(src == '' || src == null){
-//       $(this).attr('src', image_replace);
-//     }
-//     if($(this).attr('width') != null &&  $(this).attr('height') != null){
-//       let width = parseInt($(this).attr('width'));
-//       let height = parseInt($(this).attr('height'));
-//       var img = new Image(width, height);
-//     }else{
-//       var img = new Image();
-//     }
-//     img.src = $(this).attr('src');
-//     $(this).attr('src', image_replace);
-//     $(img).on('load', function(){
-//         $(that).attr('src',img.src);
-//     })
+function lazyReplaceLoad(selected, image_replace = null){
+  if(image_replace == null) image_replace = 'https://forextradingvn.top/images/posts/inspiration-2.jpg';
+  $(selected).each(function(){
+    var src = $(this).attr('src');
+    var that = this;
+    if(src == '' || src == null){
+      $(this).attr('src', image_replace);
+    }
+    if($(this).attr('width') != null &&  $(this).attr('height') != null){
+      let width = parseInt($(this).attr('width'));
+      let height = parseInt($(this).attr('height'));
+      var img = new Image(width, height);
+    }else{
+      var img = new Image();
+    }
+    img.src = $(this).attr('src');
+    $(this).attr('src', image_replace);
+    $(img).on('load', function(){
+        $(that).attr('src',img.src);
+    })
   
-//   });  
-// }
+  });  
+}
 
-// lazyReplaceLoad('.img-fluid');
+lazyReplaceLoad('.img-responsive');
