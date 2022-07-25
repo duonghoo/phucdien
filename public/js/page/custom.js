@@ -270,3 +270,11 @@ function lazyReplaceLoad(selected, image_replace = null){
 }
 
 lazyReplaceLoad('.img-responsive');
+
+
+$('.img-product').on('click', function(){
+  let src = $(this).attr('src');
+  $('.thumbnail-root').attr('src', src);
+  $('.img-product').attr('class', 'img-responsive img-product');
+  $(this).attr('class', 'img-responsive img-product img-product-active');
+});

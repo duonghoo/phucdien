@@ -39,15 +39,14 @@
         </div>
         <div class="row">
             <div class="col-md-8 col-lg-8">
+                @if(!empty($menu_footer))
+                
                 <ul class="footer-nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="#">Compnies represented</a></li>
-                    <li><a href="contact-us.html">Contact us</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Products</a></li>
+                    @foreach($menu_footer as $menu_f)
+                    <li><a href="{{$menu_f['url']}}">{{$menu_f['name']}}</a></li>
+                    @endforeach
                 </ul>
+                @endif
             </div>
             <div class="col-md-2 col-lg-2 col-md-offset-2 col-lg-offset-2">
                 <ul class="footer-social">

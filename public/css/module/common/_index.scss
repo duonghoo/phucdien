@@ -2,3 +2,31 @@
 @import "color";
 @import "font";
 @import "rateit";
+
+.d-flex{
+    display: flex;
+}
+
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
+.product-imgs{
+    margin-top: 1em;
+}
+
+.img-product-active{
+    border: 2px solid #05d1ff !important;
+}
+
+.img-product{
+    width: 30px;
+    height: 40px;
+    object-fit: cover;
+    margin: 0px 3px;
+    border: solid 2px orange;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
