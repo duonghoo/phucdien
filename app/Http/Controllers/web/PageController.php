@@ -62,25 +62,13 @@ class PageController extends Controller
         } //ltd
 
         $breadCrumb = [];
-        if($id == 14){
-            $breadCrumb[] = [
-                'name' => 'Tỷ lệ kèo',
-                'item' => getUrlStaticPage($oneItem),
-                'schema' => true,
-                'show' => true
-            ]; 
-            $title = $oneItem->title ;
-            $data['title'] =  $title;
-        }
-        else
-        {
+        
         $breadCrumb[] = [
             'name' => $oneItem->title,
             'item' => getUrlStaticPage($oneItem),
             'schema' => true,
             'show' => true
         ];
-        }
         $data['breadCrumb'] = $breadCrumb;
       
         $data['schema'] = getSchemaBreadCrumb($breadCrumb);

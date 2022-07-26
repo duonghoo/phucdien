@@ -17,7 +17,7 @@
                     <div class="tab-content">
                         <div class="tab-pane active" id="info" role="tabpanel">
                             <div class="row py-2">
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="row">

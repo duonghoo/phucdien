@@ -17,6 +17,4 @@
 
     {!! short_code($oneItem->content) !!}
 
-    @include('web.block._instagram')
-
 @endsection
