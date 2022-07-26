@@ -148,7 +148,15 @@ class HomeController extends Controller
 
         // $data['schema'] = getSchemaLogo().getLocalBusiness();
         // $data['seo_data'] = initSeoData(null,'home');
+        $breadCrumb = [];
 
+        $breadCrumb[] = [
+            'name' => 'home',
+            'item' => 'home',
+            'schema' => false,
+            'show' => true
+        ];
+        $data['$breadCrumb']=$breadCrumb;
         return view('web.home.index', $data);
     }
 

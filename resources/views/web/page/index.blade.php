@@ -36,7 +36,11 @@
                     </div>
                 </div>
             </div>
+            @if($breadCrumb[0]['name']=='Giới thiệu')
+
+            @else
             @include('web.block._sidebar')
+            @endif
         </div>
         
     </div>

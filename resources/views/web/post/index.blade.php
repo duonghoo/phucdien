@@ -12,7 +12,7 @@
                 <div class="d-flex pt-2 pb-1 bg-white1 w-100 align-items-center rounded-d mt-3">
                     <a href="/"><i class="ti-home text_primary fs-16" style="font-size: 1.2rem; color:black"></i></a>
                     <a href="/" class="d-block ms-2 text_primary fs-16" style="padding-left:1rem" title="">Trang chủ  / </a>
-                    <a href="{{$breadcrumb[0]['item']}}" class="d-block ms-2 text_primary fs-16" style="padding-left:0.5rem; border-bottom:1px $primary_color" title="">{{$breadcrumb[0]['name']}} </a>
+                    <a href="{{$breadcrumb[1]['item']}}" class="d-block ms-2 text_primary fs-16" style="padding-left:0.5rem; border-bottom:1px $primary_color" title="">{{$breadcrumb[1]['name']}} </a>
                 </div>
                 <h2>{{ $oneItem->meta_title }}</h2>
             <div class="row">
