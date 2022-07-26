@@ -8,8 +8,8 @@
 		<div class="row">
 			<section class="col-sm-7 col-md-8 col-lg-8">
 				<div class="intro">
-					<h2>Welcome to Insurance press</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci nisi, porta sed diam id, venenatis dignissim urna. Duis sit amet eros a sem viverra mollis nec eu sem. Quisque rutporta sed diam id, venenatis dignissim urna. Duis sit amet eros a sem viver uisque rurum euismod fermentum.</p>
+					<h2>Chào mừng bạn đến với Phúc Diễn</h2>
+					<p>Ở đây chúng tôi chuyên sản xuất và cung cấp bao bì</p>
 					<ul class="row">
 						<li class="col-sm-4">
 							<i class="fa fa-life-ring"></i>
@@ -31,16 +31,16 @@
 			</section>
 			<section class="col-sm-5 col-md-4 col-lg-4">
 				<div class="get-quote-form">
-					<h2>Get a free quote form</h2>
+					<h2>Liên hệ với chúng tôi</h2>
 					<form id="get-quote">
 						<div>
-							<input type="text" name="name" placeholder="Your Name" />
+							<input type="text" name="name" placeholder="Tên của bạn" />
 						</div>
 						<div>
 							<input type="text" name="email" placeholder="Email" />
 						</div>
 						<div>
-							<input type="text" name="ph-no" placeholder="Phone no" />
+							<input type="text" name="ph-no" placeholder="Số điện thoại" />
 						</div>
 						<div class="form-select">
 							<span></span>
@@ -49,7 +49,7 @@
 							</select>
 						</div>
 						<div>
-							<textarea rows="1" cols="1" placeholder="Message"></textarea>
+							<textarea rows="1" cols="1" placeholder="Lời nhắn"></textarea>
 						</div>
 						<div class="text-center">
 							<input type="submit" class="btn-default" value="Get Free Quote" />
@@ -83,9 +83,9 @@
 		
 
 			  <div class="card col-12 col-md-6 col-lg-3 mb-5" style="max-width: 50rem;">
-                <div class="mx-1 content d-flex d-sm-block w-100">
+                <div class="mx-1 content d-sm-block w-100">
 					{!! genImage($item->product->thumbnail, 400 , 400, 'img-responsive') !!}
-                  <div class="card-body d-flex flex-column justify-content-center">
+                  <div class="card-body flex-column justify-content-center">
 					<h5 class="card-title">{{$item->product->title}}</h5>
                     <a href="#" class="btn_primary mt-3 px-lg-1 px-1 text-nowrap w-100">Xem chi tiết</a>
                   </div>

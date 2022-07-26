@@ -2,9 +2,9 @@
 <div class="col-sm-4">
     <div class="blog-post">
         <!-- Search -->
-        <h2>Search</h2>
+        <h2>Tìm kiếm</h2>
         <div class="input-group search-text">
-          <input type="text" class="form-control search" placeholder="Search">
+          <input type="text" class="form-control search" placeholder="Tìm kiếm..">
           <span class="input-group-btn">
             <button class="btn btn-default btn-search" type="button"><i class="fa fa-search"></i></button>
           </span>
