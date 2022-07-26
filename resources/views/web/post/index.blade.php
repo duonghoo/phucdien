@@ -4,51 +4,49 @@
 
 
 <div id="page-content">
-    <section class="breadcrumb">
+   
         <div class="container">
-            <h2>{{ $oneItem->meta_title }}</h2>
-            <ul>
-                <li><a href="/">Home</a> &gt;</li>
-                <li><a href="{{$breadcrumb[0]['item']}}">{{$breadcrumb[0]['name']}}</a></li>
-            </ul>
-        </div>
-    </section>
-    <section class="blog-page">
-        <div class="container">
+            <section class="blog-page">
+               
+
+                <div class="d-flex pt-2 pb-1 bg-white1 w-100 align-items-center rounded-d mt-3">
+                    <a href="/"><i class="ti-home text_primary fs-16" style="font-size: 1.2rem; color:black"></i></a>
+                    <a href="/" class="d-block ms-2 text_primary fs-16" style="padding-left:1rem" title="">Trang chủ  / </a>
+                    <a href="{{$breadcrumb[0]['item']}}" class="d-block ms-2 text_primary fs-16" style="padding-left:0.5rem; border-bottom:1px $primary_color" title="">{{$breadcrumb[0]['name']}} </a>
+                </div>
+                <h2>{{ $oneItem->meta_title }}</h2>
             <div class="row">
                 <div class="col-sm-8">
                     <div class="single-post">
                         <div class="row">
                             <div class="col-sm-12 col-md-6">
-                                {!! genImage($oneItem->product->thumbnail, 750, 313, 'img-responsive thumbnail-root', $oneItem->title) !!}
+                                {!! genImage($oneItem->product->thumbnail, 750, 400, 'img-responsive thumbnail-root', $oneItem->title) ?? ''!!}
                                 <div class="d-flex product-imgs">
-                                    {!! genImage($oneItem->product->thumbnail, 750, 313, 'img-responsive img-product img-product-active', $oneItem->title) !!}
+                                    {!! genImage($oneItem->product->thumbnail, 750, 400, 'img-responsive img-product img-product-active', $oneItem->title) ?? '' !!}
                                     @if(!empty($oneItem->product->img1))
-                                        {!! genImage($oneItem->product->img1, 750, 313, 'img-responsive img-product', $oneItem->title) !!}
+                                        {!! genImage($oneItem->product->img1, 750, 400, 'img-responsive img-product', $oneItem->title) ?? ''!!}
                                     @endif
                                     @if(!empty($oneItem->product->img2))
-                                        {!! genImage($oneItem->product->img2, 750, 313, 'img-responsive img-product', $oneItem->title) !!}
+                                        {!! genImage($oneItem->product->img2, 750, 400, 'img-responsive img-product', $oneItem->title) ?? ''!!}
                                     @endif
                                     @if(!empty($oneItem->product->img3))
-                                        {!! genImage($oneItem->product->img3, 750, 313, 'img-responsive img-product', $oneItem->title) !!}
+                                        {!! genImage($oneItem->product->img3, 750, 400, 'img-responsive img-product', $oneItem->title) ?? ''!!}
                                     @endif
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-6">
-                                <div class="blog-title">{{$oneItem->product->title}}</div>
+                                <div class="blog-title fs-28">{{$oneItem->product->title}}</div>
                                 <div class="code-product">Mã sản phầm: <span>{{$oneItem->product->sku}}</span></div>
                                 @php
                                     $color = json_decode($oneItem->product->color);
                                 @endphp
                                 <div class="color-product">Màu sắc: 
                                     @if(!empty($color))
-
                                         @foreach ($color as $key => $cl)
                                             <span class="color{{$key}}" style="display:inline-block; width: 13px; height: 30px; background-color: {{$cl}}; border-radius: 20%"></span>
                                         @endforeach 
-
                                     @else
-                                    <span>Liên hệ</span>
+                                    <span>Không xác định</span>
                                     @endif
 
                                 </div>
