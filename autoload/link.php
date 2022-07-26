@@ -68,6 +68,10 @@ function getUrlPage($page) {
     return $parts['path'].'?'.http_build_query($query);
 }
 
+function getUrlProduct($item){
+    return url('/product/'.$item->id);
+}
+
 function getUrlAuthor($item, $is_amp = ''){
     if (!$is_amp)
         $is_amp = defined('IS_AMP') ? IS_AMP : 0;

@@ -20,7 +20,10 @@ Route::get('/img/{key?}/{slug}', 'ImagesController@proxy');
 Route::get('/amp', 'HomeController@ampIndex');
 
 Route::get('/load-more-posts/{category_id}/{page}', 'CategoryController@loadMorePost');
-Route::get('/load-more-posts-home/{page}', 'HomeController@loadMorePostHome');
+Route::get('/load-more-posts-home/{page}', 'ProductController@index');
+
+Route::get('/product', 'ProductController@index');
+Route::get('/product/{product}', 'ProductController@Product');
 
 /*post*/
 Route::get('/amp/{slug}-p{id}.html', 'PostController@ampIndex')->where(['slug' => '[\s\S]+', 'id' => '[0-9]+']);
