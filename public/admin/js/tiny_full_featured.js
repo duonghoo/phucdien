@@ -104,6 +104,7 @@ tinymce.init({
     template_cdate_format: '[CDATE: %m/%d/%Y : %H:%M:%S]',
     template_mdate_format: '[MDATE: %m/%d/%Y : %H:%M:%S]',
     image_caption: true,
+    content_css: '/css/page_compile/home.min.css',
     convert_urls : false,
     spellchecker_dialog: true,
     spellchecker_whitelist: ['Ephox', 'Moxiecode'],
