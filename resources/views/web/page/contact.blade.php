@@ -1,22 +1,18 @@
+
 @extends('web._layout')
 @section('main')
-    <!-- page header -->
-    <section class="page-header">
-        <div class="container-xl">
-            <div class="text-center">
-                <h1 class="mt-0 mb-2">{{$breadCrumb[0]['name']}}</h1>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb justify-content-center mb-0">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">{{$breadCrumb[0]['name']}}</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </section>
-
-    {!! short_code($oneItem->content) !!}
-
-    @include('web.block._instagram')
+    <div class="container my-3" style="margin-top:20rem">
+        <div class="row">
+                <div class="d-block d-md-flex justify-content-between mt-3">
+                    <div class="main-content mr-md-4 px-2 p-md-0">
+                                <div class="line-height-24 entry-content" style="margin-top: 2rem">
+                                    {!! short_code($oneItem->content) !!}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+       
+        
 
 @endsection

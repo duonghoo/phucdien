@@ -13,17 +13,17 @@
 					<ul class="row">
 						<li class="col-sm-4">
 							<i class="fa fa-life-ring"></i>
-							<h3>27x7 Support</h3>
+							<h3>Hỗ trợ tận tâm</h3>
 							<p>Lorem ipsum dolor sit amet, consectetur.</p>
 						</li>
 						<li class="col-sm-4">
 							<i class="ti-marker-alt"></i>
-							<h3>Easy Claim system</h3>
+							<h3>Dễ dàng đặt hàng</h3>
 							<p>Lorem ipsum dolor sit amet, consectetur.</p>
 						</li>
 						<li class="col-sm-4">
 							<i class="ti-email"></i>
-							<h3>Get Started with us</h3>
+							<h3>Liên hệ với chúng tôi</h3>
 							<p>Lorem ipsum dolor sit amet, consectetur.</p>
 						</li>
 					</ul>
@@ -45,14 +45,14 @@
 						<div class="form-select">
 							<span></span>
 							<select>
-								<option>Product</option>
+								<option>Sản phẩm</option>
 							</select>
 						</div>
 						<div>
 							<textarea rows="1" cols="1" placeholder="Lời nhắn"></textarea>
 						</div>
 						<div class="text-center">
-							<input type="submit" class="btn-default" value="Get Free Quote" />
+							<input type="submit" class="btn-default" value="Gửi mail" />
 						</div>
 					</form>
 				</div>
@@ -63,9 +63,9 @@
 	{{-- product tab  --}}
 
 	<div class="container">
-		<div class="row">
+		<div class="row mt-3">
 
-			<h2 class="title">Danh sách các sản phẩm</h2>
+			<h2 class="title ms-2" style="">Danh sách các sản phẩm</h2>
 			{{-- @if(!empty($product))
 			@foreach ($product as $item)
 			<div class="col-sm-12 col-md-3 py-0 px-2 rounded">
@@ -80,14 +80,12 @@
 			@endforeach --}}
 			@if(!empty($product))
 			@foreach ($product as $item)
-		
-
-			  <div class="card col-12 col-md-6 col-lg-3 mb-5" style="max-width: 50rem;">
+			  <div class="card col-12 col-md-6 col-lg-3 mb-5 mt-3" style="max-width: 50rem">
                 <div class="mx-1 content d-sm-block w-100">
-					{!! genImage($item->product->thumbnail, 400 , 400, 'img-responsive') !!}
+					{!! genImage($item->product->thumbnail, 400 , 400, 'img-responsive border-r1') !!}
                   <div class="card-body flex-column justify-content-center">
-					<h5 class="card-title">{{$item->product->title}}</h5>
-                    <a href="#" class="btn_primary mt-3 px-lg-1 px-1 text-nowrap w-100">Xem chi tiết</a>
+					<h5 class="card-title text-center fs-16" style="margin-top:1rem; margin-bottom:1rem">{{$item->product->title}}</h5>
+                    <a href="#" class="btn-product text-center mx-2">Xem chi tiết</a>
                   </div>
                  </div>
               </div>
