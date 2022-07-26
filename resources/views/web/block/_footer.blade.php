@@ -30,7 +30,7 @@
                     <div class="col-sm-6">
                         <ul>
                             <li><a href="#"><i class="fa fa-phone"></i> {!! getSiteSetting('site_hotline') !!}</a></li>
-                            <li><a href="#"><i class="ti-email"></i> {!! getSiteSetting('site_email') !!}</a></li>
+                            <li class="text-nowrap"><a href="#"><i class="ti-email"></i> {!! getSiteSetting('site_email') !!}</a></li>
                         </ul>
                     </div>
                 </div>
