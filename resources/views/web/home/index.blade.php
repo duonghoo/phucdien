@@ -66,7 +66,7 @@
 		<div class="row">
 
 			<h2 class="title">Danh sách các sản phẩm</h2>
-			@if(!empty($product))
+			{{-- @if(!empty($product))
 			@foreach ($product as $item)
 			<div class="col-sm-12 col-md-3 py-0 px-2 rounded">
 				<div class="p-1">
@@ -74,10 +74,24 @@
 				</div>
 				<div class="p-1 border">
 					<h3 class="post_title font-14">{{$item->product->title}}</h3>
-					<p class="desc">{!! get_limit_content($item->desc, 130) !!}</p>
-					<button class="btn btn-primary"><a href="{{getUrlPost($item)}}">Xem sản phẩn</a></button>
+					<button class="btn btn-primary w-100 mx-2"><a href="{{getUrlPost($item)}}">Xem sản phẩn</a></button>
 				</div>
 			</div>
+			@endforeach --}}
+			@if(!empty($product))
+			@foreach ($product as $item)
+		
+
+			  <div class="card col-12 col-md-6 col-lg-3 mb-5" style="max-width: 50rem;">
+                <div class="mx-1 content d-flex d-sm-block w-100">
+					{!! genImage($item->product->thumbnail, 400 , 400, 'img-responsive') !!}
+                  <div class="card-body d-flex flex-column justify-content-center">
+					<h5 class="card-title">{{$item->product->title}}</h5>
+                    <a href="#" class="btn_primary mt-3 px-lg-1 px-1 text-nowrap w-100">Xem chi tiết</a>
+                  </div>
+                 </div>
+              </div>
+
 			@endforeach
 			@endif
 		</div>
