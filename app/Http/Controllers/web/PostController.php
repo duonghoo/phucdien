@@ -15,12 +15,20 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use stdClass;
+use Cache;
 
 class PostController extends Controller
 {
     public function index($slug, $id) {
         $data['page'] = $page = isset($_GET['page']) ? $_GET['page'] : 1;
-        $oneItem = Post::with(['categories','user', 'tags'])->where('id',$id)->first();
+        $key = md5('post-'.$id.'-categories-user-tags-product');
+        if(Cache::has($key)){
+            $oneItem = Cache::get($key);
+        }else{
+            $oneItem = Post::with(['categories','user', 'tags', 'product'])->where('id',$id)->first();
+            Cache::set($key, $oneItem, now()->addHours(24));
+        }
+        
         if (empty($oneItem) || $oneItem->status == 0 || strtotime($oneItem->displayed_time) > time())
         {
             $user = Auth::user();

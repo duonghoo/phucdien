@@ -32,15 +32,15 @@ class MenuComposer
             $data['mainMenuMobile'] = json_decode($mainMenuMobile->data, 1);
         }
 
-        // if(Cache::has('menu_footer')){
-        //     $menu_footer = Cache::get('menu_footer');
-        // }else{
-        //     $menu_footer = Menu::find(7);
-        //     Cache::set('menu_footer', $menu_footer, now()->addHours(24));
-        // }
-        // if (!empty($menu_footer)) {
-        //     $data['menu_footer'] = json_decode($menu_footer->data, 1);
-        // }
+        if(Cache::has('menu_footer_pc')){
+            $menu_footer = Cache::get('menu_footer_pc');
+        }else{
+            $menu_footer = Menu::find(4);
+            Cache::set('menu_footer_pc', $menu_footer, now()->addHours(24));
+        }
+        if (!empty($menu_footer)) {
+            $data['menu_footer'] = json_decode($menu_footer->data, 1);
+        }
 
         $view->with($data);
     }
