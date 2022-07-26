@@ -85,7 +85,7 @@
 					{!! genImage($item->product->thumbnail, 400 , 400, 'img-responsive border-r1') !!}
                   <div class="card-body flex-column justify-content-center">
 					<h5 class="card-title text-center fs-16" style="margin-top:1rem; margin-bottom:1rem">{{$item->product->title}}</h5>
-                    <a href="#" class="btn-product text-center mx-2">Xem chi tiết</a>
+                    <a href="{{getUrlPost($item)}}" class="btn-product text-center mx-2">Xem chi tiết</a>
                   </div>
                  </div>
               </div>

@@ -13,11 +13,11 @@
                     <div class="col-sm-6">
                         <ul>
                             <li><a href="#"><i class="fa fa-phone"></i> {!! getSiteSetting('site_hotline') !!}</a></li>
-                            <li><a href="#"><i class="ti-email"></i> {!! getSiteSetting('site_email') !!}</a></li>
+                            <li class="text-nowrap"><a href="#"><i class="ti-email"></i> {!! getSiteSetting('site_email') !!}</a></li>
                         </ul>
                     </div>
                 </div>
-                <a href="#" class="btn-default">Contact Us</a>
+                <a href="/lien-he.html" class="btn-default">Liên hệ</a>
             </div>
             <div class="col-md-5 col-lg-5 col-md-offset-2 col-lg-offset-2">
                 <h2><span>Hotline 2</span></h2>
@@ -34,7 +34,7 @@
                         </ul>
                     </div>
                 </div>
-                <a href="#" class="btn-default">Contact Us</a>
+                <a href="/lien-he.html" class="btn-default">Liên hệ</a>
             </div>
         </div>
         <div class="row">

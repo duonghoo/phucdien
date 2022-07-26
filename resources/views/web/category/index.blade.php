@@ -3,19 +3,19 @@
 
 
 <div id="page-content">
-    <section class="breadcrumb">
-        <div class="container">
-            <h2>{{ $oneItem->meta_title }}</h2>
-            <ul>
-                <li><a href="/">Home</a> &gt;</li>
-                <li><a href="{{$breadCrumb[0]['item']}}">{{$breadCrumb[0]['name']}}</a></li>
-            </ul>
-        </div>
-    </section>
+    
 
 
 <section class="blog-page">
+    
     <div class="container">
+
+        <div class="d-flex pt-2 pb-1 bg-white1 w-100 align-items-center rounded-d mt-3">
+            <a href="/"><i class="ti-home text_primary fs-16" style="font-size: 1.2rem; color:black"></i></a>
+            <a href="/" class="d-block ms-2 text_primary fs-16" style="padding-left:1rem" title="">Trang chủ  / </a>
+            <a href="{{$breadCrumb[0]['item']}}" class="d-block ms-2 text_primary fs-16" style="padding-left:0.5rem; border-bottom:1px $primary_color" title="">{{$breadCrumb[0]['name']}} </a>
+        </div>
+
         <div class="row">
             <div class="col-sm-8" id="ajax_content">
                 @if(!empty($post))
