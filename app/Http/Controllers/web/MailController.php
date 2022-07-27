@@ -39,7 +39,13 @@ class MailController extends Controller
         </center>
         ';
 
-        Mail::send('mail.mail', array('company'=> 'Phúc Diễn Company','title_mail'=> 'Đối tác có lời nhắn', 'title'=> $data['name']." đã để lại lời nhắn", 'content' => $content, 'link' => url('/')), function($message) use ($data){
+        Mail::send('mail.mail', [
+            'company'=> 'Phúc Diễn Company',
+            'title_mail'=> 'Đối tác có lời nhắn', 
+            'title'=> $data['name']." đã để lại lời nhắn", 
+            'content' => $content, 
+            'link' => url('/')
+        ], function($message) use ($data){
 	        $message->to($data['email'], 'Người thông báo')->subject('Khách hàng '.$data['name'].' để lại lời nhắn!');
 	    });
         return \response()->json(['status' => true]);
