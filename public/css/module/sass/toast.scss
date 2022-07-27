@@ -1,12 +1,12 @@
 @charset "UTF-8";
 @font-face {
 	font-family: toast;
-	src: url(https://www.jqueryscript.net/demo/Toast-Popup-Plugin-jQuery-Toaster/assets/fonts/toast.eot?76tjxy);
-	src: url(https://www.jqueryscript.net/demo/Toast-Popup-Plugin-jQuery-Toaster/assets/fonts/toast.eot?76tjxy#iefix) format("embedded-opentype"),url(https://www.jqueryscript.net/demo/Toast-Popup-Plugin-jQuery-Toaster/assets/fonts/toast.ttf?76tjxy) format("truetype"),url(https://www.jqueryscript.net/demo/Toast-Popup-Plugin-jQuery-Toaster/assets/fonts/toast.woff?76tjxy) format("woff"),url(https://www.jqueryscript.net/demo/Toast-Popup-Plugin-jQuery-Toaster/assets/fonts/toast.svg?76tjxy#toast) format("svg");
+	src: url(../../../fonts/toast.eot?76tjxy);
+	src: url(../../../fonts/toast.eot?76tjxy#iefix) format("embedded-opentype"),url(../../../fonts/assets/fonts/toast.ttf?76tjxy) format("truetype"),url(../../../fonts/toast.woff?76tjxy) format("woff"),url(../../../fonts/toast.svg?76tjxy#toast) format("svg");
 	font-weight: 400;
 	font-style: normal;
 }
-i {
+.toast i {
 	font-family: toast !important;
 	speak: none;
 	font-style: normal;
