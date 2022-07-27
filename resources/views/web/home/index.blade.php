@@ -42,7 +42,7 @@
 						<div>
 							<input type="text" name="ph-no" placeholder="Số điện thoại" />
 						</div>
-						<div class="form-select product">
+						<div class="form-select">
 							<span></span>
 							<select class="form-control product" name="product">
 								<option value="0">Sản phẩm</option>
