@@ -302,14 +302,14 @@ $('#get-quote').on('submit', function(e){
   $('#get-quote input, #get-quote select, #get-quote textarea').each((i, item)=>{
     form_data[$(item).attr('name')] = $(item).val();
   });
-  console.log(form_data);
+  console.log('hehe');
   $.ajax({
       url: '/send_mail',
       data: form_data,
       type: 'POST',
   }).done((res) => {
       console.log(res);
-        $.Toast("Thành công", "Cảm ơn bạn đã liên hệ. Chung tôi sẽ liên hệ với bạn trong thời gian sớm nhất", "success", {
+        $.Toast("Thành công", "Cảm ơn bạn đã liên hệ. Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất", "success", {
           has_icon:true,
           has_close_btn:true,
           stack: true,
