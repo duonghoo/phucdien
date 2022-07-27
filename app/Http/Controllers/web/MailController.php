@@ -14,6 +14,8 @@ class MailController extends Controller
         $data = $request->all();
         $product = Product::find($data['product']);
         $product = !empty($product) ? $product->title : 'Sản phầm chưa xác định';
+
+        $email_admin = 'duonghoo1412@gmail.com';
         $content = '
         <center>
         <table>
@@ -45,8 +47,21 @@ class MailController extends Controller
             'title'=> $data['name']." đã để lại lời nhắn", 
             'content' => $content, 
             'link' => url('/')
-        ], function($message) use ($data){
-	        $message->to($data['email'], 'Người thông báo')->subject('Khách hàng '.$data['name'].' để lại lời nhắn!');
+        ], function($message) use ($data, $email_admin){
+	        $message->to($email_admin, 'Người thông báo')->subject('Khách hàng '.$data['name'].' để lại lời nhắn!');
+	    });
+
+        //mail dành cho khách
+        $content = 'Cảm ơn bạn đã lại lời nhắn. Chúng tôi sẽ liên hệ với bạn tỏng thời gian sớm nhất';
+
+        Mail::send('mail_client.mail', [
+            'company'=> 'Phúc Diễn Company',
+            'title_mail'=> 'Cảm ơn bạn đã liên hệ', 
+            'title'=> 'Cảm ơn '.$data['name']." đã để lại lời nhắn", 
+            'content' => $content, 
+            'link' => url('/')
+        ], function($message) use ($data, $email_admin){
+	        $message->to($data['email'], 'Người thông báo')->subject('Phúc Diễn Company');
 	    });
         return \response()->json(['status' => true]);
     }
