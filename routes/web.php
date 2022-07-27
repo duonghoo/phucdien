@@ -25,6 +25,9 @@ Route::get('/load-more-posts-home/{page}', 'ProductController@index');
 Route::get('/product', 'ProductController@index');
 Route::get('/product/{product}', 'ProductController@Product');
 
+Route::get('/product-list-ajax', 'ProductController@ajax_list');
+Route::post('/send_mail', 'MailController@submit_form');
+
 /*post*/
 Route::get('/amp/{slug}-p{id}.html', 'PostController@ampIndex')->where(['slug' => '[\s\S]+', 'id' => '[0-9]+']);
 Route::get('/{slug}-p{id}.html', 'PostController@index')->where(['slug' => '[\s\S]+', 'id' => '[0-9]+']);

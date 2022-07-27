@@ -13,5 +13,6 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         '/post/ajax_rate',
+        '/send_mail'
     ];
 }
