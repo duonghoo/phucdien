@@ -570,10 +570,7 @@
                                 <td align="left" valign="middle" id="invisibleIntroduction" class="flexibleContainerBox" style="display:none;display:none !important;">
                                   <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:100%;">
                                     <tr>
-                                      <td align="left" class="textContent">
-                                        <div style="font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#828282;text-align:center;line-height:120%;">
-                                          Here you can put short introduction of your email template.
-                                        </div>
+                                      <td align="left" class="textContent"> 
                                       </td>
                                     </tr>
                                   </table>
