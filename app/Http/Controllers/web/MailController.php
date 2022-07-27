@@ -54,13 +54,13 @@ class MailController extends Controller
         //mail dành cho khách
         $content = 'Cảm ơn bạn đã lại lời nhắn. Chúng tôi sẽ liên hệ với bạn tỏng thời gian sớm nhất';
 
-        Mail::send('mail_client.mail', [
+        Mail::send('mail.mail_client', [
             'company'=> 'Phúc Diễn Company',
             'title_mail'=> 'Cảm ơn bạn đã liên hệ', 
             'title'=> 'Cảm ơn '.$data['name']." đã để lại lời nhắn", 
             'content' => $content, 
             'link' => url('/')
-        ], function($message) use ($data, $email_admin){
+        ], function($message) use ($data){
 	        $message->to($data['email'], 'Người thông báo')->subject('Phúc Diễn Company');
 	    });
         return \response()->json(['status' => true]);
