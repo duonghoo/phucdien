@@ -321,7 +321,7 @@ $('#get-quote').on('submit', function(e){
       });
 
   }).fail((e) => {
-    $.Toast("Lỗi", "Vui lòng kiểm tra thông tin đã nhập hoặc lỗi của chúng tôi!", "danger", {
+    $.Toast("Lỗi", "Vui lòng kiểm tra thông tin đã nhập hoặc lỗi của chúng tôi!", "error", {
       has_icon:true,
       has_close_btn:true,
       stack: true,
