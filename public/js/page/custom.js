@@ -308,7 +308,7 @@ $('#get-quote').on('submit', function(e){
       data: form_data,
       type: 'POST',
   }).done((res) => {
-    if(res.status) {
+      console.log(res);
         $.Toast("Thành công", "Cảm ơn bạn đã liên hệ. Chung tôi sẽ liên hệ với bạn trong thời gian sớm nhất", "success", {
           has_icon:true,
           has_close_btn:true,
@@ -319,7 +319,6 @@ $('#get-quote').on('submit', function(e){
           has_progress:true,
           rtl:false,
       });
-    }
 
   }).fail((e) => {
     $.Toast("Lỗi", "Vui lòng kiểm tra thông tin đã nhập hoặc lỗi của chúng tôi!", "danger", {
