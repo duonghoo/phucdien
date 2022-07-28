@@ -44,12 +44,12 @@
 						</div>
 						<div class="form-select">
 							<span></span>
-							<select>
-								<option>Sản phẩm</option>
+							<select class="form-control product" name="product">
+								<option value="0">Sản phẩm</option>
 							</select>
 						</div>
 						<div>
-							<textarea rows="1" cols="1" placeholder="Lời nhắn"></textarea>
+							<textarea name="content" rows="1" cols="1" placeholder="Lời nhắn"></textarea>
 						</div>
 						<div class="text-center">
 							<input type="submit" class="btn-default" value="Gửi mail" />

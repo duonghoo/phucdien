@@ -1507,6 +1507,7 @@
         },
         {
             "name": "laravel/framework",
+<<<<<<< HEAD
             "version": "v8.83.22",
             "source": {
                 "type": "git",
@@ -1517,6 +1518,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/96aecced5126d48e277e5339193c376fe82b6565",
                 "reference": "96aecced5126d48e277e5339193c376fe82b6565",
+=======
+            "version": "v8.83.23",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "bdc707f8b9bcad289b24cd182d98ec7480ac4491"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/bdc707f8b9bcad289b24cd182d98ec7480ac4491",
+                "reference": "bdc707f8b9bcad289b24cd182d98ec7480ac4491",
+>>>>>>> 6f2c24cfea0a28f8a4ad03db1a417f5ca37032c7
                 "shasum": ""
             },
             "require": {
@@ -1676,7 +1689,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
+<<<<<<< HEAD
             "time": "2022-07-22T14:16:24+00:00"
+=======
+            "time": "2022-07-26T13:30:00+00:00"
+>>>>>>> 6f2c24cfea0a28f8a4ad03db1a417f5ca37032c7
         },
         {
             "name": "laravel/sanctum",
@@ -2411,6 +2428,7 @@
                 }
             ],
             "time": "2022-06-29T21:43:55+00:00"
+<<<<<<< HEAD
         },
         {
             "name": "nette/schema",
@@ -2558,6 +2576,8 @@
                 "source": "https://github.com/nette/utils/tree/v3.2.7"
             },
             "time": "2022-01-24T11:29:14+00:00"
+=======
+>>>>>>> 6f2c24cfea0a28f8a4ad03db1a417f5ca37032c7
         },
         {
             "name": "nikic/php-parser",
@@ -8827,5 +8847,5 @@
         "ext-gd": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }

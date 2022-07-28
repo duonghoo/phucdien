@@ -6,6 +6,7 @@ import './rateit';
 import './easyResponsiveTabs';
 import './jquery.flexslider';
 import './owl.carousel';
+import './toast.jquery'
 
 $(window).on('load', function(){
     "use strict";
@@ -125,8 +126,23 @@ $(document).ready(function() {
       $('.testimonial-tab #testimonial-'+$(this).attr('data-tab')).fadeIn(1000).addClass('active');
     });
       
+    load_product_form();
+    
 
 });
+
+const load_product_form = () => {
+  $.ajax({
+    url: '/product-list-ajax',
+    type: 'GET'
+  }).done((res)=> {
+    let tmp = '<option value="">Sản phẩm</option>';
+    $(res).each((i, v)=>{
+      tmp += `<option value="${v.id}">${v.title}</option>`;
+    })
+    $('#get-quote .product').html(tmp);
+  })
+}
 
 
 const FUNC = {
@@ -277,4 +293,43 @@ $('.img-product').on('click', function(){
   $('.thumbnail-root').attr('src', src);
   $('.img-product').attr('class', 'img-responsive img-product');
   $(this).attr('class', 'img-responsive img-product img-product-active');
+});
+
+
+$('#get-quote').on('submit', function(e){
+  e.preventDefault();
+  let form_data = {};
+  $('#get-quote input, #get-quote select, #get-quote textarea').each((i, item)=>{
+    form_data[$(item).attr('name')] = $(item).val();
+  });
+  console.log('hehe');
+  $.ajax({
+      url: '/send_mail',
+      data: form_data,
+      type: 'POST',
+  }).done((res) => {
+      console.log(res);
+        $.Toast("Thành công", "Cảm ơn bạn đã liên hệ. Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất", "success", {
+          has_icon:true,
+          has_close_btn:true,
+          stack: true,
+          fullscreen:true,
+          timeout:8000,
+          sticky:false,
+          has_progress:true,
+          rtl:false,
+      });
+
+  }).fail((e) => {
+    $.Toast("Lỗi", "Vui lòng kiểm tra thông tin đã nhập hoặc lỗi của chúng tôi!", "error", {
+      has_icon:true,
+      has_close_btn:true,
+      stack: true,
+      fullscreen:true,
+      timeout:8000,
+      sticky:false,
+      has_progress:true,
+      rtl:false,
+  });
+  });
 });

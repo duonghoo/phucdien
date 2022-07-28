@@ -146,6 +146,17 @@ class ProductController extends Controller
         return $this->index(true);
     }
 
+    public function ajax_list(){
+        $key = md5('product-item-all');
+        if(Cache::has($key)){
+            $oneItem = Cache::get($key);
+        }else{
+            $oneItem = Product::orderBy('id', 'desc')->get();
+            Cache::set($key, $oneItem, now()->addHours(24));
+        }
+        return \response()->json($oneItem);
+    }
+
     private function parse_content($content) {
         return $content;
     }
