@@ -20,12 +20,15 @@ class GroupController extends Controller
 
     public function update($id = 0) {
         $data = [];
+        
         if ($id > 0) {
             $data['oneItem'] = $oneItem = Group::findOrFail($id);
             $data['permission'] = json_decode($oneItem->permission, true);
         }
         if (!empty(Request::post())) {
             $post_data = Request::post();
+          
+
             $post_data['permission'] = json_encode($post_data['permission']);
             Group::updateOrInsert(['id' => $id], $post_data);
             return Redirect::to('/admin/group');

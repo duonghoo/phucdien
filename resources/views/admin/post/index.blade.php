@@ -69,6 +69,7 @@
                                 <th class="text-center w-10">Ngày đăng bài</th>
                                 <th class="text-center w-10">Số từ</th>
                                 <th class="text-center w-10">Điểm SEO</th>
+                                <th class="text-center w-10">Sản phẩm</th>
                                 {{--<th class="text-center w-10">Link</th>--}}
                                 <th class="text-center w-15">Thao tác</th>
                             </tr>
@@ -82,6 +83,7 @@
                                 <td class="text-center align-middle">{{date('d-m-Y H:i', strtotime($item->displayed_time))}}</td>
                                 <td class="text-center align-middle">{{$item->word_count ?? ''}}</td>
                                 <td class="text-center align-middle"><span class="@if(empty($item->seo_score)) @elseif($item->seo_score <= 60) bg-danger @elseif($item->seo_score >= 61 && $item->seo_score <= 89) bg-warning @else bg-success @endif text-white p-2">{{$item->seo_score ?? ''}}</span></td>
+                                <td class="text-center align-middle">{{$item->product_id ?? 'Không có sản phẩm'}}</td>
                                 {{--<td class="text-center">
                                     <p>Link đi: <span class="font-weight-bold">{{$item->count_link_out}}</span></p>
                                     <p class="mb-0">Link về: <span class="font-weight-bold">{{$item->count_link_ve}}</span></p>

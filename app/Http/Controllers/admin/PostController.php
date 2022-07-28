@@ -80,7 +80,7 @@ class PostController extends Controller
         $data['user_id'] = Auth::id();
         $data['group_id'] = Auth::user()->group_id;
         $data['product'] = Product::all();
-
+      
         if ($id > 0) {
             $data['oneItem'] = $oneItem = Post::findOrFail($id);
             $data['optional'] = json_decode($oneItem->optional);
@@ -88,7 +88,7 @@ class PostController extends Controller
         if (!empty(Request::post())) {
             $post_data = Request::post();
             $url_referer = $post_data['url_referer'];
-            if($post_data['product_id'] == 0) unset($post_data['product_id']);
+            if($post_data['product_id'] == 0) $post_data['product_id'] = null;
             unset($post_data['url_referer']);
             if (empty($post_data['slug'])) $post_data['slug'] = toSlug($post_data['title']);
             /*$post_data['count_link_out'] = getNumberLinkOut($post_data['content']);*/
