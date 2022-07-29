@@ -134,7 +134,9 @@ class PageController extends Controller
         ]])->get(Config::get('app.api_sbr')."api/v2/page/getPage?id=1");
         return json_decode($response->body());
     }
-
- 
-
+    public function redirectCart()
+    {
+        
+        return view('web.page.cart');
+    }
 }

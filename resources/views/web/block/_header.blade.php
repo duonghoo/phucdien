@@ -14,8 +14,13 @@
                         {{-- <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
                         <li class="list-inline-item"><a href="#"><i class="fab fa-medium"></i></a></li> --}}
                         <li><a href="{{getSiteSetting('site_youtube')}} ?? ''" target="_blank" ><i class="fab fa-youtube "></i></a></li>
+                     
+                        
+
+                        
                     </ul>
                 </div>
+              
             </div>
         </div>
     </div>

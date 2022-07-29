@@ -72,6 +72,30 @@
 <div class="clear"></div>
 @yield('main')
 <div class="clear"></div>
+
+<div class="card-area swap-position">
+    {{-- <div class="coccoc-alo-ph-circle-fill" ></div>
+    <a id="hotline-cta" href="#" rel="nofollow" class="hotline-cta-swap">
+        <div class="card-icon text-center">
+            <a href="{{getSiteSetting('site_youtube')}} ?? ''" target="_blank" ><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </a> --}}
+
+    <div class="wrapper">
+    <a href="/page/gio-hang">
+        <div class="ring">
+            
+            <div class="coccoc-alo-phone coccoc-alo-green coccoc-alo-show">
+                <div class="coccoc-alo-ph-circle"></div>
+                <div class="coccoc-alo-ph-circle-fill"></div>
+                <div class="coccoc-alo-ph-img-circle"></div>
+            </div>
+        </div>
+    </a>
+    </div>
+
+</div>
+
 @include('web.block._footer')
 @include('web.block._script')
 </body>

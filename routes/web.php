@@ -55,3 +55,4 @@ Route::post('/post/ajax_rate','PostController@ajax_rate')->name('rating');
 /*page*/
 Route::get('/amp/{slug}.html', 'PageController@ampIndex')->where(['slug' => '[\s\S]+']);
 Route::get('/{slug}.html', 'PageController@index')->where(['slug' => '[\s\S]+']);
+Route::get('/page/gio-hang', 'PageController@redirectCart');
