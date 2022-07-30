@@ -2144,6 +2144,7 @@ h3.resp-tab-active {
 			}
 		}
 	}
+	
 }
 @media (min-width:981px) and (max-width:1169px) {
 	.navbar-custom {
@@ -3188,4 +3189,8 @@ h3.resp-tab-active {
     100% {
         transform: rotate(0) scale(1) skew(1deg)
     }
+}
+
+.i85zmo3j{
+	background-color: $primary_color !important;
 }
