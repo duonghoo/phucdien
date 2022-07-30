@@ -2830,9 +2830,11 @@ h3.resp-tab-active {
 	border-radius: 50px;
 	bottom: 0;
     right: 0;
-    margin-right: -45px;
 
-	margin-bottom: 9px;
+	margin-bottom: 10px;
+    margin-left: -46px;
+    
+	
 	z-index: 10;
 }
 .card-icon{
@@ -2868,6 +2870,7 @@ h3.resp-tab-active {
     height: 160px;
     top: 20px;
     left: 20px;
+	box-shadow: 0 0 10px #000;
     position: absolute;
     background-color: transparent;
     -webkit-border-radius: 100%;
@@ -2936,6 +2939,7 @@ h3.resp-tab-active {
     top: 70px;
     left: 70px;
     position: absolute;
+	box-shadow: 0 0 10px rgba(30, 30, 30, 0.1);
     background: rgba(30, 30, 30, 0.1) url(images/cart.png) no-repeat center center;
 	background-size:40px 40px;
 	
