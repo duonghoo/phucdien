@@ -9,13 +9,13 @@
         </div>
         <div class="col-lg-8 mt-4 pe-lg-0 bg-white1 rounded-2">
 
-            <h1 class="fs-28 pt-2 text-upcase">Sản phẩm</h1>
+            <h1 class="fs-28 pt-2 ps-2 text-upcase">Sản phẩm</h1>
             <div class="d-flex flex-wrap">
                 {{-- <p class="mb-0 time-of-match text-grey3">{{$time}}</p> --}}
                 {{-- <div class="ms-0 mb-3 ms-lg-auto me-3">@include('web.block._vote', ['data' => $oneItem])</div> --}}
             </div>
             
-            <div class="d-block d-md-flex justify-content-between">
+            <div class="d-block d-md-flex justify-content-between pt-2">
                 <div class="main-content mr-md-4 px-2 p-md-0">
                     <div class="single-post">
                         <div class="row">
