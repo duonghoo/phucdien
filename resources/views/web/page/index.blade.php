@@ -1,7 +1,7 @@
 @extends('web._layout')
 @section('main')
     <div class="container my-3" style="margin-top:15rem">
-        <div class="row">
+        <div class="row ">
             <div class="d-flex pt-2 pb-1 bg-white1 w-100 align-items-center rounded-d" style="padding-left:2rem">
                 <a href="/"><i class="ti-home text_primary fs-16" style="font-size: 1.2rem; color:black"></i></a>
                 <a href="/" class="d-block ms-2 text_primary fs-16" style="padding-left:1rem" title="">Trang chủ  / </a>
@@ -28,7 +28,7 @@
                                     <div class="fst-italic mb-3">{!! $oneItem->description !!}</div>
                                 </div>
                                 @endif
-                                <div class="line-height-24 entry-content" style="margin-top: 2rem">
+                                <div class="line-height-24 entry-content max-100 w-100" style="margin-top: 2rem">
                                     {!! short_code($oneItem->content) !!}
                                 </div>
                             </div>

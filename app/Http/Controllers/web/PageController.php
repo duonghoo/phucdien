@@ -27,7 +27,12 @@ class PageController extends Controller
         $view = 'index';
         if($oneItem->slug == 'lien-he'){
             $view = 'contact';
+        } else if($oneItem->slug == 'gioi-thieu')
+        {
+            $view = 'preview';
         }
+
+
 
         $date = date('Y-m-d H:i:s l');
         $date = strtotime($date);
