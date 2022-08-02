@@ -48,7 +48,7 @@
                                         @endforeach 
 
                                     @else
-                                    <span>Liên hệ</span>
+                                    <span>Liên hệ</span>
                                     @endif
 
                                 </div>

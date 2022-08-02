@@ -10,6 +10,7 @@ use Illuminate\Http\Client\Response;
 use App\Models\Page;
 use App\Models\Post;
 use App\Models\Nha_Cai;
+use App\Models\Product;
 use App\Models\SiteSetting;
 
 class PageController extends Controller
@@ -136,7 +137,7 @@ class PageController extends Controller
     }
     public function redirectCart()
     {
-        
-        return view('web.page.cart');
+        $data['oneItem'] = Product::all();
+        return view('web.page.cart',$data);
     }
 }

@@ -17,7 +17,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use stdClass;
 use Cache;
-
+use Cookie;
 class ProductController extends Controller
 {
     public function index($is_amp=false) {
@@ -144,6 +144,24 @@ class ProductController extends Controller
 
     public function ampIndex(){
         return $this->index(true);
+    }
+
+    public function setCart(Request $request)
+    {
+            $id=$request->id;
+            $arr = [];
+            $data = Product::where('id',$id)->first();
+            $minutes = 60;
+            $cookie = Cookie::queue('cart', $data->id, 10);
+            
+            return $cookie;
+         
+    }
+    
+    public function getCart(Request $request)
+    {
+        $value = $request->cookie('cart');
+        echo $value;
     }
 
     public function ajax_list(){

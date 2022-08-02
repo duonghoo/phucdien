@@ -87,6 +87,9 @@
                   <div class="card-body flex-column justify-content-center">
 					<h5 class="card-title text-center fs-16" style="margin-top:1rem; margin-bottom:1rem">{{$item->product->title}}</h5>
                     <a href="{{getUrlPost($item)}}" class="btn-product text-center mx-2">Xem chi tiết</a>
+					
+					<button class="btn-product text-center mx-2 add-cart" id="addcart{{$item->product->id}}" value="{{$item->product->id}}">Thêm vào giỏ</button>
+
                   </div>
                  </div>
               </div>
@@ -96,7 +99,23 @@
 		</div>
 	</div>
 	
+	<script>
+		
+			$(".add-cart" ).click(function() {
+				var id = this.value;
+			$.ajax({                                      
+			url: '/page/add-cart',              
+			type: "post",          
+			data: {id:id,"_token":"{{ csrf_token() }}"},              
+			success: function()
+			{
+				$('#addcart'+id).html("Đã thêm vào giỏ");
+			},
+		});
+		});
 
+	
+	</script>
 </div>
 
 
