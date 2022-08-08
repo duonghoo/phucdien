@@ -85,7 +85,7 @@
                 <div class="mx-1 content d-sm-block w-100">
 					<a href="{{getUrlPost($item)}}">{!! genImage($item->product->thumbnail, 400 , 400, 'img-responsive border-r1') !!}</a>
                   <div class="card-body flex-column justify-content-center">
-					<h5 class="card-title text-center fs-16" style="margin-top:1rem; margin-bottom:1rem">{{$item->product->title}}</h5>
+					<a href="{{getUrlPost($item)}}"><h5 class="card-title text-center fs-16" style="margin-top:1rem; margin-bottom:1rem">{{$item->product->title}}</h5></a>
 					<button class="btn-product text-center mx-2 add-cart" id="addcart{{$item->product->id}}" value="{{$item->product->id}}">Thêm vào giỏ</button>
 
                   </div>
