@@ -57,5 +57,5 @@ Route::get('/amp/{slug}.html', 'PageController@ampIndex')->where(['slug' => '[\s
 Route::get('/{slug}.html', 'PageController@index')->where(['slug' => '[\s\S]+']);
 Route::get('/page/gio-hang', 'PageController@redirectCart');
 
-Route::post('/page/add-cart', 'ProductController@setCart');
-Route::get('/page/get-cart', 'ProductController@getCart');
+// Route::post('/page/add-cart', 'ProductController@setCart');
+// Route::get('/page/get-cart', 'ProductController@getCart');

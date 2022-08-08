@@ -8,6 +8,9 @@
 	width: 100%;
 	position: fixed;
 }
+.position-relative{
+	position: relative;
+}
 .address {
 	color: white;
 	font-size: 13px;
@@ -2946,7 +2949,7 @@ h3.resp-tab-active {
     left: 70px;
     position: absolute;
 	box-shadow: 0 0 10px rgba(30, 30, 30, 0.1);
-    background: rgba(30, 30, 30, 0.1) url(images/cart.png) no-repeat center center;
+    background: rgba(30, 30, 30, 0.1) url(/images/cart.png) no-repeat center center;
 	background-size:40px 40px;
 	
     -webkit-border-radius: 100%;

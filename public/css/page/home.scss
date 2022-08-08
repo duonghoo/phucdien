@@ -29,4 +29,14 @@
     height: 300px;
     object-fit: cover;
 }
+#count_cart{
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    color: white;
+    background: red;
+    border-radius: 50%;
+    padding: 5px;
+    font-weight: bold;
+}
 

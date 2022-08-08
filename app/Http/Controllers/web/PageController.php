@@ -5,6 +5,8 @@ namespace App\Http\Controllers\web;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Config;
+use Cookie;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Client\Response;
 use App\Models\Page;
@@ -90,11 +92,7 @@ class PageController extends Controller
 
     public function ampIndex($slug){
         return $this->index($slug);
-    }
-
-    private function daGa($content, $short_code, $url) {
-        return str_replace($short_code, initVideo($url), $content);
-    }
+    } 
 
     private function parse_content($content) {
         $array_str_remove = array(
@@ -140,9 +138,27 @@ class PageController extends Controller
         ]])->get(Config::get('app.api_sbr')."api/v2/page/getPage?id=1");
         return json_decode($response->body());
     }
-    public function redirectCart()
+    public function redirectCart(Request $request)
     {
-        $data['oneItem'] = Product::all();
+        // $data['oneItem'] = Product::all();
+        $arr = [];
+        $product = null;
+        if(isset($_COOKIE['product_cart'])){
+            $product = $_COOKIE['product_cart'];
+            if($product){
+                $product = json_decode($product);
+            }
+        }
+        
+        $data['oneItem'] = Product::whereIn('id', $product)->get();
         return view('web.page.cart',$data);
+    }
+
+    private function setCookie($key,$value, $minutes){
+        Cookie::queue($key, $value, $minutes);
+    }
+    private function getCookie(Request $request){
+        $value = $request->cookie('name');
+        return $value;
     }
 }

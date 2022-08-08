@@ -86,7 +86,7 @@
     <a href="/page/gio-hang">
         <div class="ring">
             
-            <div class="coccoc-alo-phone coccoc-alo-green coccoc-alo-show">
+            <div class="coccoc-alo-phone coccoc-alo-green coccoc-alo-show" id="cart-rel">
                 {{-- <div class="coccoc-alo-ph-circle"></div>
                 <div class="coccoc-alo-ph-circle-fill"></div> --}}
                 <div class="coccoc-alo-ph-img-circle"></div>
