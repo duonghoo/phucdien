@@ -46,6 +46,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    {{-- slected --}}
+    <link href="https://silviomoreto.github.io/bootstrap-select/css/base.css" rel="stylesheet"/>
+    <link href="https://silviomoreto.github.io/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet"/>
+<script src="https://silviomoreto.github.io/bootstrap-select/dist/js/bootstrap-select.min.js">
+
     <div id="fb-root"></div>
     <script defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v14.0&appId=432416328750166&autoLogAppEvents=1" nonce="730jaS1D"></script>
     {!! getSiteSetting('meta_head') ?? '' !!}

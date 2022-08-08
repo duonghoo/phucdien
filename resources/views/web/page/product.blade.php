@@ -21,10 +21,10 @@
                             @foreach ($product as $item)
                                 <div class="col col-sm-12 col-md-3">
                                     <div class="mx-1 content d-sm-block w-100">
-                                        {!! genImage($item->thumbnail,263, 263, 'img-responsive') !!}
+                                      <a href="{{getUrlProduct($item)}}">{!! genImage($item->thumbnail,263, 263, 'img-responsive') !!}</a>
                                         <div class="card-body flex-column justify-content-center">
                                             <h5 class="card-title text-center fs-16" style="margin-top:1rem; margin-bottom:1rem">{{$item->title}}</h5>
-                                            <a href="{{getUrlProduct($item)}}" class="btn-product text-center mx-2">Xem chi tiết</a>
+                                            <a class="btn-product text-center mx-2">Thêm vào giỏ hàng</a>
                                         </div>
                                     </div>
                                 </div>
