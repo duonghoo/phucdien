@@ -9,8 +9,8 @@
                 
                 <div class="col-sm-2">
                     <select class="form-control changeLang">
-                        <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
                         <option value="vi" {{ session()->get('locale') == 'vi' ? 'selected' : '' }}>Vietnamese</option>
+                        <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
                     </select>
                 </div>
                 <div class="col-sm-4 social">
