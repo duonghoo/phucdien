@@ -12,7 +12,6 @@
                         <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
                         <option value="vi" {{ session()->get('locale') == 'vi' ? 'selected' : '' }}>Vietnamese</option>
                     </select>
-                    {{  __('mes.title')  }}
                 </div>
                 <div class="col-sm-4 social">
                     <ul>
