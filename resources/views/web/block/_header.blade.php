@@ -6,11 +6,13 @@
                 <div class="col-sm-6 address">
                     <p ><i class="ti-location-pin"></i> {!! getSiteSetting('address') ?? ''!!}</p>
                 </div>
+                
                 <div class="col-sm-2">
                     <select class="form-control changeLang">
-                        <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }} data-content='<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Gota07.svg/120px-Gota07.svg.png">'><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Gota07.svg/120px-Gota07.svg.png"></option>
+                        <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
                         <option value="vi" {{ session()->get('locale') == 'vi' ? 'selected' : '' }}>Vietnamese</option>
                     </select>
+                    {{  __('mes.title')  }}
                 </div>
                 <div class="col-sm-4 social">
                     <ul>
@@ -21,16 +23,14 @@
                         {{-- <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
                         <li class="list-inline-item"><a href="#"><i class="fab fa-medium"></i></a></li> --}}
                         <li><a href="{{getSiteSetting('site_youtube')}} ?? ''" target="_blank" ><i class="fab fa-youtube "></i></a></li>
-                     
-                        
-
-                        
+               
                     </ul>
                 </div>
               
             </div>
         </div>
     </div>
+   
     <nav class="navbar navbar-custom navbar-fixed-top bg_secondary" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -49,3 +49,11 @@
         </div>
     </nav>
 </header>
+
+<script>
+    var url = "{{ route('changeLang') }}";
+
+     $(".changeLang").change(function(){
+         window.location.href = url + "?lang="+ $(this).val();
+     });
+</script>

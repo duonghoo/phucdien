@@ -59,3 +59,6 @@ Route::get('/page/gio-hang', 'PageController@redirectCart');
 
 Route::post('/page/add-cart', 'ProductController@setCart');
 Route::get('/page/get-cart', 'ProductController@getCart');
+
+Route::get('lang/home', 'LangController@index');
+Route::get('lang/change', 'LangController@change')->name('changeLang');
