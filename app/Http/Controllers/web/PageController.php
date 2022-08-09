@@ -148,8 +148,7 @@ class PageController extends Controller
             if($product){
                 $product = json_decode($product);
             }
-        }
-        
+        }        
         $data['oneItem'] = Product::whereIn('id', $product)->get();
         return view('web.page.cart',$data);
     }

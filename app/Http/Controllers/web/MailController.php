@@ -12,8 +12,8 @@ class MailController extends Controller
 {
     public function submit_form(Request $request){
         $data = $request->all();
-        $product = Product::find($data['product']);
-        $product = !empty($product) ? $product->title : 'Sản phầm chưa xác định';
+        // $product = Product::find($data['product']);
+        // $product = !empty($product) ? $product->title : 'Sản phầm chưa xác định';
 
         $email_admin = 'duonghoo1412@gmail.com';
         $content = '
@@ -33,13 +33,36 @@ class MailController extends Controller
             <td style="padding: 0px 10px">'.$data['name'].'</td>
             <td style="padding: 0px 10px">'.$data['email'].'</td>
             <td style="padding: 0px 10px">'.$data['ph-no'].'</td>
-            <td style="padding: 0px 10px">'.$product.'</td>
+            <td style="padding: 0px 10px">';
+
+            $products = json_decode($_COOKIE['product_cart']);
+            if(!empty($products))
+            {
+           
+            foreach($products as $product)
+            {
+                
+                $product = Product::find($product);
+               
+                $product = !empty($product) ? $product->title : 'Sản phầm chưa xác định';
+                
+                $content .= ''.$product.'';
+               
+            }
+            
+         }
+            else
+            {
+                $content .= 'Sản phẩm chưa xác định';
+            }
+
+            $content .='</td>
             <td style="padding: 0px 10px">'.$data['content'].'</td>
-        </tr>
-        </tbody>
-        </table>
-        </center>
-        ';
+            </tr>
+            </tbody>
+            </table>
+            </center>
+            ';
 
         Mail::send('mail.mail', [
             'company'=> 'Phúc Diễn Company',
