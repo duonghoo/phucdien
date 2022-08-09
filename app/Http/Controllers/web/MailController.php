@@ -39,30 +39,30 @@ class MailController extends Controller
             if(!empty($products))
             {
            
-            foreach($products as $product)
-            {
+                foreach($products as $product)
+                {
+                    
+                    $product = Product::find($product);
                 
-                $product = Product::find($product);
-               
-                $product = !empty($product) ? $product->title : 'Sản phầm chưa xác định';
+                    $product = !empty($product) ? $product->title : 'Sản phầm chưa xác định';
+                    
+                    $content .= ''.$product.'';
                 
-                $content .= ''.$product.'';
-               
-            }
+                }
             
-         }
+            }
             else
             {
                 $content .= 'Sản phẩm chưa xác định';
             }
 
             $content .='</td>
-            <td style="padding: 0px 10px">'.$data['content'].'</td>
-            </tr>
-            </tbody>
-            </table>
-            </center>
-            ';
+                        <td style="padding: 0px 10px">'.$data['content'].'</td>
+                        </tr>
+                        </tbody>
+                        </table>
+                        </center>
+                        ';
 
         Mail::send('mail.mail', [
             'company'=> 'Phúc Diễn Company',

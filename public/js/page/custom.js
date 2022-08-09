@@ -305,7 +305,7 @@ $('#get-quote').on('submit', function(e){
   $('#get-quote input, #get-quote select, #get-quote textarea').each((i, item)=>{
     form_data[$(item).attr('name')] = $(item).val();
   });
-  console.log('hehe');
+  
   $.ajax({
       url: '/send_mail',
       data: form_data,
