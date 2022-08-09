@@ -46,7 +46,7 @@ class MailController extends Controller
                 
                     $product = !empty($product) ? $product->title : 'Sản phầm chưa xác định';
                     
-                    $content .= ''.$product.'';
+                    $content .= '<p style="border-bottom:solid 1px black">'.$product.'</p>';
                 
                 }
             
