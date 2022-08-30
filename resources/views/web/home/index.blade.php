@@ -81,6 +81,7 @@
 			@if(!empty($product))
 			@foreach ($product as $item)
 			
+			
 			  <div class="card col-12 col-md-6 col-lg-3 mb-5 mt-3" style="max-width: 50rem">
                 <div class="mx-1 content d-sm-block w-100">
 					<a href="{{getUrlPost($item)}}">{!! genImage($item->product->thumbnail, 400 , 400, 'img-responsive border-r1') !!}</a>
