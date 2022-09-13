@@ -64,17 +64,21 @@
 
 	<div class="container">
 		<div class="row mt-3">
-
+			
+	
 			<h2 class="title ms-2" style="">Danh sách các sản phẩm</h2>
 			@if(!empty($product))
 			@foreach ($product as $item)
-			
 			  <div class="card col-12 col-md-6 col-lg-3 mb-5 mt-3" style="max-width: 50rem">
                 <div class="mx-1 content d-sm-block w-100">
 					<a href="{{getUrlPost($item)}}">{!! genImage($item->product->thumbnail, 400 , 400, 'img-responsive border-r1') !!}</a>
                   <div class="card-body flex-column justify-content-center">
 					<a href="{{getUrlPost($item)}}"><h5 class="card-title text-center fs-16" style="margin-top:1rem; margin-bottom:1rem">{{$item->product->title}}</h5></a>
+					@if(!str_contains ( $_COOKIE["product_cart"] , $item->product->id ))
 					<button class="btn-product text-center mx-2 add-cart" id="addcart{{$item->product->id}}" value="{{$item->product->id}}">{{__('mes.add')}}</button>
+					@else
+					<button class="btn-product text-center mx-2 add-cart" id="addcart{{$item->product->id}}" value="{{$item->product->id}}">Bỏ thêm vào giỏ</button>
+					@endif
                   </div>
                  </div>
               </div>
