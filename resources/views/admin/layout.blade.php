@@ -30,7 +30,7 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <script src="/admin/js/upload.js"></script>
 <script src="/admin/js/spectrum.js"></script>
-<script src="/admin/js/custom.js?v=12312"></script>
+<script src="/admin/js/custom.js?v={{time()}}"></script>
 <script src="/admin/js/tinymce.min.js"></script>
 <script src="/admin/js/tiny_full_featured.js?9"></script>
 <script src="/admin/js/jquery.nestable.js"></script>
