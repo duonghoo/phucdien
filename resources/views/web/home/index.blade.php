@@ -14,17 +14,17 @@
 						<li class="col-sm-4">
 							<i class="fa fa-life-ring"></i>
 							<h3>Hỗ trợ tận tâm</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur.</p>
+							<p>Chúng tôi luôn hỗ trợ tận tâm</p>
 						</li>
 						<li class="col-sm-4">
 							<i class="ti-marker-alt"></i>
 							<h3>Dễ dàng đặt hàng</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur.</p>
+							<p>Đặt hàng nhanh chóng, giao hàng tận nhà</p>
 						</li>
 						<li class="col-sm-4">
 							<i class="ti-email"></i>
 							<h3>Liên hệ với chúng tôi</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur.</p>
+							<p>24/7</p>
 						</li>
 					</ul>
 				</div>
@@ -66,18 +66,6 @@
 		<div class="row mt-3">
 
 			<h2 class="title ms-2" style="">Danh sách các sản phẩm</h2>
-			{{-- @if(!empty($product))
-			@foreach ($product as $item)
-			<div class="col-sm-12 col-md-3 py-0 px-2 rounded">
-				<div class="p-1">
-					{!! genImage($item->product->thumbnail, 400 , 400, 'img-responsive') !!}
-				</div>
-				<div class="p-1 border">
-					<h3 class="post_title font-14">{{$item->product->title}}</h3>
-					<button class="btn btn-primary w-100 mx-2"><a href="{{getUrlPost($item)}}">Xem sản phẩn</a></button>
-				</div>
-			</div>
-			@endforeach --}}
 			@if(!empty($product))
 			@foreach ($product as $item)
 			
@@ -87,18 +75,14 @@
                   <div class="card-body flex-column justify-content-center">
 					<a href="{{getUrlPost($item)}}"><h5 class="card-title text-center fs-16" style="margin-top:1rem; margin-bottom:1rem">{{$item->product->title}}</h5></a>
 					<button class="btn-product text-center mx-2 add-cart" id="addcart{{$item->product->id}}" value="{{$item->product->id}}">{{__('mes.add')}}</button>
-
                   </div>
                  </div>
               </div>
-
 			@endforeach
 			@endif
 		</div>
 	</div>
-	
 	<script>
-		
 			$(".add-cart" ).click(function() {
 				var id = this.value;
 			$.ajax({                                      
@@ -111,8 +95,6 @@
 			},
 		});
 		});
-
-	
 	</script>
 </div>
 

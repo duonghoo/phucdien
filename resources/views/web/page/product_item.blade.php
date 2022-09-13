@@ -27,26 +27,24 @@
                                         {!! genImage($oneItem->img1, 750, 313, 'img-responsive img-product', $oneItem->title) !!}
                                     @endif
                                     @if(!empty($oneItem->img2))
-                                        {!! genImage($oneItem->product->img2, 750, 313, 'img-responsive img-product', $oneItem->title) !!}
+                                        {!! genImage($oneItem->product->img2 ?? "", 750, 313, 'img-responsive img-product', $oneItem->title) !!}
                                     @endif
                                     @if(!empty($oneItem->img3))
-                                        {!! genImage($oneItem->product->img3, 750, 313, 'img-responsive img-product', $oneItem->title) !!}
+                                        {!! genImage($oneItem->product->img3 ?? "", 750, 313, 'img-responsive img-product', $oneItem->title) !!}
                                     @endif
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-6">
-                                <div class="blog-title">{{$oneItem->title}}</div>
+                                <div class="blog-title"> <p class="fs-16 m-0 p-0">{{$oneItem->title}}</p></div>
                                 <div class="code-product">Mã sản phầm: <span>{{$oneItem->sku}}</span></div>
                                 @php
                                     $color = json_decode($oneItem->color);
                                 @endphp
                                 <div class="color-product">Màu sắc: 
                                     @if(!empty($color))
-
                                         @foreach ($color as $key => $cl)
-                                            <span class="color{{$key}}" style="display:inline-block; width: 13px; height: 30px; background-color: {{$cl}}; border-radius: 20%"></span>
+                                            <span class="color{{$key}}" style="display:inline-block; width: 13px; height: 13px; background-color: {{$cl}}; border-radius: 20%"></span>
                                         @endforeach 
-
                                     @else
                                     <span>Liên hệ</span>
                                     @endif

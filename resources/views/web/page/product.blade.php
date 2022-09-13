@@ -8,23 +8,22 @@
                 <a href="{{$breadCrumb[0]['item']}}" class="d-block ms-2 text_primary fs-16" style="padding-left:0.5rem; border-bottom:1px $primary_color" title="">{{$breadCrumb[0]['name']}} </a>
             </div>
             <div class="col-lg-8 mt-4 pe-lg-0 bg-white1 rounded-2">
-
-                <h1 class="fs-28 pt-2 text-upcase">Sản phẩm</h1>
                 <div class="d-flex flex-wrap">
                     {{-- <p class="mb-0 time-of-match text-grey3">{{$time}}</p> --}}
                     {{-- <div class="ms-0 mb-3 ms-lg-auto me-3">@include('web.block._vote', ['data' => $oneItem])</div> --}}
                 </div>
                 
                 <div class="d-block d-md-flex justify-content-between">
+                   
                     <div class="main-content mr-md-4 px-2 p-md-0">
                         @if(!empty($product))
                             @foreach ($product as $item)
                                 <div class="col col-sm-12 col-md-3">
                                     <div class="mx-1 content d-sm-block w-100">
-                                      <a href="{{getUrlProduct($item)}}">{!! genImage($item->thumbnail,263, 263, 'img-responsive') !!}</a>
+                                      <a href="{{getUrlProduct($item)}}">{!! genImage($item->thumbnail,263, 263, 'img-responsive border-r1') !!}</a>
                                         <div class="card-body flex-column justify-content-center">
                                             <h5 class="card-title text-center fs-16" style="margin-top:1rem; margin-bottom:1rem">{{$item->title}}</h5>
-                                            <a class="btn-product text-center mx-2">Thêm vào giỏ hàng</a>
+                                            <button class="btn-product text-center mx-2 add-cart" id="addcart{{$item->id}}" value="{{$item->id}}">Thêm vào giỏ hàng</button>
                                         </div>
                                     </div>
                                 </div>
@@ -33,6 +32,21 @@
                     </div>
                 </div>
             </div>
+            <script>
+                    $(".add-cart" ).click(function() {
+                    var id = this.value;
+                    $.ajax({                                      
+                    url: '/page/add-cart',              
+                    type: "post",          
+                    data: {id:id,"_token":"{{ csrf_token() }}"},              
+                    success: function()
+                    {
+                        $('#addcart'+id).html("Đã thêm vào giỏ");
+                    },
+                });
+                });
+            </script>
+
             @include('web.block._product_filter')
         </div>
         

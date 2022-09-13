@@ -7,18 +7,19 @@
        <section class="col-sm-7 col-md-8 col-lg-8">
                      <table class="table" style="padding-left: 2rem">
                             <thead>
-                              <tr style="background-color: #f27127; border:none; color:white">
-                                <th class="w-10">#</th>
-                                <th class="w-50">Sản phẩm </th>
-                                <th class="w-25">Giá </th>
+                              <tr style="background-color: #f59a65; border:none; color:white; height:65px">
+                                <th class="w-10 fs-16 align-center">#</th>
+                                <th class="w-50 fs-16 align-center">Sản phẩm </th>
+                                <th class="w-25 fs-16 align-center">Giá </th>
                                 <th class="w-5"></th>
                               </tr>
                             </thead>
                             <tbody>
                             @foreach($oneItem as $prd)
                               <tr>
-                                   
-                                <td class="w-10">{{$prd->id}}</td>
+                                   @php $i=1; @endphp
+                                <td class="w-10">{{$i}}</td>
+                                @php $i++; @endphp
                                 <td class="w-50">
                                    <div class="row" style="display:flex">
                                    <div class="w-50">
@@ -31,13 +32,11 @@
                                    {{$prd->title}}
                                    <div class="color-product">Màu sắc: 
                                           @if(!empty($color))
-      
                                               @foreach ($color as $key => $cl)
                                                   <span class="color{{$key}}" style="display:inline-block; width: 13px; height: 30px; background-color: {{$cl}}; border-radius: 20%"></span>
                                               @endforeach 
-      
                                           @else
-                                          <span>Liên hệ</span>
+                                          <span>Tùy chọn</span>
                                           @endif
       
                                       </div>
@@ -45,18 +44,16 @@
                                    </div>
                                    </div>
                                 </td>
-                                
                                 <td class="w-25">{{$prd->price ?? 'Liên hệ'}}</td>
                                 <td class="w-5"><button class="remove-cart" data-id="{{$prd->id}}">x</button></td>
                               </tr> 
                               @endforeach     
-                          
                             </tbody>
                           </table>
        </section>
       
-       <section class="col-sm-5 col-md-4 col-lg-4" style="margin-top:5rem">
-              <div class="get-quote-form">
+       <section class="col-sm-5 col-md-4 col-lg-4" style="margin-top:65px">
+              <div class="get-quote-form primary_color">
                      <h2>Liên hệ hỏi giá</h2>
                      <form id="get-quote">
                             <div>

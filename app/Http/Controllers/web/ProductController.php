@@ -172,7 +172,7 @@ class ProductController extends Controller
             $oneItem = Product::orderBy('id', 'desc')->get();
             Cache::set($key, $oneItem, now()->addHours(24));
         }
-        return \response()->json($oneItem);
+        return response()->json($oneItem);
     }
 
     private function parse_content($content) {
