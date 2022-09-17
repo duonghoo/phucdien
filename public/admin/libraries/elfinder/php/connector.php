@@ -28,9 +28,13 @@ function access($attr, $path, $data, $volume) {
 }
 
 $root = getcwd();
+
 $root = explode('public_html', $root);
+
 $root = $root[0].'public_html/public';
+
 $path = $root.'/upload';
+
 #
 $user = strtolower($_SESSION['user']);
 $year = date('Y');
