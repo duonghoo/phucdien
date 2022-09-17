@@ -10,27 +10,30 @@
                     style="padding-left:0.5rem; border-bottom:1px $primary_color"
                     title="">{{ $breadCrumb[0]['name'] }} </a>
             </div>
-            <div class="col-lg-8 mt-4 pe-lg-0 bg-white1 rounded-2">
+            <div class="col-lg-8 mt-4 pe-lg-0 bg-white1 rounded-2 mt-2">
                 <div class="d-block d-md-flex justify-content-between">
                     <div class="main-content mr-md-4 px-2 p-md-0">
                         @if (!empty($product))
                             @foreach ($product as $item)
-                                <div class="col col-sm-12 col-md-3">
+                                <div class="card col col-sm-12 col-md-3 mt-2">
                                     <div class="mx-1 content d-sm-block w-100">
                                         <a href="{{ getUrlProduct($item) }}">{!! genImage($item->thumbnail, 263, 263, 'img-responsive border-r1') !!}</a>
                                         <div class="card-body flex-column justify-content-center">
                                             <h5 class="card-title text-center fs-16"
                                                 style="margin-top:1rem; margin-bottom:1rem">{{ $item->title }}</h5>
+                                                
+                                                <div class="mx-2 mb-2">
+                                                    @if(!empty($_COOKIE["product_cart"]))
+                                                    @if(!str_contains ( $_COOKIE["product_cart"] , $item->id ))
+                                                    <button class="btn-product text-center add-cart w-100" id="addcart{{$item->id}}" value="{{$item->id}}">{{__('mes.add')}}</button>
+                                                    @else
+                                                    <button class="btn-product text-center add-cart w-100" id="addcart{{$item->id}}" value="{{$item->id}}">Bỏ thêm vào giỏ</button>
+                                                    @endif
+                                                    @else
+                                                    <button class="btn-product text-center add-cart w-100" id="addcart{{$item->id}}" value="{{$item->id}}">{{__('mes.add')}}</button>
+                                                    @endif
+                                                </div>
 
-                                                @if (!str_contains($_COOKIE['product_cart'], $item->product->id))
-                                                    <button class="btn-product text-center mx-2 add-cart"
-                                                        id="addcart{{ $item->product->id }}"
-                                                        value="{{ $item->product->id }}">Thêm vào giỏ hàng</button>
-                                                @else
-                                                    <button class="btn-product text-center mx-2 add-cart"
-                                                        id="addcart{{ $item->product->id }}"
-                                                        value="{{ $item->product->id }}">Bỏ thêm vào giỏ</button>
-                                                @endif
                                         </div>
                                     </div>
                                 </div>
