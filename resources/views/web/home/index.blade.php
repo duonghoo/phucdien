@@ -94,7 +94,7 @@
 			type: "post",          
 			data: {id:id,"_token":"{{ csrf_token() }}"},              
 			success: function()
-			{
+			{ 
 				$('#addcart'+id).html("Đã thêm vào giỏ");
 			},
 		});
