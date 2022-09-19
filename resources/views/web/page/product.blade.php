@@ -21,15 +21,21 @@
                                         <div class="card-body flex-column justify-content-center">
                                             <h5 class="card-title text-center fs-16"
                                                 style="margin-top:1rem; margin-bottom:1rem">{{ $item->title }}</h5>
-
-                                                @if (!str_contains($_COOKIE['product_cart'], $item->product->id))
+                                   
+                                                @if(!empty($_COOKIE["product_cart"]))
+                                                @if (!str_contains($_COOKIE['product_cart'], $item->id))
                                                     <button class="btn-product text-center mx-2 add-cart"
-                                                        id="addcart{{ $item->product->id }}"
-                                                        value="{{ $item->product->id }}">Thêm vào giỏ hàng</button>
+                                                        id="addcart{{ $item->id }}"
+                                                        value="{{ $item->id }}">Thêm vào giỏ hàng</button>
                                                 @else
                                                     <button class="btn-product text-center mx-2 add-cart"
-                                                        id="addcart{{ $item->product->id }}"
-                                                        value="{{ $item->product->id }}">Bỏ thêm vào giỏ</button>
+                                                        id="addcart{{ $item->id }}"
+                                                        value="{{ $item->id }}">Bỏ thêm vào giỏ</button>
+                                                @endif
+                                                @else
+                                                    <button class="btn-product text-center mx-2 add-cart"
+                                                        id="addcart{{ $item->id }}"
+                                                        value="{{ $item->id }}">Bỏ thêm vào giỏ</button>
                                                 @endif
                                         </div>
                                     </div>
