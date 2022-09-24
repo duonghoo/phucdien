@@ -82,13 +82,13 @@
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>Tài khoản</label>
-                                                <input class="form-control" {{empty($oneItem) ? 'name=username required' : ''}} value="{{!empty($oneItem->username) ? $oneItem->username : ''}}" type="text" placeholder="Tài khoản">
+                                                <input class="form-control" name="username" {{empty($oneItem) ? 'required' : ''}} value="{{!empty($oneItem->username) ? $oneItem->username : ''}}" type="text" placeholder="Tài khoản">
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>Email</label>
-                                                <input class="form-control" name="email" {{!empty($oneItem) ? 'disabled' : ''}} value="{{!empty($oneItem->email) ? $oneItem->email : ''}}" type="text" placeholder="Email">
+                                                <input class="form-control" name="email" {{!empty($oneItem) ? 'required' : ''}} value="{{!empty($oneItem->email) ? $oneItem->email : ''}}" type="text" placeholder="Email">
                                             </div>
                                         </div>
                                     </div>
