@@ -15,6 +15,7 @@
                               </tr>
                             </thead>
                             <tbody>
+                            @if(!empty($oneItem))
                             @foreach($oneItem as $prd)
                               <tr>
                                    @php $i=1; @endphp
@@ -47,7 +48,8 @@
                                 <td class="w-25">{{$prd->price ?? 'Liên hệ'}}</td>
                                 <td class="w-5"><button class="remove-cart" data-id="{{$prd->id}}">x</button></td>
                               </tr> 
-                              @endforeach     
+                              @endforeach 
+                              @endif    
                             </tbody>
                           </table>
        </section>
