@@ -429,3 +429,20 @@ $('.remove-cart').on('click', function (e) {
     cart_count();
   }
 });
+
+$('.mail-btn').on('click',function(e)
+{
+  nn=document.forms["myForm"]["num"].value;
+
+  ans=isNumber(nn);
+
+  if(!ans)
+  {
+      alert('SĐT phải là một số')
+  }
+}
+);
+
+function isNumber(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}

@@ -34,8 +34,10 @@ class MailController extends Controller
             <td style="padding: 0px 10px">'.$data['email'].'</td>
             <td style="padding: 0px 10px">'.$data['ph-no'].'</td>
             <td style="padding: 0px 10px">';
-
+            if(!empty($_COOKIE['product_cart']))
+            {
             $products = json_decode($_COOKIE['product_cart']);
+            }
             if(!empty($products))
             {
            
@@ -53,7 +55,15 @@ class MailController extends Controller
             }
             else
             {
+                $product =  Product::find($data['product']);
+                if(!empty($product))
+                {
+                $content .= '<p style="border-bottom:solid 1px black">'.$product.'</p>';
+                }
+                else
+                {
                 $content .= 'Sản phẩm chưa xác định';
+                }
             }
 
             $content .='</td>

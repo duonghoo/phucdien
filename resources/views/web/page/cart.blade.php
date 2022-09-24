@@ -69,7 +69,7 @@
                                    <textarea name="content" rows="1" cols="1" placeholder="Lời nhắn"></textarea>
                             </div>
                             <div class="text-center">
-                                   <input type="submit" class="btn-default" value="Gửi mail" />
+                                   <input type="submit" class="btn-default mail-btn" value="Gửi mail" />
                             </div>
                      </form>
               </div>
