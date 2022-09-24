@@ -17,9 +17,11 @@
                 <h2>{{ $oneItem->meta_title }}</h2>
             <div class="row">
                 <div class="col-sm-8">
+                    @if(!empty($oneItem->product))
                     <div class="single-post">
+                  
                         <div class="row">
-                            @if(!empty($oneItem->product))
+                          
                             <div class="col-sm-12 col-md-6">
                                 {!! genImage($oneItem->product->thumbnail ?? "", 750, 400, 'img-responsive thumbnail-root', $oneItem->title) ?? ''!!}
                                 <div class="d-flex product-imgs">
@@ -62,9 +64,12 @@
 
                                 </div>
                             </div>
-                            @endif
+                           
                         </div>
-                    </div>        
+                      
+
+                    </div>    
+                    @endif    
                     <div class="single-post">
                         <div class="blog-img">
                             <a href="#">
