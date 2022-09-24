@@ -7,6 +7,8 @@ use Redirect;
 use App\Models\Product;
 use Mail;
 
+use Illuminate\Support\Facades\Cookie;
+
 
 class MailController extends Controller
 {
@@ -14,6 +16,10 @@ class MailController extends Controller
         $data = $request->all();
         // $product = Product::find($data['product']);
         // $product = !empty($product) ? $product->title : 'Sản phầm chưa xác định';
+
+        if(!isset($data['product'])){
+            $data['product'] = null;
+        }
 
         $email_admin = 'duonghoo1412@gmail.com';
         $content = '
@@ -34,10 +40,8 @@ class MailController extends Controller
             <td style="padding: 0px 10px">'.$data['email'].'</td>
             <td style="padding: 0px 10px">'.$data['ph-no'].'</td>
             <td style="padding: 0px 10px">';
-            if(!empty($_COOKIE['product_cart']))
-            {
-            $products = json_decode($_COOKIE['product_cart']);
-            }
+            $products = !empty(json_decode(Cookie::get('product_cart'))) ? json_decode(Cookie::get('product_cart')) : null;
+          
             if(!empty($products))
             {
            
