@@ -19,18 +19,19 @@
                 <div class="col-sm-8">
                     <div class="single-post">
                         <div class="row">
+                            @if(!empty($oneItem->product))
                             <div class="col-sm-12 col-md-6">
-                                {!! genImage($oneItem->product->thumbnail, 750, 400, 'img-responsive thumbnail-root', $oneItem->title) ?? ''!!}
+                                {!! genImage($oneItem->product->thumbnail ?? "", 750, 400, 'img-responsive thumbnail-root', $oneItem->title) ?? ''!!}
                                 <div class="d-flex product-imgs">
-                                    {!! genImage($oneItem->product->thumbnail, 750, 400, 'img-responsive img-product img-product-active', $oneItem->title) ?? '' !!}
+                                    {!! genImage($oneItem->product->thumbnail ?? "", 750, 400, 'img-responsive img-product img-product-active', $oneItem->title) ?? '' !!}
                                     @if(!empty($oneItem->product->img1))
-                                        {!! genImage($oneItem->product->img1, 750, 400, 'img-responsive img-product', $oneItem->title) ?? ''!!}
+                                        {!! genImage($oneItem->product->img1 ?? "", 750, 400, 'img-responsive img-product', $oneItem->title) ?? ''!!}
                                     @endif
                                     @if(!empty($oneItem->product->img2))
-                                        {!! genImage($oneItem->product->img2, 750, 400, 'img-responsive img-product', $oneItem->title) ?? ''!!}
+                                        {!! genImage($oneItem->product->img2 ?? "", 750, 400, 'img-responsive img-product', $oneItem->title) ?? ''!!}
                                     @endif
                                     @if(!empty($oneItem->product->img3))
-                                        {!! genImage($oneItem->product->img3, 750, 400, 'img-responsive img-product', $oneItem->title) ?? ''!!}
+                                        {!! genImage($oneItem->product->img3 ?? "", 750, 400, 'img-responsive img-product', $oneItem->title) ?? ''!!}
                                     @endif
                                 </div>
                             </div>
@@ -61,6 +62,7 @@
 
                                 </div>
                             </div>
+                            @endif
                         </div>
                     </div>        
                     <div class="single-post">
