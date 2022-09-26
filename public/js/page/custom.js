@@ -446,3 +446,4 @@ $('.mail-btn').on('click',function(e)
 function isNumber(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 }
+

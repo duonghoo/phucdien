@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="vi">
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -130,7 +130,20 @@
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     </script>
+    <script>
+        function InvalidPhone(textbox) {
+        if (textbox.value === '') {
+            textbox.setCustomValidity('Vui lòng nhập số điện thoại');
+        } else if (textbox.validity.typeMismatch){
+            textbox.setCustomValidity('Số điện thoại phải là một số');
+        } else {
+           textbox.setCustomValidity('');
+        }
 
+        return true;
+    }
+    
+    </script>
 </div>
 
 @include('web.block._footer')
