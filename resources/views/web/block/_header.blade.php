@@ -7,9 +7,10 @@
                 </div>
 
                 <div class="col-sm-2 address">
-                    <select class="form-control mt-2 ms-auto selectpicker"  data-live-search="true" data-container="body">
+                    <select class="form-control mt-2 ms-auto selectpicker" data-live-search="true" data-container="body">
                         <option value="vi" data-content="<img src='https://i.imgur.com/XkuTj3B.png'>"
-                            data-tokens="ketchup mustard" {{ session()->get('locale') == 'vi' ? 'selected' : '' }}>Vietnamese</option>
+                            data-tokens="ketchup mustard" {{ session()->get('locale') == 'vi' ? 'selected' : '' }}>
+                            Vietnamese</option>
                         <option value="en" data-content="<img src='https://i.imgur.com/XkuTj3B.png'>"
                             {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
                     </select>
@@ -60,6 +61,13 @@
     $(".changeLang").change(function() {
         window.location.href = url + "?lang=" + $(this).val();
     });
-
-    
+    document.addEventListener('DOMContentLoaded', (event) => {
+       
+    });
+    $(document).ready(function() {
+         
+         $(function() {
+             $('select').selectpicker();
+         });
+     });
 </script>

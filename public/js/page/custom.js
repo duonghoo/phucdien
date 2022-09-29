@@ -311,7 +311,12 @@ $('#get-quote').on('submit', function (e) {
     data: form_data,
     type: 'POST',
   }).done((res) => {
-    console.log(res);
+    $('input[name="name"]').val('');
+    $('input[name="email"]').val('');
+    $('input[name="ph-no"]').val('');
+    $('select[name="product"]').val('');
+    $('textarea[name="content"]').val('');
+
     $.Toast("Thành công", "Cảm ơn bạn đã liên hệ. Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất", "success", {
       has_icon: true,
       has_close_btn: true,
@@ -430,18 +435,6 @@ $('.remove-cart').on('click', function (e) {
   }
 });
 
-$('.mail-btn').on('click',function(e)
-{
-  nn=document.forms["myForm"]["num"].value;
-
-  ans=isNumber(nn);
-
-  if(!ans)
-  {
-      alert('SĐT phải là một số')
-  }
-}
-);
 
 function isNumber(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
