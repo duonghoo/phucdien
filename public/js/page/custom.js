@@ -369,9 +369,11 @@ cart_count();
 
 $('.add-cart').on('click', function (e) {
   e.preventDefault();
-  if($(this).text() == 'Bỏ thêm vào giỏ')
+  var remove = "{{@json(__('mes.remove')}}";
+  var add =  "{{@json(__('mes.add')}}";
+  if($(this).text() == remove)
   {
-    $(this).text('Thêm vào giỏ');
+    $(this).text(add);
     
     let prd_id = $(this).attr('value');
     let arr = getCookie('product_cart');
@@ -386,7 +388,7 @@ $('.add-cart').on('click', function (e) {
     }
   }
   else{
-    $(this).text('Bỏ thêm vào giỏ');
+    $(this).text(remove);
     let product_id = $(this).attr('value');
     let arr = getCookie('product_cart');
     if (arr) {

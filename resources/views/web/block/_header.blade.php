@@ -7,12 +7,9 @@
                 </div>
 
                 <div class="col-sm-2 address">
-                    <select class="form-control mt-2 ms-auto selectpicker" data-live-search="true" data-container="body">
-                        <option value="vi" data-content="<img src='https://i.imgur.com/XkuTj3B.png'>"
-                            data-tokens="ketchup mustard" {{ session()->get('locale') == 'vi' ? 'selected' : '' }}>
-                            Vietnamese</option>
-                        <option value="en" data-content="<img src='https://i.imgur.com/XkuTj3B.png'>"
-                            {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
+                    <select class="form-control mt-2 ms-auto changeLang">
+                        <option value="vi" {{ session()->get('locale') == 'vi' ? 'selected' : '' }}>Vietnamese</option>
+                        <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
                     </select>
                 </div>
                 <div class="col-sm-2 social">
@@ -46,7 +43,7 @@
                     <span>Phúc Diễn</span>
                 </a>
 
-                <p>Liên hệ với chúng tôi <b>{!! getSiteSetting('site_hotline') ?? '' !!}</b></p>
+                <p>{{__('mes.contact_us')}} <b>{!! getSiteSetting('site_hotline') ?? '' !!}</b></p>
             </div>
             <div class="collapse navbar-collapse navbar-main-collapse">
                 @include('web.block._menu', ['breadCrumb' => $breadCrumb ?? ''])
