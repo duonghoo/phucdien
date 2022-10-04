@@ -366,50 +366,7 @@ function eraseCookie(name) {
 }
 
 cart_count();
-
-$('.add-cart').on('click', function (e) {
-  e.preventDefault();
-  var remove = "{{@json(__('mes.remove')}}";
-  var add =  "{{@json(__('mes.add')}}";
-  if($(this).text() == remove)
-  {
-    $(this).text(add);
-    
-    let prd_id = $(this).attr('value');
-    let arr = getCookie('product_cart');
-    if (arr) {
-      arr = JSON.parse(arr);
-      let new_arr = arr.filter((value, index, arr) => {
-        return value != prd_id;
-      })
-      setCookie('product_cart', JSON.stringify(new_arr), 1);
-      $(this).closest("tr").remove();
-      cart_count();
-    }
-  }
-  else{
-    $(this).text(remove);
-    let product_id = $(this).attr('value');
-    let arr = getCookie('product_cart');
-    if (arr) {
-      arr = JSON.parse(arr);
-      arr.push(product_id);
-      setCookie('product_cart', JSON.stringify(arr), 1);
-  
-    } else {
-      let arr = [];
-      arr.push(product_id);
-      setCookie('product_cart', JSON.stringify(arr), 1);
-  
-    }
-    cart_count();
-
-  
-  }
- 
-
-})
-
+//
 function cart_count() {
   let count = getCookie('product_cart');
   if (count) {

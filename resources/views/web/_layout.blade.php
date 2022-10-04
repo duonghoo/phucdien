@@ -133,23 +133,111 @@
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     </script>
-    <script>
-        function InvalidPhone(textbox) {
-        if (textbox.value === '') {
-            textbox.setCustomValidity('Vui lòng nhập số điện thoại');
-        } else if (textbox.validity.typeMismatch){
-            textbox.setCustomValidity('Số điện thoại phải là một số');
-        } else {
-           textbox.setCustomValidity('');
-        }
 
-        return true;
-    }
-    
-    </script>
+
+
+   
 </div>
 
 @include('web.block._footer')
 @include('web.block._script')
+
+<script>
+        $(document).ready(function(){
+
+            function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+            }
+            function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+            }
+            function eraseCookie(name) {
+            document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+            }
+
+            function cart_count() {
+  let count = getCookie('product_cart');
+  if (count) {
+    count = JSON.parse(count);
+    count = [...new Set(count)];
+    count = count.length;
+    $('#cart-rel').append(`<div id="count_cart">${count}</div>`);
+  } else {
+    $('#cunt_cart').remove();
+  }
+}
+
+$('.remove-cart').on('click', function (e) {
+  e.preventDefault();
+  let prd_id = $(this).data('id');
+  let arr = getCookie('product_cart');
+  if (arr) {
+    arr = JSON.parse(arr);
+    let new_arr = arr.filter((value, index, arr) => {
+      return value != prd_id;
+    })
+    setCookie('product_cart', JSON.stringify(new_arr), 1);
+    $(this).closest("tr").remove();
+    cart_count();
+  }
+});
+
+        $('.add-cart').on('click', function (e) {
+        e.preventDefault();
+        var remove = "{{__('mes.remove')}}";
+        var add =  "{{__('mes.add')}}";
+        if($(this).text() == remove)
+        {
+            $(this).text(add);
+            
+            let prd_id = $(this).attr('value');
+            let arr = getCookie('product_cart');
+            if (arr) {
+            arr = JSON.parse(arr);
+            let new_arr = arr.filter((value, index, arr) => {
+                return value != prd_id;
+            })
+            setCookie('product_cart', JSON.stringify(new_arr), 1);
+            $(this).closest("tr").remove();
+            cart_count();
+            }
+            }
+            else{
+                $(this).text(remove);
+                let product_id = $(this).attr('value');
+                let arr = getCookie('product_cart');
+                if (arr) {
+                arr = JSON.parse(arr);
+                arr.push(product_id);
+                setCookie('product_cart', JSON.stringify(arr), 1);
+            
+                } else {
+                let arr = [];
+                arr.push(product_id);
+                setCookie('product_cart', JSON.stringify(arr), 1);
+            
+                }
+                cart_count();
+            }
+            });
+
+        });
+
+      
+
+        </script>     
 </body>
 </html>
