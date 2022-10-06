@@ -440,34 +440,34 @@ $('input[name=title]').stringToSlug({
 
 
 
-// custom
-// $('#lbl_img').on('click', function (){
-//     let input = document.createElement('input');
-//     input.type = 'file';
+custom
+$('#lbl_img').on('click', function (){
+    let input = document.createElement('input');
+    input.type = 'file';
   
-//     input.onchange = e => { 
-//       $('#progress-wrp').show();
-//       let file = e.target.files[0];
-//       let upload = new uploadImg(file);
-//       upload.setProgressBar('#progress-wrp');
-//       console.log(upload);
-//       upload.doUpload('/admin/upload_image').then((data) => {
-//         $('#lbl_img').on('load', function(){
-//             $("#progress-wrp .progress-bar").css("width", "100%");
-//             $("#progress-wrp .status").text("100%");
-//             setTimeout(()=>{
-//                 $('#progress-wrp').hide("slow");
-//             },2000)
+    input.onchange = e => { 
+      $('#progress-wrp').show();
+      let file = e.target.files[0];
+      let upload = new uploadImg(file);
+      upload.setProgressBar('#progress-wrp');
+      console.log(upload);
+      upload.doUpload('/admin/upload_image').then((data) => {
+        $('#lbl_img').on('load', function(){
+            $("#progress-wrp .progress-bar").css("width", "100%");
+            $("#progress-wrp .status").text("100%");
+            setTimeout(()=>{
+                $('#progress-wrp').hide("slow");
+            },2000)
             
-//         }).attr('src', '/img/thumb/'+ data.data);
-//         $('#hd_img').val(data.data);
-//       }).catch(e => {
-//         console.log(e);
-//       });
-//     }
+        }).attr('src', '/img/thumb/'+ data.data);
+        $('#hd_img').val(data.data);
+      }).catch(e => {
+        console.log(e);
+      });
+    }
   
-//     input.click();
-//   });
+    input.click();
+  });
 
 $('#yes_del_cache').on('click', function(){
     $.ajax({
