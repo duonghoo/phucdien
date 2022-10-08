@@ -58,7 +58,7 @@
                                         @if(!empty($oneItem->img1))
                                             <img style="width: 150px; height:auto" src="{{$oneItem->img1}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
                                         @else
-                                            <img style="width: 150px; height:auto" src="{{url('admin/images/no-image.jpg')}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
+                                            <img style="width: 150px; height:auto" src="{{url('admin/images/no-image.jpg')}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img1')">
                                         @endif
                                         <input type="hidden" name="img1" id="hd_img" value="{{!empty($oneItem->img1)? $oneItem->img1: ''}}" required>
                                     </div>
@@ -67,7 +67,7 @@
                                         @if(!empty($oneItem->img2))
                                             <img style="width: 150px; height:auto" src="{{$oneItem->img2}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
                                         @else
-                                            <img style="width: 150px; height:auto" src="{{url('admin/images/no-image.jpg')}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
+                                            <img style="width: 150px; height:auto" src="{{url('admin/images/no-image.jpg')}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img2')">
                                         @endif
                                         <input type="hidden" name="img2" id="hd_img" value="{{!empty($oneItem->img2)? $oneItem->img2: ''}}" required>
                                     </div>
@@ -76,7 +76,7 @@
                                         @if(!empty($oneItem->img3))
                                             <img style="width: 150px; height:auto" src="{{$oneItem->img3}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
                                         @else
-                                            <img style="width: 150px; height:auto" src="{{url('admin/images/no-image.jpg')}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
+                                            <img style="width: 150px; height:auto" src="{{url('admin/images/no-image.jpg')}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img3')">
                                         @endif
                                         <input type="hidden" name="img3" id="hd_img" value="{{!empty($oneItem->img3)? $oneItem->img3: ''}}" required>
                                     </div>

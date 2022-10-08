@@ -8,22 +8,22 @@
 		<div class="row">
 			<section class="col-sm-7 col-md-8 col-lg-8">
 				<div class="intro">
-					<h2>Chào mừng bạn đến với Phúc Diễn</h2>
-					<p>Ở đây chúng tôi chuyên sản xuất và cung cấp bao bì</p>
+					<h2>{{__('mes.welcome')}}</h2>
+					<p>{{__('mes.welcome_content')}}</p>
 					<ul class="row">
 						<li class="col-sm-4">
 							<i class="fa fa-life-ring"></i>
-							<h3>Hỗ trợ tận tâm</h3>
-							<p>Chúng tôi luôn hỗ trợ tận tâm</p>
+							<h3>{{__('mes.dedicate')}}</h3>
+							<p>{{__('mes.dedicate_content')}}</p>
 						</li>
 						<li class="col-sm-4">
 							<i class="ti-marker-alt"></i>
-							<h3>Dễ dàng đặt hàng</h3>
-							<p>Đặt hàng nhanh chóng, giao hàng tận nhà</p>
+							<h3>{{__('mes.easytobuy')}}</h3>
+							<p>{{__('mes.easytobuy_content')}}</p>
 						</li>
 						<li class="col-sm-4">
 							<i class="ti-email"></i>
-							<h3>Liên hệ với chúng tôi</h3>
+							<h3>{{__('mes.contact_us')}}</h3>
 							<p>24/7</p>
 						</li>
 					</ul>
@@ -31,7 +31,7 @@
 			</section>
 			<section class="col-sm-5 col-md-4 col-lg-4">
 				<div class="get-quote-form">
-					<h2>Liên hệ với chúng tôi</h2>
+					<h2>{{__('mes.contact_us')}}</h2>
 					<form id="get-quote">
 						<div>
 							<input type="text" required oninvalid="this.setCustomValidity('Vui lòng cho chúng tôi biết tên của bạn"
@@ -82,7 +82,7 @@
 					@if(!str_contains ( $_COOKIE["product_cart"] , $item->product->id ))
 					<button class="btn-product text-center add-cart w-100" id="addcart{{$item->product->id}}" value="{{$item->product->id}}">{{__('mes.add')}}</button>
 					@else
-					<button class="btn-product text-center add-cart w-100" id="addcart{{$item->product->id}}" value="{{$item->product->id}}">Bỏ thêm vào giỏ</button>
+					<button class="btn-product text-center add-cart w-100" id="addcart{{$item->product->id}}" value="{{$item->product->id}}">{{__('mes.remove')}}</button>
 					@endif
 					@else
 					<button class="btn-product text-center add-cart w-100" id="addcart{{$item->product->id}}" value="{{$item->product->id}}">{{__('mes.add')}}</button>
@@ -95,20 +95,6 @@
 			@endif
 		</div>
 	</div>
-	<script>
-			$(".add-cart" ).click(function() {
-				var id = this.value;
-			$.ajax({                                      
-			url: '/page/add-cart',              
-			type: "post",          
-			data: {id:id,"_token":"{{ csrf_token() }}"},              
-			success: function()
-			{ 
-				$('#addcart'+id).html("Đã thêm vào giỏ");
-			},
-		});
-		});
-	</script>
 </div>
 
 
