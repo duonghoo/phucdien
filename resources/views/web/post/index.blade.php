@@ -71,7 +71,6 @@
                     @endif     --}}
                     <div class="single-post">
                         <div class="blog-img">
-                            <h1>Giới thiệu sản phẩm</h1>
                             <a href="#">
                                 {!! genImage($oneItem->thumbnail, 750, 313, 'img-responsive', $oneItem->title) !!}
                             </a>
