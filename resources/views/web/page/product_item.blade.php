@@ -9,7 +9,7 @@
         </div>
         <div class="col-lg-8 mt-4 pe-lg-0 bg-white1 rounded-2">
 
-            <h1 class="fs-28 pt-2 ps-2 text-upcase">Sản phẩm</h1>
+            <h1 class="fs-28 pt-2 text-upcase">{!! $oneItem->title !!}</h1>
             <div class="d-flex flex-wrap">
                 {{-- <p class="mb-0 time-of-match text-grey3">{{$time}}</p> --}}
                 {{-- <div class="ms-0 mb-3 ms-lg-auto me-3">@include('web.block._vote', ['data' => $oneItem])</div> --}}
@@ -35,7 +35,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-6">
-                                <div class="blog-title"> <p class="fs-16 m-0 p-0">{{$oneItem->title}}</p></div>
+                                {{-- <div class="blog-title"> <p class="fs-16 m-0 p-0">{{$oneItem->title}}</p></div> --}}
                                 <div class="code-product">Mã sản phầm: <span>{{$oneItem->sku}}</span></div>
                                 @php
                                     $color = json_decode($oneItem->color);
@@ -64,6 +64,15 @@
                         </div>
                     </div>   
                 </div>
+
+                
+                <div class="content">
+                    <h1>Phần giới thiệu</h1>
+                    <p>
+                        {!! $oneItem->description !!}
+                    </p>
+                </div>
+
             </div>
         </div>
         @include('web.block._sidebar')
