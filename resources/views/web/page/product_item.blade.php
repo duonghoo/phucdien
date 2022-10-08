@@ -46,7 +46,7 @@
                                             <span class="color{{$key}}" style="display:inline-block; width: 13px; height: 13px; background-color: {{$cl}}; border-radius: 20%"></span>
                                         @endforeach 
                                     @else
-                                    <span>Liên hệ</span>
+                                    <span class="h5 fs-16" style="color: red">Liên hệ</span>
                                     @endif
 
                                 </div>
@@ -56,9 +56,12 @@
                                     @if(!empty($oneItem->price))
                                         {{number_format($oneItem->price, 0, '', ',')}}
                                     @else 
-                                    <span>Liên hệ</span>
+                                    <span class="h5 fs-20" style="color: red">Liên hệ</span>
                                     @endif
 
+                                </div>
+                                <div class="btn bg_primary text-white1 p-2 mt-2">
+                                    HOTLINE: {!! getSiteSetting('site_hotline') !!}
                                 </div>
                             </div>
                         </div>
@@ -66,8 +69,8 @@
                 </div>
 
                 
-                <div class="content">
-                    <h1>Phần giới thiệu</h1>
+                <div class="content border">
+                    <h2>Mô tả</h2>
                     <p>
                         {!! $oneItem->description !!}
                     </p>
