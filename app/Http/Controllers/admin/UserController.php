@@ -35,8 +35,6 @@ class UserController extends Controller
         }
         if (!empty(Request::post())) {
             $post_data = Request::post();
-            if(empty($post_data['email']))
-                $post_data['email'] = $post_data['username'].'@forextradingvn.top';
             if (!empty($post_data['password'])) $post_data['password'] = bcrypt($post_data['password']);
             else unset($post_data['password']);
             $post_data['option'] = json_encode($post_data['option']);

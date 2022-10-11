@@ -20,14 +20,16 @@ use Cache;
 class PostController extends Controller
 {
     public function index($slug, $id) {
+        // $search = isset($_GET['product_search']) ? $_GET['product_search'] : null;
         $data['page'] = $page = isset($_GET['page']) ? $_GET['page'] : 1;
-        $key = md5('post-'.$id.'-categories-user-tags-product');
-        if(Cache::has($key)){
-            $oneItem = Cache::get($key);
-        }else{
+        // $key = md5('post-'.$id.'-categories-user-tags-product');
+        // if(Cache::has($key)){
+        //     $oneItem = Cache::get($key);
+        // }else{
             $oneItem = Post::with(['categories','user', 'tags', 'product'])->where('id',$id)->first();
-            Cache::set($key, $oneItem, now()->addHours(24));
-        }
+            
+        //     Cache::set($key, $oneItem, now()->addHours(24));
+        // }
         
         if (empty($oneItem) || $oneItem->status == 0 || strtotime($oneItem->displayed_time) > time())
         {

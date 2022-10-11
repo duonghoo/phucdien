@@ -67,10 +67,10 @@ class Post extends Model
     }
 
     static function getPosts($params) {
-        $key_cache = md5(serialize($params));
-        if(Cache::has($key_cache)){
-            return Cache::get($key_cache);
-        }
+        // $key_cache = md5(serialize($params));
+        // if(Cache::has($key_cache)){
+        //     return Cache::get($key_cache);
+        // }
         extract($params);
         $data = self::where([
             'status' => 1,
@@ -109,6 +109,9 @@ class Post extends Model
         if(isset($exclude)){
             $data = $data->whereNotIn('post.id', $exclude);
         }
+        if (isset($search)) {
+            $data = $data->where('title', 'like', "%$search%");
+        }
         $offset = $offset ?? 0;
         $limit = $limit ?? 10;
 
@@ -116,15 +119,15 @@ class Post extends Model
             ->offset($offset)
             ->limit($limit)
             ->get();
-        Cache::set($key_cache, $data, now()->addHours(12));
+        // Cache::set($key_cache, $data, now()->addHours(12));
         return $data;
     }
 
     static function getCount($params) {
-        $key_cache = md5(serialize($params).'count');
-        if(Cache::has($key_cache)){
-            return Cache::get($key_cache);
-        }
+        // $key_cache = md5(serialize($params).'count');
+        // if(Cache::has($key_cache)){
+        //     return Cache::get($key_cache);
+        // }
         extract($params);
         $data = self::where([
             'status' => 1,
@@ -151,7 +154,7 @@ class Post extends Model
             $data = $data->whereNotIn('post.id', $exclude);
         }
         $count_data = $data->count();
-        Cache::set($key_cache, $count_data, now()->addHours(12));
+        // Cache::set($key_cache, $count_data, now()->addHours(12));
 
         return $count_data;
     }

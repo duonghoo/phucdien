@@ -300,6 +300,18 @@ $('.img-product').on('click', function () {
 
 
 $('#get-quote').on('submit', function (e) {
+  $.Toast("Thành công", "Cảm ơn bạn đã liên hệ. Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất", "success", {
+    has_icon: true,
+    has_close_btn: true,
+    stack: true,
+    fullscreen: true,
+    timeout: 8000,
+    sticky: false,
+    has_progress: true,
+    rtl: false,
+  });
+
+  
   e.preventDefault();
   let form_data = {};
   $('#get-quote input, #get-quote select, #get-quote textarea').each((i, item) => {
@@ -311,18 +323,13 @@ $('#get-quote').on('submit', function (e) {
     data: form_data,
     type: 'POST',
   }).done((res) => {
-    console.log(res);
-    $.Toast("Thành công", "Cảm ơn bạn đã liên hệ. Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất", "success", {
-      has_icon: true,
-      has_close_btn: true,
-      stack: true,
-      fullscreen: true,
-      timeout: 8000,
-      sticky: false,
-      has_progress: true,
-      rtl: false,
-    });
+    $('input[name="name"]').val('');
+    $('input[name="email"]').val('');
+    $('input[name="ph-no"]').val('');
+    $('select[name="product"]').val('');
+    $('textarea[name="content"]').val('');
 
+  
   }).fail((e) => {
     $.Toast("Lỗi", "Vui lòng kiểm tra thông tin đã nhập hoặc lỗi của chúng tôi!", "error", {
       has_icon: true,
@@ -361,48 +368,7 @@ function eraseCookie(name) {
 }
 
 cart_count();
-
-$('.add-cart').on('click', function (e) {
-  e.preventDefault();
-  if($(this).text() == 'Bỏ thêm vào giỏ')
-  {
-    $(this).text('Thêm vào giỏ');
-    
-    let prd_id = $(this).attr('value');
-    let arr = getCookie('product_cart');
-    if (arr) {
-      arr = JSON.parse(arr);
-      let new_arr = arr.filter((value, index, arr) => {
-        return value != prd_id;
-      })
-      setCookie('product_cart', JSON.stringify(new_arr), 1);
-      $(this).closest("tr").remove();
-      cart_count();
-    }
-  }
-  else{
-    $(this).text('Bỏ thêm vào giỏ');
-    let product_id = $(this).attr('value');
-    let arr = getCookie('product_cart');
-    if (arr) {
-      arr = JSON.parse(arr);
-      arr.push(product_id);
-      setCookie('product_cart', JSON.stringify(arr), 1);
-  
-    } else {
-      let arr = [];
-      arr.push(product_id);
-      setCookie('product_cart', JSON.stringify(arr), 1);
-  
-    }
-    cart_count();
-
-  
-  }
- 
-
-})
-
+//
 function cart_count() {
   let count = getCookie('product_cart');
   if (count) {
@@ -429,3 +395,9 @@ $('.remove-cart').on('click', function (e) {
     cart_count();
   }
 });
+
+
+function isNumber(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+

@@ -47,10 +47,12 @@
 {{--                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link {{ request()->is('admin/post/da-ga') && isset($_GET['status']) && $_GET['status'] == 0 ? 'c-active' : '' }}" href="/admin/post/da-ga?status=0"><span class="c-sidebar-nav-icon"></span> Bài viết đá gà lưu nháp</a></li>--}}
                 <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/admin/post/update"><span class="c-sidebar-nav-icon"></span> Thêm mới</a></li>
                 <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/admin/tag"><span class="c-sidebar-nav-icon"></span> Quản lý tag</a></li>
-                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/admin/product?page=1"><span class="c-sidebar-nav-icon"></span> Quản lý sản phầm</a></li>
                 {{-- <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link {{request()->is('admin/video') ? 'c-active' : ''}}" href="{{route('video').'?is_status=1'}}"><span class="c-sidebar-nav-icon"></span> Quản lý video</a></li> --}}
             </ul>
         </li>
+        <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/admin/product?page=1"><svg class="c-sidebar-nav-icon">
+            <use xlink:href="/admin/images/icon-svg/free.svg#cil-notes"></use></svg>Quản lý sản phẩm</a></li>
+
         @endif
         @if(!empty($permission['page']))
             <li class="c-sidebar-nav-item c-sidebar-nav-dropdown @if(getCurrentController() == 'page') c-show @endif">

@@ -8,7 +8,8 @@
                     <div class="row">
                         <div class="col-sm-8">
                             <div class="card">
-                                <div class="card-header"><strong>{{!empty($oneItem) ? 'Chỉnh sửa' : 'Thêm mới'}} sản phầm</strong>{!!!empty($oneItem) ? ' - <a rel="nofollow" target="_blank" href="'.getUrlStaticPage($oneItem).'">'.$oneItem->title.'</a>' : ''!!}</div>
+                                {{-- <div class="card-header"><strong>{{!empty($oneItem) ? 'Chỉnh sửa' : 'Thêm mới'}} sản phầm</strong>{!!!empty($oneItem) ? ' - <a rel="nofollow" target="_blank" href="'.getUrlStaticPage($oneItem).'">'.$oneItem->title.'</a>' : ''!!}</div> --}}
+                                <div class="card-header"><strong>{{!empty($oneItem) ? 'Chỉnh sửa' : 'Thêm mới'}} sản phầm</strong>{!!!empty($oneItem) ? ' - <span>'.$oneItem->title.'</span>' : ''!!}</div>
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-sm-12">
@@ -18,11 +19,11 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>SKU</label>
-                                                <input class="form-control" name="sku" value="{{!empty($oneItem->sku) ? $oneItem->sku : ''}}" type="text" placeholder="SKU">
+                                                <input class="form-control" required name="sku" value="{{!empty($oneItem->sku) ? $oneItem->sku : ''}}" type="text" placeholder="SKU">
                                             </div>
                                             <div class="form-group">
-                                                <label>Mô tả</label>
-                                                <textarea class="form-control" rows="4" name="description">{{!empty($oneItem->description) ? $oneItem->description : ''}}</textarea>
+                                                <label >Mô tả</label>
+                                                <textarea id="full-featured" class="form-control" rows="4" name="description">{{!empty($oneItem->description) ? $oneItem->description : ''}}</textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label>Giá</label>
@@ -57,7 +58,7 @@
                                         @if(!empty($oneItem->img1))
                                             <img style="width: 150px; height:auto" src="{{$oneItem->img1}}" id="lbl_img1" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
                                         @else
-                                            <img style="width: 150px; height:auto" src="{{url('admin/images/no-image.jpg')}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
+                                            <img style="width: 150px; height:auto" src="{{url('admin/images/no-image.jpg')}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img1')">
                                         @endif
                                         <input type="hidden" name="img1" id="hd_img1" value="{{!empty($oneItem->img1)? $oneItem->img1: ''}}" required>
                                     </div>
@@ -66,7 +67,7 @@
                                         @if(!empty($oneItem->img2))
                                             <img style="width: 150px; height:auto" src="{{$oneItem->img2}}" id="lbl_img2" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
                                         @else
-                                            <img style="width: 150px; height:auto" src="{{url('admin/images/no-image.jpg')}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
+                                            <img style="width: 150px; height:auto" src="{{url('admin/images/no-image.jpg')}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img2')">
                                         @endif
                                         <input type="hidden" name="img2" id="hd_img2" value="{{!empty($oneItem->img2)? $oneItem->img2: ''}}" required>
                                     </div>
@@ -75,7 +76,7 @@
                                         @if(!empty($oneItem->img3))
                                             <img style="width: 150px; height:auto" src="{{$oneItem->img3}}" id="lbl_img3" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
                                         @else
-                                            <img style="width: 150px; height:auto" src="{{url('admin/images/no-image.jpg')}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
+                                            <img style="width: 150px; height:auto" src="{{url('admin/images/no-image.jpg')}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img3')">
                                         @endif
                                         <input type="hidden" name="img3" id="hd_img3" value="{{!empty($oneItem->img3)? $oneItem->img3: ''}}" required>
                                     </div>

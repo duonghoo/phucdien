@@ -38,7 +38,7 @@ function getUrlStaticPage($item, $is_amp = '') {
     if ($is_amp)
         $slug = "/amp/";
     $slug .= "$item->slug.html";
-
+    
     return url($slug);
 }
 

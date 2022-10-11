@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Redirect;
 class CategoryController extends Controller
 {
     public function index($slug, $id, $page = 1) {
+        $search = isset($_GET['product_search']) ? $_GET['product_search'] : null;
         $oneItem = Category::find($id);
         if (empty($oneItem) || $oneItem->status == 0)
             return Redirect::to(url('404.html'));
@@ -32,6 +33,7 @@ class CategoryController extends Controller
         $limit = 10;
 
         $params = [
+            'search' => $search,
             'info_category' =>true,
             'author' =>true,
             'category_id' => $id,

@@ -50,7 +50,6 @@ class ProductController extends Controller
         $pagination = (int) ceil($count/$limit);
         $data['pagination'] = $pagination;
         $data['page'] = $page;
-
         $data['product'] = Product::getProduct($params);
 
         $date = date('Y-m-d H:i:s l');
@@ -101,13 +100,13 @@ class ProductController extends Controller
     }
 
     public function Product($product){
-        $key = md5('product-item-'.$product);
-        if(Cache::has($key)){
-            $oneItem = Cache::get($key);
-        }else{
+        // $key = md5('product-item-'.$product);
+        // if(Cache::has($key)){
+        //     $oneItem = Cache::get($key);
+        // }else{
             $oneItem = Product::with(['user'])->where('id',$product)->first();
-            Cache::set($key, $oneItem, now()->addHours(24));
-        }
+        //     Cache::set($key, $oneItem, now()->addHours(24));
+        // }
 
         if (empty($oneItem) || $oneItem->status == 0)
         {
@@ -165,13 +164,13 @@ class ProductController extends Controller
     }
 
     public function ajax_list(){
-        $key = md5('product-item-all');
-        if(Cache::has($key)){
-            $oneItem = Cache::get($key);
-        }else{
+        // $key = md5('product-item-all');
+        // if(Cache::has($key)){
+        //     $oneItem = Cache::get($key);
+        // }else{
             $oneItem = Product::orderBy('id', 'desc')->get();
-            Cache::set($key, $oneItem, now()->addHours(24));
-        }
+        //     Cache::set($key, $oneItem, now()->addHours(24));
+        // }
         return response()->json($oneItem);
     }
 

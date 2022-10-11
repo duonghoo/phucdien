@@ -15,6 +15,7 @@
                               </tr>
                             </thead>
                             <tbody>
+                            @if(!empty($oneItem))
                             @foreach($oneItem as $prd)
                               <tr>
                                    @php $i=1; @endphp
@@ -47,7 +48,8 @@
                                 <td class="w-25">{{$prd->price ?? 'Liên hệ'}}</td>
                                 <td class="w-5"><button class="remove-cart" data-id="{{$prd->id}}">x</button></td>
                               </tr> 
-                              @endforeach     
+                              @endforeach 
+                              @endif    
                             </tbody>
                           </table>
        </section>
@@ -57,19 +59,22 @@
                      <h2>Liên hệ hỏi giá</h2>
                      <form id="get-quote">
                             <div>
-                                   <input type="text" name="name" placeholder="Tên của bạn" />
+                                   <input type="text" required oninvalid="this.setCustomValidity('Vui lòng cho chúng tôi biết tên của bạn"
+                                   oninput="this.setCustomValidity('')" name="name" placeholder="Tên của bạn" />
                             </div>
                             <div>
-                                   <input type="text" name="email" placeholder="Email" />
+                                   <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required oninvalid="this.setCustomValidity('Vui lòng điền email và nhập đúng định dạng')" oninput="this.setCustomValidity('')" name="email" placeholder="Email" />
                             </div>
                             <div>
-                                   <input type="text" name="ph-no" placeholder="Số điện thoại" />
+                                   <input type="text"  placeholder="123-45-678" pattern="[0-9]{10}" id="ph-no" name="ph-no" required="required" oninvalid="this.setCustomValidity('Vui lòng nhập số và không để trống')" oninput="this.setCustomValidity('')" />
                             </div>
+                          
                             <div>
-                                   <textarea name="content" rows="1" cols="1" placeholder="Lời nhắn"></textarea>
+                                   <textarea required oninvalid="this.setCustomValidity('Vui lòng để lại lời nhắn cho chúng tôi"
+                                   oninput="this.setCustomValidity('')" name="content" rows="1" cols="1" placeholder="Lời nhắn"></textarea>
                             </div>
                             <div class="text-center">
-                                   <input type="submit" class="btn-default" value="Gửi mail" />
+                                   <input type="submit" class="btn-default mail-btn" value="Gửi mail" />
                             </div>
                      </form>
               </div>

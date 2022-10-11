@@ -15,22 +15,24 @@
                     <a href="{{$breadcrumb[1]['item']}}" class="d-block ms-2 text_primary fs-16" style="padding-left:0.5rem; border-bottom:1px $primary_color" title="">{{$breadcrumb[1]['name']}} </a>
                 </div>
                 <h2>{{ $oneItem->meta_title }}</h2>
+                
             <div class="row">
                 <div class="col-sm-8">
+                    {{-- @if(!empty($oneItem->product))
                     <div class="single-post">
                         <div class="row">
                             <div class="col-sm-12 col-md-6">
-                                {!! genImage($oneItem->product->thumbnail, 750, 400, 'img-responsive thumbnail-root', $oneItem->title) ?? ''!!}
+                                {!! genImage($oneItem->product->thumbnail ?? "", 750, 400, 'img-responsive thumbnail-root', $oneItem->title) ?? ''!!}
                                 <div class="d-flex product-imgs">
-                                    {!! genImage($oneItem->product->thumbnail, 750, 400, 'img-responsive img-product img-product-active', $oneItem->title) ?? '' !!}
+                                    {!! genImage($oneItem->product->thumbnail ?? "", 750, 400, 'img-responsive img-product img-product-active', $oneItem->title) ?? '' !!}
                                     @if(!empty($oneItem->product->img1))
-                                        {!! genImage($oneItem->product->img1, 750, 400, 'img-responsive img-product', $oneItem->title) ?? ''!!}
+                                        {!! genImage($oneItem->product->img1 ?? "", 750, 400, 'img-responsive img-product', $oneItem->title) ?? ''!!}
                                     @endif
                                     @if(!empty($oneItem->product->img2))
-                                        {!! genImage($oneItem->product->img2, 750, 400, 'img-responsive img-product', $oneItem->title) ?? ''!!}
+                                        {!! genImage($oneItem->product->img2 ?? "", 750, 400, 'img-responsive img-product', $oneItem->title) ?? ''!!}
                                     @endif
                                     @if(!empty($oneItem->product->img3))
-                                        {!! genImage($oneItem->product->img3, 750, 400, 'img-responsive img-product', $oneItem->title) ?? ''!!}
+                                        {!! genImage($oneItem->product->img3 ?? "", 750, 400, 'img-responsive img-product', $oneItem->title) ?? ''!!}
                                     @endif
                                 </div>
                             </div>
@@ -61,8 +63,12 @@
 
                                 </div>
                             </div>
+                           
                         </div>
-                    </div>        
+                      
+
+                    </div>    
+                    @endif     --}}
                     <div class="single-post">
                         <div class="blog-img">
                             <a href="#">

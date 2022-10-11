@@ -99,13 +99,13 @@
                                                 <label>
                                                     Từ khóa SEO
                                                 </label>
-                                                <input class="form-control" name="main_keyword" value="{{!empty($oneItem->main_keyword) ? $oneItem->main_keyword : ''}}" type="text" placeholder="Từ khóa SEO">
+                                                <input class="form-control" name="main_keyword" required value="{{!empty($oneItem->main_keyword) ? $oneItem->main_keyword : ''}}" type="text" placeholder="Từ khóa SEO">
                                             </div>
                                             <div class="form-group">
                                                 <label>
                                                     Từ khóa liên quan
                                                 </label>
-                                                <input class="form-control" name="meta_keyword" value="{{!empty($oneItem->meta_keyword) ? $oneItem->meta_keyword : ''}}" type="text" placeholder="Từ khóa liên quan">
+                                                <input class="form-control" name="meta_keyword" required value="{{!empty($oneItem->meta_keyword) ? $oneItem->meta_keyword : ''}}" type="text" placeholder="Từ khóa liên quan">
                                             </div>
                                         </div>
                                     </div>
@@ -120,7 +120,7 @@
                                             <div class="row">
                                                 <div class="col-sm-12">
 
-                                                    <div class="form-group">
+                                                    <div class="form-group" hidden>
                                                         <label>Sản phẩm</label>
                                                         @if(!$product->isEmpty())
                                                         <select name="product_id" class="form-control">
@@ -138,7 +138,7 @@
 
                                                     <div class="form-group">
                                                         <label>Chuyên mục</label>
-                                                        <div id="select-multi-category" data-post-id="{{!empty($oneItem->id) ? $oneItem->id : 0}}"></div>
+                                                        <div id="select-multi-category" data-post-id="{{!empty($oneItem->id) ? $oneItem->id : 4}}"></div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Tag</label>

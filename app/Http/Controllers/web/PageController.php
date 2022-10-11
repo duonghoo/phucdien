@@ -149,8 +149,10 @@ class PageController extends Controller
                 $product = json_decode($product);
             }
         }
-        
+        if(empty($product)) return view('web.page.cart',['oneItem' => null]);
+
         $data['oneItem'] = Product::whereIn('id', $product)->get();
+        
         return view('web.page.cart',$data);
     }
 

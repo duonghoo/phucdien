@@ -19,23 +19,7 @@
                 </div>
                 <a href="/lien-he.html" class="btn-default">Liên hệ</a>
             </div>
-            <div class="col-md-5 col-lg-5 col-md-offset-2 col-lg-offset-2">
-                <h2><span>Hotline 2</span></h2>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <p>{!! getSiteSetting('address') !!}
-                            {{-- <br/>Zip - 382481 --}}
-                        </p>
-                    </div>
-                    <div class="col-sm-6">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-phone"></i> {!! getSiteSetting('site_hotline') !!}</a></li>
-                            <li class="text-nowrap"><a href="#"><i class="ti-email"></i> {!! getSiteSetting('site_email') !!}</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <a href="/lien-he.html" class="btn-default">Liên hệ</a>
-            </div>
+
         </div>
         <div class="row">
             <div class="col-md-8 col-lg-8">
