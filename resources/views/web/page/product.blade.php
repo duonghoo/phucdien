@@ -15,25 +15,23 @@
                     <div class="main-content mr-md-4 px-2 p-md-0">
                         @if (!empty($product))
                             @foreach ($product as $item)
-                                <div class="card col col-sm-12 col-md-3 mt-2">
+                                <div class="card col col-sm-12 col-md-4 mt-2">
                                     <div class="mx-1 content d-sm-block w-100">
                                         <a href="{{ getUrlProduct($item) }}">{!! genImage($item->thumbnail, 263, 263, 'img-responsive border-r1') !!}</a>
                                         <div class="card-body flex-column justify-content-center">
                                             <h5 class="card-title text-center fs-16"
                                                 style="margin-top:1rem; margin-bottom:1rem">{{ $item->title }}</h5>
-                                                
                                                 <div class="mx-2 mb-2">
                                                     @if(!empty($_COOKIE["product_cart"]))
                                                     @if(!str_contains ( $_COOKIE["product_cart"] , $item->id ))
-                                                    <button class="btn-product text-center add-cart w-100" id="addcart{{$item->id}}" value="{{$item->id}}">{{__('mes.add')}}</button>
+                                                    <button class="btn-product text-center add-cart w-100 fs-15" id="addcart{{$item->id}}" value="{{$item->id}}">{{__('mes.add')}}</button>
                                                     @else
-                                                    <button class="btn-product text-center add-cart w-100" id="addcart{{$item->id}}" value="{{$item->id}}">Bỏ thêm vào giỏ</button>
+                                                    <button class="btn-product text-center add-cart w-100 fs-15" id="addcart{{$item->id}}" value="{{$item->id}}">{{__('mes.remove')}}</button>
                                                     @endif
                                                     @else
-                                                    <button class="btn-product text-center add-cart w-100" id="addcart{{$item->id}}" value="{{$item->id}}">{{__('mes.add')}}</button>
+                                                    <button class="btn-product text-center add-cart w-100 fs-15" id="addcart{{$item->id}}" value="{{$item->id}}">{{__('mes.add')}}</button>
                                                     @endif
                                                 </div>
-
                                         </div>
                                     </div>
                                 </div>
