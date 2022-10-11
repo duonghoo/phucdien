@@ -74,7 +74,7 @@
 
 			  <div class="card col-12 col-md-6 col-lg-3 mb-5 mt-3" style="max-width: 50rem">
                 <div class="mx-1 content d-sm-block w-100">
-					<a href="{{getUrlPost($item)}}">{!! genImage($item->product->thumbnail, 400 , 400, 'img-responsive border-r1') !!}</a>
+					<a href="{{getUrlPost($item)}}">{!! genImage($item->product->thumbnail ?? "", 400 , 400, 'img-responsive border-r1') !!}</a>
                   <div class="card-body flex-column justify-content-center">
 					<a href="{{getUrlPost($item)}}"><h5 class="card-title text-center fs-16" style="margin-top:1rem; margin-bottom:1rem">{{$item->product->title}}</h5></a>
 					<div class="mx-2 mb-1">

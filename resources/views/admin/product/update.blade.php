@@ -23,7 +23,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label >Mô tả</label>
-                                                <textarea id="full-featured" required class="form-control" rows="4" name="description">{{!empty($oneItem->description) ? $oneItem->description : ''}}</textarea>
+                                                <textarea id="full-featured" class="form-control" rows="4" name="description">{{!empty($oneItem->description) ? $oneItem->description : ''}}</textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label>Giá</label>
