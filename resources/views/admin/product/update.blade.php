@@ -19,11 +19,11 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>SKU</label>
-                                                <input class="form-control" name="sku" value="{{!empty($oneItem->sku) ? $oneItem->sku : ''}}" type="text" placeholder="SKU">
+                                                <input class="form-control" required name="sku" value="{{!empty($oneItem->sku) ? $oneItem->sku : ''}}" type="text" placeholder="SKU">
                                             </div>
                                             <div class="form-group">
                                                 <label >Mô tả</label>
-                                                <textarea id="full-featured" class="form-control" rows="4" name="description">{{!empty($oneItem->description) ? $oneItem->description : ''}}</textarea>
+                                                <textarea id="full-featured" required class="form-control" rows="4" name="description">{{!empty($oneItem->description) ? $oneItem->description : ''}}</textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label>Giá</label>

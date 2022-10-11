@@ -329,17 +329,7 @@ $('#get-quote').on('submit', function (e) {
     $('select[name="product"]').val('');
     $('textarea[name="content"]').val('');
 
-    $.Toast("Thành công", "Cảm ơn bạn đã liên hệ. Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất", "success", {
-      has_icon: true,
-      has_close_btn: true,
-      stack: true,
-      fullscreen: true,
-      timeout: 8000,
-      sticky: false,
-      has_progress: true,
-      rtl: false,
-    });
-
+  
   }).fail((e) => {
     $.Toast("Lỗi", "Vui lòng kiểm tra thông tin đã nhập hoặc lỗi của chúng tôi!", "error", {
       has_icon: true,
