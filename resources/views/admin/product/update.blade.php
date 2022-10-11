@@ -55,29 +55,29 @@
                                     <div class="form-group col-6">
                                         <label>Ảnh mô tả 1</label>
                                         @if(!empty($oneItem->img1))
-                                            <img style="width: 150px; height:auto" src="{{$oneItem->img1}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
+                                            <img style="width: 150px; height:auto" src="{{$oneItem->img1}}" id="lbl_img1" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
                                         @else
                                             <img style="width: 150px; height:auto" src="{{url('admin/images/no-image.jpg')}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
                                         @endif
-                                        <input type="hidden" name="img1" id="hd_img" value="{{!empty($oneItem->img1)? $oneItem->img1: ''}}" required>
+                                        <input type="hidden" name="img1" id="hd_img1" value="{{!empty($oneItem->img1)? $oneItem->img1: ''}}" required>
                                     </div>
                                     <div class="form-group col-6">
                                         <label>Ảnh mô tả 2</label>
                                         @if(!empty($oneItem->img2))
-                                            <img style="width: 150px; height:auto" src="{{$oneItem->img2}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
+                                            <img style="width: 150px; height:auto" src="{{$oneItem->img2}}" id="lbl_img2" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
                                         @else
                                             <img style="width: 150px; height:auto" src="{{url('admin/images/no-image.jpg')}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
                                         @endif
-                                        <input type="hidden" name="img2" id="hd_img" value="{{!empty($oneItem->img2)? $oneItem->img2: ''}}" required>
+                                        <input type="hidden" name="img2" id="hd_img2" value="{{!empty($oneItem->img2)? $oneItem->img2: ''}}" required>
                                     </div>
                                     <div class="form-group col-6">
                                         <label>Ảnh mô tả 3</label>
                                         @if(!empty($oneItem->img3))
-                                            <img style="width: 150px; height:auto" src="{{$oneItem->img3}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
+                                            <img style="width: 150px; height:auto" src="{{$oneItem->img3}}" id="lbl_img3" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
                                         @else
                                             <img style="width: 150px; height:auto" src="{{url('admin/images/no-image.jpg')}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
                                         @endif
-                                        <input type="hidden" name="img3" id="hd_img" value="{{!empty($oneItem->img3)? $oneItem->img3: ''}}" required>
+                                        <input type="hidden" name="img3" id="hd_img3" value="{{!empty($oneItem->img3)? $oneItem->img3: ''}}" required>
                                     </div>
                                     <div class="form-group float-right col-12">
                                         <button type="submit" class="btn btn-primary">Lưu trữ</button>
