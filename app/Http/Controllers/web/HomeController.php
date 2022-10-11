@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Match;
 use App\Models\Post;
+use App\Models\Product;
 use Cache;
 
 class HomeController extends Controller
@@ -18,13 +19,13 @@ class HomeController extends Controller
         $data['loadmore'] = true;
 
         // bài viết sản phầm
-        $post_product_home = md5('post_product_home');
-        if(Cache::has($post_product_home)){
-            $data['product'] = Cache::get($post_product_home, now()->addHours(12));
-        }else{
-            $data['product'] = Post::with('product')->whereNotNull('product_id')->orderBy('displayed_time', 'DESC')->offset(0)->limit(8)->get();
-            Cache::set($post_product_home, $data['product']);
-        }
+        // $post_product_home = md5('post_product_home');
+        // if(Cache::has($post_product_home)){
+        //     $data['product'] = Cache::get($post_product_home, now()->addHours(12));
+        // }else{
+            $data['product'] = Product::orderBy('updated_at', 'DESC')->offset(0)->limit(8)->get();
+        //     Cache::set($post_product_home, $data['product']);
+        // }
 
         // dd($data['product']);
         

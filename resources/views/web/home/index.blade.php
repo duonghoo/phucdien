@@ -69,23 +69,24 @@
 			
 	
 			<h2 class="title ms-2" style="">Danh sách các sản phẩm</h2>
+		
 			@if(!empty($product))
 			@foreach ($product as $item)
 
 			  <div class="card col-12 col-md-6 col-lg-3 mb-5 mt-3" style="max-width: 50rem">
                 <div class="mx-1 content d-sm-block w-100">
-					<a href="{{getUrlPost($item)}}">{!! genImage($item->product->thumbnail ?? "", 400 , 400, 'img-responsive border-r1') !!}</a>
+					<a href="{{getUrlPost($item)}}">{!! genImage($item->thumbnail ?? "", 400 , 400, 'img-responsive border-r1') !!}</a>
                   <div class="card-body flex-column justify-content-center">
-					<a href="{{getUrlPost($item)}}"><h5 class="card-title text-center fs-16" style="margin-top:1rem; margin-bottom:1rem">{{$item->product->title ?? ""}}</h5></a>
+					<a href="{{getUrlPost($item)}}"><h5 class="card-title text-center fs-16" style="margin-top:1rem; margin-bottom:1rem">{{$item->title ?? ""}}</h5></a>
 					<div class="mx-2 mb-1">
 					@if(!empty($_COOKIE["product_cart"]))
-					@if(!str_contains ( $_COOKIE["product_cart"] , $item->product->id ))
-					<button class="btn-product text-center add-cart w-100" id="addcart{{$item->product->id}}" value="{{$item->product->id ?? ""}}">{{__('mes.add')}}</button>
+					@if(!str_contains ( $_COOKIE["product_cart"] , $item->id ))
+					<button class="btn-product text-center add-cart w-100" id="addcart{{$item->id}}" value="{{$item->id ?? ""}}">{{__('mes.add')}}</button>
 					@else
-					<button class="btn-product text-center add-cart w-100" id="addcart{{$item->product->id}}" value="{{$item->product->id ?? ""}}">{{__('mes.remove')}}</button>
+					<button class="btn-product text-center add-cart w-100" id="addcart{{$item->id}}" value="{{$item->id ?? ""}}">{{__('mes.remove')}}</button>
 					@endif
 					@else
-					<button class="btn-product text-center add-cart w-100" id="addcart{{$item->product->id}}" value="{{$item->product->id ?? ""}}">{{__('mes.add')}}</button>
+					<button class="btn-product text-center add-cart w-100" id="addcart{{$item->id}}" value="{{$item->id ?? ""}}">{{__('mes.add')}}</button>
 					@endif
 					</div>
                   </div>
