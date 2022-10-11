@@ -14,7 +14,7 @@
                     <a href="/" class="d-block ms-2 text_primary fs-16" style="padding-left:1rem" title="">Trang chủ  / </a>
                     <a href="{{$breadcrumb[1]['item']}}" class="d-block ms-2 text_primary fs-16" style="padding-left:0.5rem; border-bottom:1px $primary_color" title="">{{$breadcrumb[1]['name']}} </a>
                 </div>
-                <h2>{{ $oneItem->meta_title }}</h2>
+                <h2>{!! $oneItem->meta_title ?? ""!!}</h2>
                 
             <div class="row">
                 <div class="col-sm-8">
@@ -72,7 +72,7 @@
                     <div class="single-post">
                         <div class="blog-img">
                             <a href="#">
-                                {!! genImage($oneItem->thumbnail, 750, 313, 'img-responsive', $oneItem->title) !!}
+                                {!! genImage($oneItem->thumbnail ?? "", 750, 313, 'img-responsive', $oneItem->title) !!}
                             </a>
                             <div class="blog-icon"><img src="images/example/icon2.png"></div>
                         </div>
