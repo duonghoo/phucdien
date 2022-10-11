@@ -138,7 +138,7 @@
 
                                                     <div class="form-group">
                                                         <label>Chuyên mục</label>
-                                                        <div id="select-multi-category" data-post-id="{{!empty($oneItem->id) ? $oneItem->id : 0}}"></div>
+                                                        <div id="select-multi-category" data-post-id="{{!empty($oneItem->id) ? $oneItem->id : 4}}"></div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Tag</label>
