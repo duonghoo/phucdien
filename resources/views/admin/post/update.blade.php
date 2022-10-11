@@ -40,7 +40,7 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Nội dung</label>
-                                                        <textarea id="full-featured" class="form-control" required name="content">{{!empty($oneItem->content) ? $oneItem->content : ''}}</textarea>
+                                                        <textarea id="full-featured" class="form-control" name="content">{{!empty($oneItem->content) ? $oneItem->content : ''}}</textarea>
                                                     </div>
                                                 </div>
                                             </div>
