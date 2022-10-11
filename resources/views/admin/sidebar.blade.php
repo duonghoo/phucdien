@@ -51,7 +51,7 @@
             </ul>
         </li>
         <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/admin/product?page=1"><svg class="c-sidebar-nav-icon">
-            <use xlink:href="/admin/images/icon-svg/free.svg#cil-notes"></use></svg>Quản lý sản phầm</a></li>
+            <use xlink:href="/admin/images/icon-svg/free.svg#cil-notes"></use></svg>Quản lý sản phẩm</a></li>
 
         @endif
         @if(!empty($permission['page']))
