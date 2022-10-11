@@ -80,9 +80,9 @@
                     @foreach ($product as $item)
                         <div class="card col-12 col-md-6 col-lg-3 mb-5 mt-3" style="max-width: 50rem">
                             <div class="mx-1 content d-sm-block w-100">
-                                <a href="{{ getUrlPost($item) }}">{!! genImage($item->thumbnail ?? '', 400, 400, 'img-responsive border-r1') !!}</a>
+                                <a href="{{ getUrlProduct($item) }}">{!! genImage($item->thumbnail ?? '', 400, 400, 'img-responsive border-r1') !!}</a>
                                 <div class="card-body flex-column justify-content-center">
-                                    <a href="{{ getUrlPost($item) }}">
+                                    <a href="{{ getUrlProduct($item) }}">
                                         <h5 class="card-title text-center fs-16"
                                             style="margin-top:1rem; margin-bottom:1rem">{{ $item->title ?? '' }}</h5>
                                     </a>
