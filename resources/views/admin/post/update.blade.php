@@ -120,7 +120,7 @@
                                             <div class="row">
                                                 <div class="col-sm-12">
 
-                                                    {{-- <div class="form-group">
+                                                    <div class="form-group" hidden>
                                                         <label>Sản phẩm</label>
                                                         @if(!$product->isEmpty())
                                                         <select name="product_id" class="form-control">
@@ -134,7 +134,7 @@
                                                             @endforeach
                                                         </select>
                                                         @endif
-                                                    </div> --}}
+                                                    </div>
 
                                                     <div class="form-group">
                                                         <label>Chuyên mục</label>
