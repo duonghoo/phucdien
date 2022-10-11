@@ -300,6 +300,18 @@ $('.img-product').on('click', function () {
 
 
 $('#get-quote').on('submit', function (e) {
+  $.Toast("Thành công", "Cảm ơn bạn đã liên hệ. Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất", "success", {
+    has_icon: true,
+    has_close_btn: true,
+    stack: true,
+    fullscreen: true,
+    timeout: 8000,
+    sticky: false,
+    has_progress: true,
+    rtl: false,
+  });
+
+  
   e.preventDefault();
   let form_data = {};
   $('#get-quote input, #get-quote select, #get-quote textarea').each((i, item) => {
