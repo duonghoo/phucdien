@@ -36,7 +36,7 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Mô tả</label>
-                                                        <textarea class="form-control tiny-featured" required rows="4" name="description">{{!empty($oneItem->description) ? $oneItem->description : ''}}</textarea>
+                                                        <textarea class="form-control tiny-featured" rows="4" name="description">{{!empty($oneItem->description) ? $oneItem->description : ''}}</textarea>
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Nội dung</label>
