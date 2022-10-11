@@ -33,10 +33,10 @@ class Product extends Model
     }
 
     static function getProduct($params) {
-        $key_cache = md5('product-'.serialize($params));
-        if(Cache::has($key_cache)){
-            return Cache::get($key_cache);
-        }
+        //$key_cache = md5('product-'.serialize($params));
+        // if(Cache::has($key_cache)){
+            // return Cache::get($key_cache);
+        // }
         extract($params);
         $data = self::where([
             'status' => 1,
@@ -58,7 +58,7 @@ class Product extends Model
             ->offset($offset)
             ->limit($limit)
             ->get();
-        Cache::set($key_cache, $data, now()->addHours(12));
+        //Cache::set($key_cache, $data, now()->addHours(12));
         return $data;
     }
 

@@ -50,7 +50,6 @@ class ProductController extends Controller
         $pagination = (int) ceil($count/$limit);
         $data['pagination'] = $pagination;
         $data['page'] = $page;
-
         $data['product'] = Product::getProduct($params);
 
         $date = date('Y-m-d H:i:s l');
