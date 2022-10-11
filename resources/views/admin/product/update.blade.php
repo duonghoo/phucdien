@@ -8,7 +8,8 @@
                     <div class="row">
                         <div class="col-sm-8">
                             <div class="card">
-                                <div class="card-header"><strong>{{!empty($oneItem) ? 'Chỉnh sửa' : 'Thêm mới'}} sản phầm</strong>{!!!empty($oneItem) ? ' - <a rel="nofollow" target="_blank" href="'.getUrlStaticPage($oneItem).'">'.$oneItem->title.'</a>' : ''!!}</div>
+                                {{-- <div class="card-header"><strong>{{!empty($oneItem) ? 'Chỉnh sửa' : 'Thêm mới'}} sản phầm</strong>{!!!empty($oneItem) ? ' - <a rel="nofollow" target="_blank" href="'.getUrlStaticPage($oneItem).'">'.$oneItem->title.'</a>' : ''!!}</div> --}}
+                                <div class="card-header"><strong>{{!empty($oneItem) ? 'Chỉnh sửa' : 'Thêm mới'}} sản phầm</strong>{!!!empty($oneItem) ? ' - <span>'.$oneItem->title.'</span>' : ''!!}</div>
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-sm-12">
@@ -21,8 +22,8 @@
                                                 <input class="form-control" name="sku" value="{{!empty($oneItem->sku) ? $oneItem->sku : ''}}" type="text" placeholder="SKU">
                                             </div>
                                             <div class="form-group">
-                                                <label>Mô tả</label>
-                                                <textarea class="form-control" rows="4" name="description">{{!empty($oneItem->description) ? $oneItem->description : ''}}</textarea>
+                                                <label >Mô tả</label>
+                                                <textarea id="full-featured" class="form-control" rows="4" name="description">{{!empty($oneItem->description) ? $oneItem->description : ''}}</textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label>Giá</label>
