@@ -33,6 +33,7 @@ class CategoryController extends Controller
         $limit = 10;
 
         $params = [
+            'search' => $search,
             'info_category' =>true,
             'author' =>true,
             'category_id' => $id,

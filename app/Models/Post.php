@@ -124,10 +124,10 @@ class Post extends Model
     }
 
     static function getCount($params) {
-        $key_cache = md5(serialize($params).'count');
-        if(Cache::has($key_cache)){
-            return Cache::get($key_cache);
-        }
+        // $key_cache = md5(serialize($params).'count');
+        // if(Cache::has($key_cache)){
+        //     return Cache::get($key_cache);
+        // }
         extract($params);
         $data = self::where([
             'status' => 1,
@@ -154,7 +154,7 @@ class Post extends Model
             $data = $data->whereNotIn('post.id', $exclude);
         }
         $count_data = $data->count();
-        Cache::set($key_cache, $count_data, now()->addHours(12));
+        // Cache::set($key_cache, $count_data, now()->addHours(12));
 
         return $count_data;
     }

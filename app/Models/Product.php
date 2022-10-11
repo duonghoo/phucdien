@@ -64,16 +64,16 @@ class Product extends Model
 
     static function getCount($params) {
         $key_cache = md5('product-'.serialize($params).'count');
-        if(Cache::has($key_cache)){
-            return Cache::get($key_cache);
-        }
+        // if(Cache::has($key_cache)){
+        //     return Cache::get($key_cache);
+        // }
         extract($params);
         $data = self::where([
             'status' => 1,
         ]);
 
         $count_data = $data->count();
-        Cache::set($key_cache, $count_data, now()->addHours(12));
+        // Cache::set($key_cache, $count_data, now()->addHours(12));
 
         return $count_data;
     }
