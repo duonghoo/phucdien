@@ -154,6 +154,10 @@ class PostController extends Controller
 
     }
 
+    public function not_found()
+    {
+        return view('web.block._404');
+    }
     public function ajax_load_more_post_amp(){
         turnOnAjaxAmp();
         $dataPost = $_GET;

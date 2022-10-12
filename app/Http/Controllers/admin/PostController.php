@@ -74,10 +74,6 @@ class PostController extends Controller
         return view('admin.post.index', $data);
     }
 
-    public function not_found()
-    {
-        return view('web.block._404');
-    }
 
     public function update($id = 0) {
         $data['url_referer'] = Request::server('HTTP_REFERER') ?? '/admin/post?status=1';
