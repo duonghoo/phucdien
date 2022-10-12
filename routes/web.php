@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index');
-
+Route::any('/404.html', 'PostController@not_found');
 Route::get('/img/{key?}/{slug}', 'ImagesController@proxy');
 
 Route::get('/amp', 'HomeController@ampIndex');
