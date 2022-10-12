@@ -13,16 +13,12 @@ class CategoryController extends Controller
     public function index($slug, $id, $page = 1) {
         $search = isset($_GET['product_search']) ? $_GET['product_search'] : null;
         $oneItem = Category::find($id);
-        if(!empty($oneItem))
-        {
-        if ($oneItem->status != 0)
-        { 
+        if (empty($oneItem) || $oneItem->status == 0)
+            return Redirect::to(url('404.html'));
         $data = [];
         $data['oneItem'] = $oneItem;
         if ($oneItem->slug != $slug) return Redirect::to(getUrlCate($oneItem), 301);
         $data['seo_data'] = initSeoData($oneItem,'category');
-        }
-    }
 
         $data['loadmore'] = true;
         // //video limit 9
