@@ -13,7 +13,7 @@ class CategoryController extends Controller
     public function index($slug, $id, $page = 1) {
         $search = isset($_GET['product_search']) ? $_GET['product_search'] : null;
         $oneItem = Category::find($id);
-        if(!empty($oneItem)
+        if(!empty($oneItem))
         {
         if ($oneItem->status != 0)
         { 
