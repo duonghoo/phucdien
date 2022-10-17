@@ -110,13 +110,13 @@
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>Tên tác giả</label>
-                                                <input class="form-control" name="fullname" value="{{$oneItem->fullname ?? ''}}" type="text" placeholder="Tên tác giả">
+                                                <input class="form-control" required name="fullname" value="{{$oneItem->fullname ?? ''}}" type="text" placeholder="Tên tác giả">
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>Url tác giả</label>
-                                                <input class="form-control" name="slug" value="{{$oneItem->slug ?? ''}}" type="text" placeholder="Url tác giả">
+                                                <input class="form-control" required name="slug" value="{{$oneItem->slug ?? ''}}" type="text" placeholder="Url tác giả">
                                             </div>
                                         </div>
                                     </div>
