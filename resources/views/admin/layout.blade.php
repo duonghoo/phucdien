@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="/admin/css/toastr.min.css">
     <link rel="stylesheet" href="/admin/css/spectrum.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-    <link rel="shortcut icon" href="{{url('images/favicon.png')}}" />
-    <link rel="apple-touch-icon" href="{{url('images/favicon.png')}}" />
+    <link rel="shortcut icon" href="{{url('images/logo.png')}}" />
+    <link rel="apple-touch-icon" href="{{url('images/logo.png')}}" />
     <title>{{!empty(getCurrentControllerTitle()) ? 'Quản lý '.getCurrentControllerTitle() : 'Admin'}}</title>
 </head>
 <body>
