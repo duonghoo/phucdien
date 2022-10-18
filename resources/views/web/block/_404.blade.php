@@ -1,5 +1,6 @@
 @extends('web._layout')
 @section('main')
+<div id="page-content" class="container text-center">
     <div class="row justify-content-center mt-5">
         <div class="col-12 col-lg-6 my-5 text-center">
             <h1 class="font-36 font-weight-500 mb-0">Ooops... Error 404</h1>
@@ -7,4 +8,5 @@
             <p class="font-14">You can go to the <a href="{{ getUrlLink('/') }}" class="border px-3 py-2 text-decoration-none view-more">HOMEPAGE</a></p>
         </div>
     </div>
+</div>
 @endsection

@@ -15,7 +15,7 @@
                 <div class="col-sm-2 social">
                     <ul>
 
-                        <li><a href="{{ getSiteSetting('site_youtube') }} ?? ''" target="_blank"><i
+                        <li><a href="{{ getSiteSetting('site_facebook') }} ?? ''" target="_blank"><i
                                     class="fab fa-facebook-f "></i></a></li>
                         <li><a href="{{ getSiteSetting('site_twitter') }} ?? ''" target="_blank"><i
                                     class="fab fa-twitter "></i></a></li>
@@ -36,11 +36,17 @@
     <nav class="navbar navbar-custom navbar-fixed-top bg_secondary" role="navigation">
         <div class="container">
             <div class="navbar-header">
+                <a class="navbar-brand"><img src="{{getSiteSetting('site_logo')}}" style="max-height:5rem; margin-top:-2rem" alt=""></a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
+<<<<<<< HEAD
                 <img src="{!! getSiteSetting('') !!}" alt="">
+=======
+                
+>>>>>>> ab1e254c71dd2b1b1f1a394e8cf82d100501dc15
                 <a class="navbar-brand" href="/">
+                    
                     <span>Phúc Diễn</span>
                 </a>
 
