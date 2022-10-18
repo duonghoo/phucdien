@@ -26,7 +26,7 @@
                                     <td><a target="_blank" href="{{getUrlCate($item, 0)}}">{{$item->title}}</a> - <span class="text-success">{{$item->count_post}} bài viết</span></td>
                                     <td class="text-center">
                                         <a class="btn btn-info" href="/admin/category/update/{{$item->id}}"><svg class="c-icon"><use xlink:href="/admin/images/icon-svg/free.svg#cil-pencil"></use></svg></a>
-                                        <a class="btn  {{$item->id == 14 ? 'btn-secondary' : 'btn-primary'}}" onclick="return confirm('Bạn có chắc muốn xóa?')" href="{{$item->id == 14 ? '#' : '/admin/category/delete/{{$item->id}}'}}"><svg class="c-icon"><use xlink:href="/admin/images/icon-svg/free.svg#cil-trash"></use></svg></a>
+                                        <a class="btn btn-primary" onclick="return confirm('Bạn có chắc muốn xóa?')" href="{{$item->id == 14 ? '#' : '/admin/category/delete/{{$item->id}}'}}"><svg class="c-icon"><use xlink:href="/admin/images/icon-svg/free.svg#cil-trash"></use></svg></a>
                                     </td>
                                 </tr>
                                 @endforeach @endif
