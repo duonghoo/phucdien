@@ -89,9 +89,9 @@
                                         <label>Logo</label>
                                       
                                         @if(!empty($oneItem->site_logo))
-                                            <img src="{{'/img/thumb/'.$oneItem->site_logo}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','site_logo')">
+                                            <img src="{{'/img/thumb/'.$oneItem->site_logo}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
                                         @else
-                                            <img src="{{url('admin/images/no-image.jpg')}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','site_logo')">
+                                            <img src="{{url('admin/images/no-image.jpg')}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
                                         @endif
                                         <input type="hidden" name="site_logo" id="hd_img" value="{{!empty($oneItem->site_logo)? $oneItem->site_logo: ''}}" required>
                                         <div id="progress-wrp" style="display: none">
