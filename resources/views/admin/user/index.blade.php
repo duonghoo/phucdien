@@ -28,7 +28,7 @@
                                             <use xlink:href="/admin/images/icon-svg/free.svg#cil-pencil"></use>
                                         </svg>
                                     </a>
-                                    <a class="btn btn-danger" onclick="return confirm('Bạn có chắc muốn xóa?')"
+                                    <a class="btn btn-danger" onclick="return confirm('Khi xóa thành viên sẽ xóa tất cả sản phẩm và bài viết của họ, Bạn có chắc muốn xóa?')"
                                        href="/admin/user/delete/{{$item->id}}">
                                         <svg class="c-icon">
                                             <use xlink:href="/admin/images/icon-svg/free.svg#cil-trash"></use>
@@ -40,6 +40,8 @@
                             </tbody>
                         </table>
                     </div>
+                    <p>Có thể sửa thông tin thành viên</p>
+                    <p class="text-danger">CẢNH BÁO: KHÔNG NÊN XÓA THÀNH VIÊN NẾU KHÔNG MUỐN BỊ MẤT CÁC BÀI VIẾT CỦA THÀNH VIÊN ĐÓ !!!</p>
                 </div>
             </div>
         </div>
