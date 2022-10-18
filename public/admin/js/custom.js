@@ -440,7 +440,7 @@ $('input[name=title]').stringToSlug({
 
 
 
-custom
+
 // $('#lbl_img').on('click', function (){
 //     let input = document.createElement('input');
 //     input.type = 'file';
