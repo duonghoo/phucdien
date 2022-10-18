@@ -15,7 +15,7 @@
                 <div class="col-sm-2 social">
                     <ul>
 
-                        <li><a href="{{ getSiteSetting('site_youtube') }} ?? ''" target="_blank"><i
+                        <li><a href="{{ getSiteSetting('site_facebook') }} ?? ''" target="_blank"><i
                                     class="fab fa-facebook-f "></i></a></li>
                         <li><a href="{{ getSiteSetting('site_twitter') }} ?? ''" target="_blank"><i
                                     class="fab fa-twitter "></i></a></li>

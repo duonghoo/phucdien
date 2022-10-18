@@ -34,7 +34,7 @@
             </div>
             <div class="col-md-2 col-lg-2 col-md-offset-2 col-lg-offset-2">
                 <ul class="footer-social">
-                    <li><a href="{{getSiteSetting('site_youtube')}}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="{{getSiteSetting('site_facebook')}}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                     <li><a href="{{getSiteSetting('site_twitter')}}" target="_blank"><i class="fab fa-twitter"></i></a></li>
                     <li><a href="{{getSiteSetting('site_instagram')}}" target="_blank"><i class="fab fa-instagram"></i></a></li>
                     {{-- <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
