@@ -36,11 +36,13 @@
     <nav class="navbar navbar-custom navbar-fixed-top bg_secondary" role="navigation">
         <div class="container">
             <div class="navbar-header">
+                <a class="navbar-brand"><img src="{{getSiteSetting('site_logo')}}" style="max-height:5rem" alt=""></a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a href=""><img src="{{getSiteSetting('site_logo')}}" style="max-height:5rem" alt=""></a>
+                
                 <a class="navbar-brand" href="/">
+                    
                     <span>Phúc Diễn</span>
                 </a>
 
