@@ -40,11 +40,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
-<<<<<<< HEAD
-                <img src="{!! getSiteSetting('') !!}" alt="">
-=======
                 
->>>>>>> ab1e254c71dd2b1b1f1a394e8cf82d100501dc15
                 <a class="navbar-brand" href="/">
                     
                     <span>Phúc Diễn</span>
