@@ -39,6 +39,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
+                <a href="{{getSiteSetting('site_logo')}}"></a>
                 <a class="navbar-brand" href="/">
                     <span>Phúc Diễn</span>
                 </a>
