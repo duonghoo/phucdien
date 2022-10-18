@@ -89,7 +89,7 @@
                                         <label>Logo</label>
                                       
                                         @if(!empty($oneItem->site_logo))
-                                            <img src="{{'/img/thumb/'.$oneItem->site_logo}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
+                                            <img src="{{$oneItem->site_logo}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
                                         @else
                                             <img src="{{url('admin/images/no-image.jpg')}}" id="lbl_img" class="img-fluid d-block" onclick="upload_file('chosefile','img')">
                                         @endif
