@@ -172,16 +172,8 @@ function getCurrentControllerTitle() {
 }
 
 function getSiteSetting($key) {
-    $value = '';
-    if (!empty($key)) {
-        if(Cache::has('getSiteSetting-'.$key)){
-            $value = Cache::get('getSiteSetting-'.$key);
-        }else{
-            $value = \App\Models\SiteSetting::where('setting_key', $key)->first();
-            Cache::set('getSiteSetting-'.$key, $value, now()->addHours(24));
-        }
-        
-    }
+
+     $value = \App\Models\SiteSetting::where('setting_key', $key)->first();
     if(empty($value)) return null;
     return $value->setting_value;
 }
