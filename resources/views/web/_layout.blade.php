@@ -38,8 +38,8 @@
         <link rel="amphtml" href="{{$seo_data['amphtml']}}">
     @endif
 
-    <link rel="shortcut icon" href="{{url('images/favicon.png')}}" />
-    <link rel="apple-touch-icon" href="{{url('images/favicon.png')}}" />
+    <link rel="shortcut icon" href="{{url('images/logo.png')}}" />
+    <link rel="apple-touch-icon" href="{{url('images/logo.png')}}" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
