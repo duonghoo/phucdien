@@ -101,7 +101,6 @@ class PostController extends Controller
                 $post_category = $post_data['category'];
                 unset($post_data['category']);
                 $post_data['category_primary_id'] = $post_category[0];
-                dd($post_data['category_primary_id']);
             }
             else
             {
