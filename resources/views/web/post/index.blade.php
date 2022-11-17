@@ -85,13 +85,13 @@
                             {!! short_code($oneItem->content) !!}
                         </div>
                     </div>
-                    <div class="social-post">
+                    {{-- <div class="social-post w-100">
                         <div>{!! genImage($oneItem->user->thumbnail, 100, 100, 'img-responsive social-img', $oneItem->user->fullname) !!}</div>
                         <div class="social-text">
                             <h6><i class="fa fa-user mr-5"></i> {{$oneItem->user->fullname}}</h6>
                             <h5>"{!! get_limit_content($oneItem->user->description, 200) !!}"</h5>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 @include('web.block._sidebar')
             </div>
