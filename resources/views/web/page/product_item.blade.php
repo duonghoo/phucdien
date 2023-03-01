@@ -20,7 +20,7 @@
                     <div class="single-post">
                         <div class="row">
                             <div class="col-sm-12 col-md-6">
-                                {!! genImage($oneItem->thumbnail, 750, 313, 'img-responsive thumbnail-root', $oneItem->title) !!}
+                                {!! genImage($oneItem->thumbnail, 313, 750, 'img-responsive thumbnail-root', $oneItem->title) !!}
                                 <div class="d-flex product-imgs">
                                     {!! genImage($oneItem->thumbnail, 750, 313, 'img-responsive img-product img-product-active', $oneItem->title) !!}
                                     @if(!empty($oneItem->img1))
