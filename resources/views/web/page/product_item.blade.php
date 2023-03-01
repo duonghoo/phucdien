@@ -20,17 +20,17 @@
                     <div class="single-post">
                         <div class="row">
                             <div class="col-sm-12 col-md-6">
-                                {!! genImage($oneItem->thumbnail, 1000, 1500, 'img-responsive thumbnail-root', $oneItem->title) !!}
+                                {!! genImage($oneItem->thumbnail, 1637, 2363, 'img-responsive thumbnail-root', $oneItem->title) !!}
                                 <div class="d-flex product-imgs">
-                                    {!! genImage($oneItem->thumbnail, 750, 313, 'img-responsive img-product img-product-active', $oneItem->title) !!}
+                                    {!! genImage($oneItem->thumbnail, 1637, 2363, 'img-responsive img-product img-product-active', $oneItem->title) !!}
                                     @if(!empty($oneItem->img1))
-                                        {!! genImage($oneItem->img1, 750, 313, 'img-responsive img-product', $oneItem->title) !!}
+                                        {!! genImage($oneItem->img1, 1637, 2363, 'img-responsive img-product', $oneItem->title) !!}
                                     @endif
                                     @if(!empty($oneItem->img2))
-                                        {!! genImage($oneItem->product->img2 ?? "", 750, 313, 'img-responsive img-product', $oneItem->title) !!}
+                                        {!! genImage($oneItem->product->img2 ?? "", 1637, 2363, 'img-responsive img-product', $oneItem->title) !!}
                                     @endif
                                     @if(!empty($oneItem->img3))
-                                        {!! genImage($oneItem->product->img3 ?? "", 750, 313, 'img-responsive img-product', $oneItem->title) !!}
+                                        {!! genImage($oneItem->product->img3 ?? "", 1637, 2363, 'img-responsive img-product', $oneItem->title) !!}
                                     @endif
                                 </div>
                             </div>
